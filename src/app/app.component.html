@@ -1,0 +1,38 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav mode="side" #sidenav opened position="start">
+    <div class="detect">Detect<br> 
+    <mat-checkbox id="object" name="object" value="Object" [(disabled)]="disabledObject" [(ngModel)]="checkedObject"
+    (change)="onChange($event)">Object</mat-checkbox>
+    <mat-checkbox id="phenomenon" name="phenomenon" value="Phenomenon" [(disabled)]="disabledPhenom" [(ngModel)]="checkedPhenom"
+     (change)="onChange($event)" >Phenomenon</mat-checkbox></div><br>
+    <button mat-raised-button id="nextButton" (click)="goToPage('object-detection')">Next</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color = "primary">
+      <button mat-button [matMenuTriggerFor]="file">File</button>
+      <mat-menu #file="matMenu" yPosition="above">
+        <button mat-menu-item>Open picture</button>
+        <button mat-menu-item>Save picture</button>
+        <button mat-menu-item>Close picture</button>
+      </mat-menu>      
+      <button mat-button [matMenuTriggerFor]="edit">Edit</button>
+      <mat-menu #edit="matMenu" yPosition="above">
+        <button mat-menu-item>Add a tag</button>
+        <button mat-menu-item>Add day and time to detected object and phenomenon</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="tools">Tools</button>
+      <mat-menu #tools="matMenu" yPosition="above">
+        <button mat-menu-item>Calculate the distance between two objects</button>
+        <button mat-menu-item>Calculate latitude and longitude</button>
+        <button mat-menu-item>Create statistics for a phenomenon</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="help">Help</button>
+      <mat-menu #help="matMenu" yPosition="above">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+      <span class = "filler"></span>
+    </mat-toolbar>
+    <div class="main-content"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
