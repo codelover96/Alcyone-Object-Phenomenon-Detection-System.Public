@@ -15,12 +15,17 @@ export class AppComponent {
   checkedPhenom=false;
   disabledNext=false;
   checkedNext=false;
+  fileToUpload=null;
+  imageUrl=null;
 
   constructor(private router:Router){}
 
-  goToPage(pageName:string):void{
-    this.router.navigate([`${pageName}`]);
-  }
+  handleFileInput(file: FileList){
+    this.fileToUpload=file.item(0);
+    var reader = new FileReader();
+    reader.onload=(event:any)=>{
+      this.imageUrl=event.target.result;
+    }
+    reader.readAsDataURL(this.fileToUpload);
 }
-
-
+}

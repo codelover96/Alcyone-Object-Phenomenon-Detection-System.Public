@@ -5,13 +5,14 @@
     (change)="onChange($event)">Object</mat-checkbox>
     <mat-checkbox id="phenomenon" name="phenomenon" value="Phenomenon" [(disabled)]="disabledPhenom" [(ngModel)]="checkedPhenom"
      (change)="onChange($event)" >Phenomenon</mat-checkbox></div><br>
-    <button mat-raised-button id="nextButton" (click)="goToPage('object-detection')">Next</button>
+    <button mat-raised-button id="nextButton" routerLink="/object-detection">Next</button>
+    <router-outlet></router-outlet>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color = "primary">
       <button mat-button [matMenuTriggerFor]="file">File</button>
       <mat-menu #file="matMenu" yPosition="above">
-        <button mat-menu-item>Open picture</button>
+        <button mat-menu-item (click)="openPicture()"><input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">Open picture</button>
         <button mat-menu-item>Save picture</button>
         <button mat-menu-item>Close picture</button>
       </mat-menu>      
