@@ -27,5 +27,5 @@ export class AppComponent {
       this.imageUrl=event.target.result;
     }
     reader.readAsDataURL(this.fileToUpload);
-}
+  }
 }

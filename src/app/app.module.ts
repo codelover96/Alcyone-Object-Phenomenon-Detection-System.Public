@@ -8,11 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ObjectDetectionComponent } from './object-detection/object-detection.component';
+import { DetectionComponent } from './detection/detection.component';
+import { PhenomenonDetectionComponent } from './phenomenon-detection/phenomenon-detection.component';
 
 @NgModule({
    declarations: [
       AppComponent,
-      ObjectDetectionComponent
+      ObjectDetectionComponent,
+      DetectionComponent,
+      PhenomenonDetectionComponent
    ],
    imports: [
       MaterialModule,

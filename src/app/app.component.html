@@ -1,13 +1,4 @@
 <mat-sidenav-container fullscreen>
-  <mat-sidenav mode="side" #sidenav opened position="start">
-    <div class="detect">Detect<br> 
-    <mat-checkbox id="object" name="object" value="Object" [(disabled)]="disabledObject" [(ngModel)]="checkedObject"
-    (change)="onChange($event)">Object</mat-checkbox>
-    <mat-checkbox id="phenomenon" name="phenomenon" value="Phenomenon" [(disabled)]="disabledPhenom" [(ngModel)]="checkedPhenom"
-     (change)="onChange($event)" >Phenomenon</mat-checkbox></div><br>
-    <button mat-raised-button id="nextButton" routerLink="/object-detection">Next</button>
-    <router-outlet></router-outlet>
-  </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color = "primary">
       <button mat-button [matMenuTriggerFor]="file">File</button>
@@ -36,4 +27,13 @@
     </mat-toolbar>
     <div class="main-content"></div>
   </mat-sidenav-content>
+  <mat-sidenav mode="side" #sidenav opened position="start">
+    <div class="detect">Detect<br> 
+    <mat-checkbox id="object" name="object" value="Object" [(disabled)]="disabledObject" [(ngModel)]="checkedObject"
+    (change)="onChange($event)">Object</mat-checkbox>
+    <mat-checkbox id="phenomenon" name="phenomenon" value="Phenomenon" [(disabled)]="disabledPhenom" [(ngModel)]="checkedPhenom"
+     (change)="onChange($event)" >Phenomenon</mat-checkbox></div><br>
+    <button mat-raised-button id="nextButton" routerLink="/object-detection">Next</button>
+    <router-outlet></router-outlet>
+  </mat-sidenav>
 </mat-sidenav-container>
