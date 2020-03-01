@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-object-detection',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObjectDetectionComponent implements OnInit {
 
+  markedShape=false;
+  markedSize=false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  onChangeShape(event:MatCheckboxChange){
+    this.markedShape=event.checked;
+    console.log(this.markedShape);
+  }
+  onChangeSize(event:MatCheckboxChange){
+    this.markedSize=event.checked;
+    console.log(this.markedSize);
+  }
 }

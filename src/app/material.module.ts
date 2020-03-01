@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   imports: [ 
@@ -17,8 +18,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatToolbarModule,
     MatSidenavModule,
     MatCardModule,
-    MatSliderModule,
-    MatCheckboxModule
+    MatSliderModule
   ],
   exports: [
     MatButtonModule, 
@@ -28,7 +28,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSidenavModule,
     MatCardModule,
     MatSliderModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule
   ]    
 })
 

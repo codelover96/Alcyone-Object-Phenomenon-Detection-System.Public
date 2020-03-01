@@ -3,7 +3,8 @@
     <mat-toolbar color = "primary">
       <button mat-button [matMenuTriggerFor]="file">File</button>
       <mat-menu #file="matMenu" yPosition="above">
-        <button mat-menu-item (click)="openPicture()"><input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">Open picture</button>
+        <button mat-menu-item (click)="openInput()">Open</button>
+        <input hidden type="file" id="fileInput" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
         <button mat-menu-item>Save picture</button>
         <button mat-menu-item>Close picture</button>
       </mat-menu>      
@@ -25,15 +26,19 @@
       </mat-menu>
       <span class = "filler"></span>
     </mat-toolbar>
-    <div class="main-content"></div>
+    <div class="main-content">
+      <img [src]="imageUrl">
+    </div>
   </mat-sidenav-content>
   <mat-sidenav mode="side" #sidenav opened position="start">
-    <div class="detect">Detect<br> 
-    <mat-checkbox id="object" name="object" value="Object" [(disabled)]="disabledObject" [(ngModel)]="checkedObject"
-    (change)="onChange($event)">Object</mat-checkbox>
-    <mat-checkbox id="phenomenon" name="phenomenon" value="Phenomenon" [(disabled)]="disabledPhenom" [(ngModel)]="checkedPhenom"
-     (change)="onChange($event)" >Phenomenon</mat-checkbox></div><br>
-    <button mat-raised-button id="nextButton" routerLink="/object-detection">Next</button>
+    <div class="detect"><br> 
+      <mat-radio-group>Detect<br>
+        <mat-radio-button class="radiogroup" name="object" value="Object" ngDefaultControl [(ngModel)]="radioObject"
+        (change)="onChangeObj($event)">Object</mat-radio-button>
+        <mat-radio-button class="radiogroup" name="phenomenon" value="Phenomenon" ngDefaultControl [(ngModel)]="radioPhenom"  
+        (change)="onChangePhe($event)">Phenomenon</mat-radio-button>
+      </mat-radio-group></div><br>
+    <button mat-raised-button id="nextButton" (click)="getValue()">Next</button>
     <router-outlet></router-outlet>
   </mat-sidenav>
 </mat-sidenav-container>
