@@ -19,7 +19,6 @@ mat-sidenav {
 }
 ::ng-deep div.mat-menu-panel {
    min-width: 112px;
-     /** set width to 500px */
    max-width: 500px;
    overflow: auto;
    -webkit-overflow-scrolling: touch;

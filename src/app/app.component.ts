@@ -21,6 +21,7 @@ export class AppComponent {
   markedObj : string ;
   markedPhe: string;
   theCheckbox = false;
+  clickedNext=false;
 
   constructor(private router:Router){}
 
@@ -46,9 +47,11 @@ export class AppComponent {
   getValue(){
     if (this.markedObj=="Object"){
         this.router.navigate(['object-detection']);
+        this.clickedNext=true;
     }
     if (this.markedPhe=="Phenomenon"){
       this.router.navigate(['phenomenon-detection']);
+      this.clickedNext=true;
     }
   }
 }
