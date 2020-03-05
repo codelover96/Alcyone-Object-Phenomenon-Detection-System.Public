@@ -6,7 +6,7 @@
    margin-right: 10px;
 }
 mat-sidenav {
-    width: 150px;
+    width: 200px;
     padding:10px;
 
 }
@@ -15,7 +15,10 @@ mat-sidenav {
     color:#fff
 }
 .detect{
-   vertical-align: middle;
+   font-size:25px;
+}
+.outDetect{
+   margin-top: 100px;
 }
 ::ng-deep div.mat-menu-panel {
    min-width: 112px;
@@ -25,4 +28,9 @@ mat-sidenav {
    max-height: calc(100vh - 48px);
    border-radius: 4px;
    outline: 0;
+}
+.nextButton{
+   margin-top:50px;
+   display:flex;
+   justify-content: center;
 }

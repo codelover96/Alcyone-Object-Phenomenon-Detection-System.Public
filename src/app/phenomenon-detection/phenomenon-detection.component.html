@@ -1,1 +1,29 @@
-<p>phenomenon-detection works!</p>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav-content>
+    </mat-sidenav-content>
+    <mat-sidenav mode="side" #sidenav opened position="start">
+        <div class="detect">Detect<br>
+            <mat-checkbox id="fire" name="fire" value="Fire" [(disabled)]="disabledFire" [(ngModel)]="checkedFire" data-md-icheck 
+            (change)="onChangeFire($event)">Fire</mat-checkbox><br>
+            <mat-checkbox id="flood" name="flood" value="Flood" [(disabled)]="disabledFlood" [(ngModel)]="checkedFlood" data-md-icheck 
+            (change)="onChangeFlood($event)">Flood</mat-checkbox><br>
+            <mat-checkbox id="tornado" name="tornado" value="Tornado" [(disabled)]="disabledTornado" [(ngModel)]="checkedTornado" data-md-icheck 
+            (change)="onChangeTornado($event)">Tornado</mat-checkbox><br>
+            <mat-checkbox id="snow" name="snow" value="Snow/Snowstorm" [(disabled)]="disabledSnow" [(ngModel)]="checkedSnow" data-md-icheck 
+            (change)="onChangeSnow($event)">Snow/Snowstorm</mat-checkbox><br>
+            <mat-checkbox id="rain" name="rain" value="Rain/Rainstorm" [(disabled)]="disabledRain" [(ngModel)]="checkedRain" data-md-icheck 
+            (change)="onChangeRain($event)">Rain/Rainstorm</mat-checkbox><br>
+            <mat-checkbox id="balllightning" name="balllightning" value="Ball lightning" [(disabled)]="disabledBalllight" [(ngModel)]="checkedBalllight" data-md-icheck 
+            (change)="onChangeBalllight($event)">Ball lightning</mat-checkbox><br>
+            <mat-checkbox id="hail" name="hail" value="Hail" [(disabled)]="disabledHail" [(ngModel)]="checkedHail" data-md-icheck 
+            (change)="onChangeHal($event)">Hail</mat-checkbox><br>
+            <mat-checkbox id="wind" name="wind" value="Wind/Windstorm" [(disabled)]="disabledWind" [(ngModel)]="checkedWind" data-md-icheck 
+            (change)="onChangeWind($event)">Wind/Windstorm</mat-checkbox><br>
+            <mat-checkbox id="pollution" name="pollution" value="pollution" [(disabled)]="disabledPollution" [(ngModel)]="checkedPollution" data-md-icheck 
+            (change)="onChangePollution($event)">Pollution</mat-checkbox><br>
+            <mat-checkbox id="ingredients" name="ingredients" value="Object's ingredients" [(disabled)]="disabledIngred" [(ngModel)]="checkedIngred" data-md-icheck 
+            (change)="onChangeIngred($event)">Object's ingredients</mat-checkbox><br>
+        </div>
+        <button mat-raised-button id="nextButton" (click)="getValue()">Next</button>
+    </mat-sidenav>
+</mat-sidenav-container>

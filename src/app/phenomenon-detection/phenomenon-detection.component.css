@@ -1,0 +1,30 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.filler {
+   flex: 1 1 auto;
+}
+.gap {
+   margin-right: 10px;
+}
+mat-sidenav {
+    width: 200px;
+    padding:10px;
+}
+.mat-drawer { 
+    background-color: #3F51B5;
+    color:#fff
+}
+::ng-deep div.mat-menu-panel {
+   min-width: 112px;
+   max-width: 500px;
+   overflow: auto;
+   -webkit-overflow-scrolling: touch;
+   max-height: calc(100vh - 48px);
+   border-radius: 4px;
+   outline: 0;
+}
+mat-form-field {
+    margin-right: 12px;
+}
+#ingredients{
+    margin-left:10px;
+}
