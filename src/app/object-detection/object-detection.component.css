@@ -25,3 +25,9 @@ mat-sidenav {
 mat-form-field {
     margin-right: 12px;
 }
+#goButton{
+    margin-left:50px;
+}
+.search{
+    margin-top:70px;
+}

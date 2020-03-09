@@ -2,29 +2,22 @@
     <mat-sidenav-content>
     </mat-sidenav-content>
     <mat-sidenav mode="side" #sidenav opened position="start">
+      <div class="search">
         <div class="features">Calculate<br>
-          <mat-checkbox id="shape" class="calculate" name="shape" value="Shape" [(disabled)]="disabledShape" [(ngModel)]="checkedShape" data-md-icheck 
-          (change)="onChangeShape($event)">Shape</mat-checkbox><br>
-          <mat-checkbox id="size" class="calculate" name="size" value="Size" [(disabled)]="disabledSize" [(ngModel)]="checkedSize" data-md-icheck
-          (change)="onChangePhe($event)">Size</mat-checkbox></div><br>
+          <mat-checkbox id="shape" class="calculate" name="shape" value="Shape" (change)="onChangeShape($event)">Shape</mat-checkbox><br>
+          <mat-checkbox id="size" class="calculate" name="size" value="Size" (change)="onChangeSize($event)">Size</mat-checkbox></div><br>
         <div class="appearance">Appearance<br>
-          <mat-checkbox id="sea" name="sea" value="Sea" [(disabled)]="disabledSea" [(ngModel)]="checkedSea" data-md-icheck 
-          (change)="onChangeSea($event)">Sea</mat-checkbox><br>
-          <mat-checkbox id="ashore" name="ashore" value="Ashore" [(disabled)]="disabledAshore" [(ngModel)]="checkedAshore" data-md-icheck 
-          (change)="onChangeAshore($event)">Ashore</mat-checkbox><br>
-          <mat-checkbox id="ashorewalt" name="ashorewalt" value="Ashore with altitude" [(disabled)]="disabledAshorewalt" [(ngModel)]="checkedAshorewalt" data-md-icheck 
-          (change)="onChangeAshorewAlt($event)">Ashore with altitude</mat-checkbox><br>
-          <mat-checkbox id="ashoreinslope" name="ashoreinslope" value="Ashore in slope" [(disabled)]="disabledAshoreinslope" [(ngModel)]="checkedAshoreinslope" data-md-icheck 
-          (change)="onChangeAshoreInSlope($event)">Ashore in slope</mat-checkbox><br>
+          <mat-checkbox id="sea" name="sea" value="Sea" (change)="onChangeSea($event)">Sea</mat-checkbox><br>
+          <mat-checkbox id="ashore" name="ashore" value="Ashore" (change)="onChangeAshore($event)">Ashore</mat-checkbox><br>
+          <mat-checkbox id="ashorewalt" name="ashorewalt" value="Ashore with altitude"  (change)="onChangeAshorewAlt($event)">Ashore with altitude</mat-checkbox><br>
+          <mat-checkbox id="ashoreinslope" name="ashoreinslope" value="Ashore in slope" (change)="onChangeAshoreInSlope($event)">Ashore in slope</mat-checkbox><br>
         </div><br>
         <div class="specific">Search with specific<br>
-          <mat-checkbox id="size2" name="size2" value="size" [(disabled)]="disabledSize2" [(ngModel)]="checkedSize2" data-md-icheck 
-          (change)="onChangeSpecificSize($event)">size</mat-checkbox><br>
-          <form><mat-form-field><mat-label>x</mat-label><input matInput placeholder="x value"></mat-form-field></form>
-          <mat-checkbox id="shape2" name="shape2" value="shape" [(disabled)]="disabledShape2" [(ngModel)]="checkedShape2" data-md-icheck 
-          (change)="onChangeSpecificShape($event)">shape</mat-checkbox><br>
-          <mat-form-field><mat-select>
-            <mat-option value="Square">Square</mat-option>
+          <mat-checkbox id="size2" name="size2" value="size" (change)="onChangeSpecificSize($event)">size</mat-checkbox><br>
+          <form><mat-form-field><mat-label>x</mat-label><input id="xvalue" matInput placeholder="x value"></mat-form-field></form>
+          <mat-checkbox id="shape2" name="shape2" value="shape" (change)="onChangeSpecificShape($event)">shape</mat-checkbox><br>
+          <mat-form-field id="selectShape" (change)="onChangeSelect($event)"><mat-select>
+            <mat-option value="Square" name="Square">Square</mat-option>
             <mat-option value="Rectangle">Rectangle</mat-option>
             <mat-option value="Triangle">Triangle</mat-option>
             <mat-option value="Circle">Circle</mat-option>
@@ -32,6 +25,7 @@
             <mat-option value="Parallelogram">Parallelogram</mat-option>
           </mat-select></mat-form-field>
         </div>
-        <button mat-raised-button id="goButton" (click)="getValue()">Go</button>
+        <button mat-raised-button id="goButton" (click)="onClick()">Go</button>
+      </div>
     </mat-sidenav>
 </mat-sidenav-container>
