@@ -25,11 +25,11 @@ mat-sidenav {
 mat-form-field {
     margin-right: 12px;
 }
-#ingredients{
-    margin-left:10px;
-}
 .detect{
     margin-top:80px;
+}
+#ingredients{
+    margin-left:10px;
 }
 #nextButton{
     margin-top:80px;

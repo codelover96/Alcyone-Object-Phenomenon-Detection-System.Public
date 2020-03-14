@@ -44,7 +44,7 @@ export class AppComponent {
     this.markedPhe=event.value;
     console.log(this.markedPhe);
   }
-  getValue(){
+  onClick(){
     if (this.markedObj=="Object"){
         this.router.navigate(['object-detection']);
         this.clickedNext=true;
