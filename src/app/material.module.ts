@@ -11,6 +11,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [ 
@@ -22,7 +23,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatCardModule,
     MatSliderModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule, 
@@ -35,7 +37,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatCheckboxModule,
     MatRadioModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ]    
 })
 

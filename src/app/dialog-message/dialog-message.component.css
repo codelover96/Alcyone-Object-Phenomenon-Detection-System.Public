@@ -1,0 +1,8 @@
+.custom-dialog {
+    margin: -16px;
+    overflow: hidden;
+    padding: 10px   12px 25px 12px;
+}
+.button{
+  background-color: #3F51B5;
+}

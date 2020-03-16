@@ -10,13 +10,16 @@ import { RouterModule } from '@angular/router';
 import { ObjectDetectionComponent } from './object-detection/object-detection.component';
 import { PhenomenonDetectionComponent } from './phenomenon-detection/phenomenon-detection.component';
 import { PhenomenonDetection2Component } from './phenomenon-detection2/phenomenon-detection2.component';
+import { DialogMessageComponent } from './dialog-message/dialog-message.component';
+import {ObjectDetectionService} from './object-detection/object-detection.service';
 
 @NgModule({
    declarations: [
       AppComponent,
       ObjectDetectionComponent,
       PhenomenonDetectionComponent,
-      PhenomenonDetection2Component
+      PhenomenonDetection2Component,
+      DialogMessageComponent
    ],
    imports: [
       MaterialModule,
@@ -26,7 +29,8 @@ import { PhenomenonDetection2Component } from './phenomenon-detection2/phenomeno
       FormsModule,
       RouterModule
    ],
-   providers: [{provide: APP_BASE_HREF, useValue: ''}],
-   bootstrap: [AppComponent]
+   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService],
+   bootstrap: [AppComponent],
+   entryComponents : [DialogMessageComponent]
 })
 export class AppModule { }
