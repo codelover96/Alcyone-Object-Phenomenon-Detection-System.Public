@@ -6,8 +6,8 @@
 		</p>
 	</mat-dialog-content>
 	<mat-dialog-actions>
-		<button mat-button mat-raised-button class="button" [mat-dialog-close]="false">Next phenomenon</button>
-		<button mat-raised-button class="button" [mat-dialog-close]="true">OK</button>
-		<button mat-raised-button class="button" (click)="onClick()" [mat-dialog-close]="true">New</button>
+		<button mat-button mat-raised-button class="button" [mat-dialog-close]="false" value='Next phenomenon'>Next phenomenon</button>
+		<button mat-raised-button class="button" [mat-dialog-close]="true" value='OK'>OK</button>
+		<button mat-raised-button class="button" [mat-dialog-close]="true" value='New search'>New search</button>
 	</mat-dialog-actions>
 </div>

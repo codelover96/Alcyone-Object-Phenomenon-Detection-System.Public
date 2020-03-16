@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { MatSelectChange } from '@angular/material/select';
-import {MatDialog} from '@angular/material/dialog';
 import {ObjectDetectionService} from './object-detection.service';
 
 @Component({
@@ -56,7 +54,7 @@ export class ObjectDetectionComponent implements OnInit {
   }
   onClick(){
      this.xvalueInput=parseInt((document.getElementById("xvalue") as HTMLInputElement).value);
-     this.shapeValueInput=((document.getElementById("selectShape") as HTMLSelectElement).value);
+     this.shapeValueInput=((document.getElementById("selectShape") as HTMLSelectElement).innerText);
      console.log(this.xvalueInput);
      console.log(this.shapeValueInput);
      var data = null;
