@@ -7,11 +7,11 @@ import {PhenomenonDetection2Component} from './phenomenon-detection2/phenomenon-
 import {AppComponent} from './app.component';
 
 const routes: Routes = [
+  {path: 'app', component: AppComponent},
+  {path: '', redirectTo: 'app', pathMatch: 'full'},
   {path: 'object-detection', component: ObjectDetectionComponent},
   {path: 'phenomenon-detection', component: PhenomenonDetectionComponent},
-  {path: 'phenomenon-detection2', component: PhenomenonDetection2Component},
-  {path: 'app', component: AppComponent}
-  //{ path: '',   redirectTo: '/app-component', pathMatch: 'full' },
+  {path: 'phenomenon-detection2', component: PhenomenonDetection2Component}
 ];
 
 @NgModule({

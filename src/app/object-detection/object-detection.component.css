@@ -31,3 +31,6 @@ mat-form-field {
 .search{
     margin-top:70px;
 }
+#appearance,#searchwith,#calculate{
+    font-size:18px;
+}

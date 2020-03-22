@@ -18,7 +18,7 @@ mat-sidenav {
    font-size:25px;
 }
 .outDetect{
-   margin-top: 100px;
+  margin-top: 180px;;
 }
 ::ng-deep div.mat-menu-panel {
    min-width: 112px;

@@ -19,7 +19,7 @@ export class DialogMessageComponent implements OnInit {
     
   }
   onClick(){
-
+    
   }
 
 }

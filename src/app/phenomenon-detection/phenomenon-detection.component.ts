@@ -23,7 +23,7 @@ export class PhenomenonDetectionComponent implements OnInit {
   ngOnInit(): void {
   }
   constructor(private router:Router){}
-
+  
   onClick(){
     this.router.navigate(['phenomenon-detection2']);
   }

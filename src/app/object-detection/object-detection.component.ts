@@ -58,16 +58,7 @@ export class ObjectDetectionComponent implements OnInit {
      console.log(this.xvalueInput);
      console.log(this.shapeValueInput);
      var data = null;
-    this.objectService.openModal("Message Test", ()=>{
-      console.log('Yes');
-    }, ()=>{
-      console.log('No');
-    });
+     this.objectService.openModal("Message Test", ()=>{}, ()=>{}, ()=>{});
   }
-  
-  /*onChangeSelect(event:MatSelectChange){
-    this.shapeValueInput=<HTMLSelectElement>document.getElementById('selectShape');
-    this.shapeValueInput=event.value;
-    console.log(this.shapeValueInput);
-  }*/
+
 }

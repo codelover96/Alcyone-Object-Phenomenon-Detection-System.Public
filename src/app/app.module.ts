@@ -12,6 +12,8 @@ import { PhenomenonDetectionComponent } from './phenomenon-detection/phenomenon-
 import { PhenomenonDetection2Component } from './phenomenon-detection2/phenomenon-detection2.component';
 import { DialogMessageComponent } from './dialog-message/dialog-message.component';
 import {ObjectDetectionService} from './object-detection/object-detection.service';
+import {PhenomenonDetection2Service} from './phenomenon-detection2/phenomenon-detection2.service';
+
 
 @NgModule({
    declarations: [
@@ -29,7 +31,7 @@ import {ObjectDetectionService} from './object-detection/object-detection.servic
       FormsModule,
       RouterModule
    ],
-   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService],
+   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetection2Service],
    bootstrap: [AppComponent],
    entryComponents : [DialogMessageComponent]
 })

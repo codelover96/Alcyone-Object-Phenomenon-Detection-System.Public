@@ -1,13 +1,11 @@
 <div class="custom-dialog">
 	<h2 mat-dialog-title>Results</h2>
 	<mat-dialog-content>
-		<p>
-			{{modalMessage}}
-		</p>
+		<p>{{modalMessage}}</p>
 	</mat-dialog-content>
 	<mat-dialog-actions>
-		<button mat-button mat-raised-button class="button" [mat-dialog-close]="false" value='Next phenomenon'>Next phenomenon</button>
-		<button mat-raised-button class="button" [mat-dialog-close]="true" value='OK'>OK</button>
-		<button mat-raised-button class="button" [mat-dialog-close]="true" value='New search'>New search</button>
+		<button mat-raised-button class="button" [mat-dialog-close]="false" value='Next object'(click)="onClick()">Next object</button>
+		<button mat-raised-button class="button" [mat-dialog-close]="true" value='OK' routerLink="object-detection">OK</button>
+		<button mat-raised-button class="button" [mat-dialog-close]="true" value='New search' routerLink="/app">New search</button>
 	</mat-dialog-actions>
 </div>

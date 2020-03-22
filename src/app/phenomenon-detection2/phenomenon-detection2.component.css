@@ -25,8 +25,11 @@ mat-sidenav {
 mat-form-field {
     margin-right: 12px;
 }
-.detect{
+.metrics{
     margin-top:80px;
+}
+#detect,#appearance{
+    font-size:18px;
 }
 #goButton{
     margin-top:80px;

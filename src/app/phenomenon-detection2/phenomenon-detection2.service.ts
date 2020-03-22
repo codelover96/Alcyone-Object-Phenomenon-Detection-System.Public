@@ -4,7 +4,7 @@ import {DialogMessageComponent} from '../dialog-message/dialog-message.component
 import { Router } from '@angular/router';
 
 @Injectable()
-export class ObjectDetectionService{
+export class PhenomenonDetection2Service{
     router:Router;
     constructor(public dialog: MatDialog) { }
 

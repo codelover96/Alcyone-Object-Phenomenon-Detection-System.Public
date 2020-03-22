@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { PhenomenonDetection2Service} from './phenomenon-detection2.service';
 
 @Component({
   selector: 'app-phenomenon-detection2',
@@ -20,7 +21,7 @@ export class PhenomenonDetection2Component implements OnInit {
   markedAshorewAlt=false;
   markedAshoreInSlope=false;
 
-  constructor() { }
+  constructor(public phenomService:PhenomenonDetection2Service){}
 
   ngOnInit(): void {
   }
@@ -53,5 +54,10 @@ export class PhenomenonDetection2Component implements OnInit {
   }
   onChangeAshoreInSlope(event:MatCheckboxChange){
     this.markedAshoreInSlope=event.checked;
+  }
+  onClick(){
+    var data = null;
+    this.phenomService.openModal("Message Test", ()=>{}, ()=>{}, ()=>{});
+    
   }
 }

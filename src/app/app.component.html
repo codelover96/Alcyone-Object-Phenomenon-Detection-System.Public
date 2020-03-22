@@ -31,13 +31,13 @@
     </div>
   </mat-sidenav-content>
   <mat-sidenav mode="side" #sidenav opened position="start">
-    <div class="outDetect"*ngIf="!clickedNext"><br> 
+    <div class="outDetect"*ngIf="!clickedNext">
       <mat-radio-group><h1 class="detect">Detect</h1><br>
         <mat-radio-button class="radiogroup" name="object" value="Object" (change)="onChangeObj($event)">Object</mat-radio-button>
         <mat-radio-button class="radiogroup" name="phenomenon" value="Phenomenon" (change)="onChangePhe($event)">Phenomenon</mat-radio-button>
-      </mat-radio-group><br>
+      </mat-radio-group>
       <button mat-raised-button class="nextButton" (click)="onClick()">Next</button>
-   </div>
+    </div>
   <router-outlet></router-outlet>
 </mat-sidenav>
 </mat-sidenav-container>
