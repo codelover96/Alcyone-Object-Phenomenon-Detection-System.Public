@@ -2,34 +2,36 @@
 .filler {
    flex: 1 1 auto;
 }
-.gap {
-   margin-right: 10px;
+.sideBar {
+   width: 220px;
+   display: flex;
+   padding:12px;
+   align-items: center;
+   justify-content: center;
+   background-color: #4b4276;
+   color:#fff;
 }
-mat-sidenav {
-    width: 200px;
-    padding:10px;
-
+.topBar { 
+   background-color:	#808080;
+   color:#fff;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
 }
-.mat-drawer { 
-    background-color: #3F51B5;
-    color:#fff
+.container{
+   position: absolute;
+   top: 60px;
+   bottom: 60px;
+   left: 0;
+   right: 0;
 }
-.detect{
-   font-size:25px;
+.topItem{
+   font-size: 20px;
 }
-.outDetect{
-  margin-top: 180px;;
+.items{
+   margin-left:10px;
 }
-::ng-deep div.mat-menu-panel {
-   min-width: 112px;
-   max-width: 500px;
-   overflow: auto;
-   -webkit-overflow-scrolling: touch;
-   max-height: calc(100vh - 48px);
-   border-radius: 4px;
-   outline: 0;
-}
-.nextButton{
-   margin-top:50px;
-   margin-left:50px;
+#logo{
+   margin-left:-15px;
 }

@@ -5,10 +5,12 @@ import { ObjectDetectionComponent } from './object-detection/object-detection.co
 import { PhenomenonDetectionComponent } from './phenomenon-detection/phenomenon-detection.component';
 import {PhenomenonDetection2Component} from './phenomenon-detection2/phenomenon-detection2.component';
 import {AppComponent} from './app.component';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
   {path: 'app', component: AppComponent},
-  {path: '', redirectTo: 'app', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'object-detection', component: ObjectDetectionComponent},
   {path: 'phenomenon-detection', component: PhenomenonDetectionComponent},
   {path: 'phenomenon-detection2', component: PhenomenonDetection2Component}

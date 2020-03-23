@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatRadioChange } from '@angular/material/radio';
+
 
 @Component({
   selector: 'my-app',
@@ -22,6 +22,7 @@ export class AppComponent {
   markedPhe: string;
   theCheckbox = false;
   clickedNext=false;
+  logo='./assets/logo.png';
 
   constructor(private router:Router){}
 
@@ -36,22 +37,5 @@ export class AppComponent {
   openInput(){ 
     document.getElementById("fileInput").click();
   }
-  onChangeObj(event:MatRadioChange){
-    this.markedObj=event.value;
-    console.log(this.markedObj);
-  }
-  onChangePhe(event:MatRadioChange){
-    this.markedPhe=event.value;
-    console.log(this.markedPhe);
-  }
-  onClick(){
-    if (this.markedObj=="Object"){
-        this.router.navigate(['object-detection']);
-        this.clickedNext=true;
-    }
-    if (this.markedPhe=="Phenomenon"){
-      this.router.navigate(['phenomenon-detection']);
-      this.clickedNext=true;
-    }
-  }
+  
 }

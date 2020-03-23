@@ -1,0 +1,15 @@
+.detect{
+    font-size:25px;
+ }
+ .outDetect{
+   margin-top: 180px;
+ }
+ #nextButton{
+    background-color: #808080;
+    color:white;
+    margin: 0 auto; 
+    display: block;
+ }
+ .item{
+   font-size: 17px;
+ }

@@ -32,6 +32,8 @@ mat-form-field {
     font-size:18px;
 }
 #goButton{
-    margin-top:80px;
-    margin-left:50px;
+    margin: 0 auto; 
+    display: block;
+    background-color: #808080;
+    color:white;
 }

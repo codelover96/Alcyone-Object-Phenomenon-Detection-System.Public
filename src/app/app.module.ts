@@ -13,6 +13,7 @@ import { PhenomenonDetection2Component } from './phenomenon-detection2/phenomeno
 import { DialogMessageComponent } from './dialog-message/dialog-message.component';
 import {ObjectDetectionService} from './object-detection/object-detection.service';
 import {PhenomenonDetection2Service} from './phenomenon-detection2/phenomenon-detection2.service';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {PhenomenonDetection2Service} from './phenomenon-detection2/phenomenon-de
       ObjectDetectionComponent,
       PhenomenonDetectionComponent,
       PhenomenonDetection2Component,
-      DialogMessageComponent
+      DialogMessageComponent,
+      HomeComponent
    ],
    imports: [
       MaterialModule,

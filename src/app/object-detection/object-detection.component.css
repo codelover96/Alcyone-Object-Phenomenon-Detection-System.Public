@@ -26,11 +26,17 @@ mat-form-field {
     margin-right: 12px;
 }
 #goButton{
-    margin-left:50px;
+    margin: 0 auto; 
+    display: block;
+    background-color: #808080;
+    color:white;
 }
 .search{
     margin-top:70px;
 }
 #appearance,#searchwith,#calculate{
     font-size:18px;
+}
+.search{
+    
 }

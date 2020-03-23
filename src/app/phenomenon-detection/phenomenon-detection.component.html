@@ -1,19 +1,16 @@
-<mat-sidenav-container fullscreen>
-    <mat-sidenav-content>
-    </mat-sidenav-content>
-    <mat-sidenav mode="side" #sidenav opened position="start">
-        <div class="phenom"><p id="detect">Detect</p>
-            <mat-checkbox id="fire" value="Fire" (change)="onChangeFire($event)">Fire</mat-checkbox><br>
-            <mat-checkbox id="flood" value="Flood" (change)="onChangeFlood($event)">Flood</mat-checkbox><br>
-            <mat-checkbox id="tornado" value="Tornado" (change)="onChangeTornado($event)">Tornado</mat-checkbox><br>
-            <mat-checkbox id="snow" value="Snow/Snowstorm" (change)="onChangeSnow($event)">Snow/Snowstorm</mat-checkbox><br>
-            <mat-checkbox id="rain" value="Rain/Rainstorm" (change)="onChangeRain($event)">Rain/Rainstorm</mat-checkbox><br>
-            <mat-checkbox id="balllightning" value="Ball lightning" (change)="onChangeBalllight($event)">Ball lightning</mat-checkbox><br>
-            <mat-checkbox id="hail" value="Hail" (change)="onChangeHail($event)">Hail</mat-checkbox><br>
-            <mat-checkbox id="wind" value="Wind/Windstorm" (change)="onChangeWind($event)">Wind/Windstorm</mat-checkbox><br>
-            <mat-checkbox id="pollution" value="pollution" (change)="onChangePollution($event)">Pollution</mat-checkbox><br>
-            <mat-checkbox id="ingredients" value="Object's ingredients" (change)="onChangeIngred($event)">Object's ingredients</mat-checkbox><br>
-        </div>
-        <button mat-raised-button id="nextButton" (click)="onClick()">Next</button>
-    </mat-sidenav>
-</mat-sidenav-container>
+<div class="phenom">
+    <p id="detect">Detect</p>
+    <mat-checkbox id="fire" value="Fire" (change)="onChangeFire($event)">Fire</mat-checkbox><br>
+    <mat-checkbox id="flood" value="Flood" (change)="onChangeFlood($event)">Flood</mat-checkbox><br>
+    <mat-checkbox id="tornado" value="Tornado" (change)="onChangeTornado($event)">Tornado</mat-checkbox><br>
+    <mat-checkbox id="snow" value="Snow/Snowstorm" (change)="onChangeSnow($event)">Snow/Snowstorm</mat-checkbox><br>
+    <mat-checkbox id="rain" value="Rain/Rainstorm" (change)="onChangeRain($event)">Rain/Rainstorm</mat-checkbox><br>
+    <mat-checkbox id="balllightning" value="Ball lightning" (change)="onChangeBalllight($event)">Ball lightning
+    </mat-checkbox><br>
+    <mat-checkbox id="hail" value="Hail" (change)="onChangeHail($event)">Hail</mat-checkbox><br>
+    <mat-checkbox id="wind" value="Wind/Windstorm" (change)="onChangeWind($event)">Wind/Windstorm</mat-checkbox><br>
+    <mat-checkbox id="pollution" value="pollution" (change)="onChangePollution($event)">Pollution</mat-checkbox><br>
+    <mat-checkbox id="ingredients" value="Object's ingredients" (change)="onChangeIngred($event)">Object's ingredients
+    </mat-checkbox><br><br>
+</div>
+<button mat-raised-button id="nextButton" (click)="onClick()">Next</button>

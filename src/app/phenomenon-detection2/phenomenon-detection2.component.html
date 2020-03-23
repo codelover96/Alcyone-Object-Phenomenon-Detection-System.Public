@@ -1,22 +1,20 @@
-<mat-sidenav-container fullscreen>
-    <mat-sidenav-content>
-    </mat-sidenav-content>
-    <mat-sidenav mode="side" #sidenav opened position="start">
-        <div class="metrics"><p id="detect">Detect</p>
-            <mat-checkbox id="shape" value="Shape" (change)="onChangeShape($event)">Shape</mat-checkbox><br>
-            <mat-checkbox id="size" value="Size" (change)="onChangeSize($event)">Size</mat-checkbox><br>
-            <mat-checkbox id="speed" value="Speed" (change)="onChangeSpeed($event)">Speed</mat-checkbox><br>
-            <mat-checkbox id="altitude" value="Altitude" (change)="onChangeAltitude($event)">Altitude</mat-checkbox><br>
-            <mat-checkbox id="direction" value="Direction" (change)="onChangeDirection($event)">Direction</mat-checkbox><br>
-            <mat-checkbox id="footprint" value="Footprint" (change)="onChangeFootprint($event)">Footprint</mat-checkbox><br>
-            <mat-checkbox id="location" value="Location" (change)="onChangeLocation($event)">Location</mat-checkbox><br>
-        </div><br>
-        <div class="places"><p id="appearance">Appearance</p>
-            <mat-checkbox id="sea" value="Sea" (change)="onChangeSea($event)">Sea</mat-checkbox><br>
-            <mat-checkbox id="ashore" value="Ashore" (change)="onChangeAshore($event)">Ashore</mat-checkbox><br>
-            <mat-checkbox id="ashorewithaltitude" value="Ashore with altitude" (change)="onChangeAshorewAlt($event)">Ashore with altitude</mat-checkbox><br>
-            <mat-checkbox id="ashoreinslope" value="Ashore in slope" (change)="onChangeAshoreInSlope($event)">Ashore in slope</mat-checkbox><br>
-        </div>
-        <button mat-raised-button id="goButton" (click)="onClick()">Go</button>
-    </mat-sidenav>
-</mat-sidenav-container>
+<div class="metrics">
+    <p id="detect">Detect</p>
+    <mat-checkbox id="shape" value="Shape" (change)="onChangeShape($event)">Shape</mat-checkbox><br>
+    <mat-checkbox id="size" value="Size" (change)="onChangeSize($event)">Size</mat-checkbox><br>
+    <mat-checkbox id="speed" value="Speed" (change)="onChangeSpeed($event)">Speed</mat-checkbox><br>
+    <mat-checkbox id="altitude" value="Altitude" (change)="onChangeAltitude($event)">Altitude</mat-checkbox><br>
+    <mat-checkbox id="direction" value="Direction" (change)="onChangeDirection($event)">Direction</mat-checkbox><br>
+    <mat-checkbox id="footprint" value="Footprint" (change)="onChangeFootprint($event)">Footprint</mat-checkbox><br>
+    <mat-checkbox id="location" value="Location" (change)="onChangeLocation($event)">Location</mat-checkbox><br>
+</div><br>
+<div class="places">
+    <p id="appearance">Appearance</p>
+    <mat-checkbox id="sea" value="Sea" (change)="onChangeSea($event)">Sea</mat-checkbox><br>
+    <mat-checkbox id="ashore" value="Ashore" (change)="onChangeAshore($event)">Ashore</mat-checkbox><br>
+    <mat-checkbox id="ashorewithaltitude" value="Ashore with altitude" (change)="onChangeAshorewAlt($event)">Ashore with
+        altitude</mat-checkbox><br>
+    <mat-checkbox id="ashoreinslope" value="Ashore in slope" (change)="onChangeAshoreInSlope($event)">Ashore in slope
+    </mat-checkbox><br><br>
+</div>
+<button mat-raised-button id="goButton" (click)="onClick()">Go</button>
