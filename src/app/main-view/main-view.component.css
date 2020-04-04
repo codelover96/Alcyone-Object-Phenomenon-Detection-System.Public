@@ -1,0 +1,36 @@
+.filler {
+    flex: 1 1 auto;
+ }
+ .sideBar {
+    width: 220px;
+    display: flex;
+    padding:12px;
+    align-items: center;
+    justify-content: center;
+    background-color: #4b4276;
+    color:#fff;
+ }
+ .topBar { 
+    background-color:	#808080;
+    color:#fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+ }
+ .container{
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+ }
+ .topItem{
+    font-size: 20px;
+ }
+ .items{
+    margin-left:10px;
+ }
+ #logo{
+    margin-left:-15px;
+ }

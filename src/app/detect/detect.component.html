@@ -1,0 +1,9 @@
+<div class="outDetect" *ngIf="!clickedNext">
+  <mat-radio-group>
+    <h1 class="detect">Detect</h1><br>
+    <mat-radio-button class="item" name="object" value="Object" (change)="onChangeObj($event)">Object</mat-radio-button>
+    <mat-radio-button class="item" name="phenomenon" value="Phenomenon" (change)="onChangePhe($event)">Phenomenon
+    </mat-radio-button>
+  </mat-radio-group><br><br>
+  <button mat-raised-button id="nextButton" (click)="onClick()">Next</button>
+</div>

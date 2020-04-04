@@ -37,5 +37,7 @@ export class AppComponent {
   openInput(){ 
     document.getElementById("fileInput").click();
   }
-  
+  closeInput(){
+    document.getElementById("img").innerHTML="dsds.jpg";
+  }
 }
