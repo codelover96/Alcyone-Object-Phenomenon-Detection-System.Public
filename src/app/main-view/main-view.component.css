@@ -2,8 +2,9 @@
     flex: 1 1 auto;
  }
  .sideBar {
+    position: fixed;
     width: 220px;
-    display: flex;
+    margin-top: 60px;
     padding:12px;
     align-items: center;
     justify-content: center;

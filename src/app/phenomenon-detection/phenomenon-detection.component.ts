@@ -24,9 +24,6 @@ export class PhenomenonDetectionComponent implements OnInit {
   }
   constructor(private router:Router){}
   
-  onClick(){
-    this.router.navigate(['phenomenon-detection2']);
-  }
   onChangeFire(event:MatCheckboxChange){
     this.markedFire=event.checked;
   }

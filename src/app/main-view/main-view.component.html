@@ -1,5 +1,5 @@
 <mat-toolbar class="topBar">
-    <img [src]="logo" id="logo">
+    <a routerLink="/home"><img [src]="logo" id="logo"></a>
     <div class="items">
         <button mat-button [matMenuTriggerFor]="file" class="topItem">File</button>
         <mat-menu #file="matMenu" yPosition="above">

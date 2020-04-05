@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   constructor() {
     this.height = screen.height; //800
     this.width = screen.width; //1280
-    console.log(this.height);
   }
   ngOnInit(): void {
   }

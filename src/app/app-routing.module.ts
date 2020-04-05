@@ -11,7 +11,7 @@ import {MainViewComponent} from './main-view/main-view.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent },
   {path: 'main', component: MainViewComponent,
     children: [
       {path: '', redirectTo: '/detect', pathMatch: 'full'},
