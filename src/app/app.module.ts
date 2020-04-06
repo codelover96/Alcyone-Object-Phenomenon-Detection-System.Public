@@ -16,6 +16,8 @@ import {PhenomenonDetection2Service} from './phenomenon-detection2/phenomenon-de
 import {DetectComponent} from './detect/detect.component';
 import { HomeComponent } from './home/home.component';
 import { MainViewComponent } from './main-view/main-view.component';
+import {HttpClientModule} from '@angular/common/http';
+import {DialogMessageService} from './dialog-message/dialog-message.service';
 
 @NgModule({
    declarations: [
@@ -34,9 +36,10 @@ import { MainViewComponent } from './main-view/main-view.component';
       BrowserAnimationsModule,
       AppRoutingModule,
       FormsModule,
-      RouterModule
+      RouterModule,
+      HttpClientModule
    ],
-   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetection2Service],
+   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetection2Service,DialogMessageService],
    bootstrap: [AppComponent],
    entryComponents : [DialogMessageComponent]
 })

@@ -1,0 +1,39 @@
+{
+  "request": [
+    {
+      "userid": "2b8h7eed7",
+      "role": "user",
+      "searchID": "", 
+	    "object_title": "ship",
+	    "features":{
+        "colorBands":{
+          "visible":[],
+          "NIR":[],
+          "Ultraviolet":[] },
+        "size":100,
+        "terrain": "sand",
+        "texture_material": "metal"},
+	    "provided_images": ""
+    }],
+  "response": [
+    {
+      "userid": "2b8h7eed7",
+	    "role": "user",
+	    "searchID": 12503,
+	    "object_title":"ship",
+	    "responseID": "maybe timestamp or unique id",
+	    "computation_time": 2,
+	    "error" : {
+		    "value": "0 or 1",
+		    "err_info": "error message"
+	    },
+      "model":"", 
+      "modelAccuracy":0.92, 
+      "objects_identified":[],
+      "resultsURL":["/timestamp/object1","/timestamp/object2"], 
+      "object_quantities":{
+        "ship": 3,
+        "smoke": 1
+      }
+    }]
+}
