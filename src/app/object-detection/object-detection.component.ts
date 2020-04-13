@@ -19,8 +19,7 @@ export class ObjectDetectionComponent implements OnInit {
   markedSpecificShape=false;
   xvalueInput;
   shapeValueInput;
-  name:string;
-  animal:string;
+ 
 
   constructor(public objectService:ObjectDetectionService){}
 
@@ -28,11 +27,13 @@ export class ObjectDetectionComponent implements OnInit {
   }
   onChangeShape(event:MatCheckboxChange){
     this.markedShape=event.checked;
-    console.log(this.markedShape);
+    var shape = String(this.markedShape);
+    var jsonObj=JSON.parse(shape);
+    var jsonContent=JSON.stringify(jsonObj);
+    //this.fs.writeFile("object.json",jsonContent);
   }
   onChangeSize(event:MatCheckboxChange){
     this.markedSize=event.checked;
-    console.log(this.markedSize);
   }
   onChangeSea(event:MatCheckboxChange){
     this.markedSea=event.checked;
@@ -55,8 +56,6 @@ export class ObjectDetectionComponent implements OnInit {
   onClick(){
      this.xvalueInput=parseInt((document.getElementById("xvalue") as HTMLInputElement).value);
      this.shapeValueInput=((document.getElementById("selectShape") as HTMLSelectElement).innerText);
-     console.log(this.xvalueInput);
-     console.log(this.shapeValueInput);
      var data = null;
      this.objectService.openModal("Message Test", ()=>{}, ()=>{}, ()=>{});
   }

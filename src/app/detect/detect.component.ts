@@ -26,11 +26,9 @@ export class DetectComponent implements OnInit {
   }
   onChangeObj(event:MatRadioChange){
     this.markedObj=event.value;
-    console.log(this.markedObj);
   }
   onChangePhe(event:MatRadioChange){
     this.markedPhe=event.value;
-    console.log(this.markedPhe);
   }
   onClick(){
     if (this.markedObj=="Object"){

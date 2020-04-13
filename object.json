@@ -1,0 +1,42 @@
+{
+  "request": [
+    {
+      "searchID": 0,
+      "object_title": "",
+      "features": {
+        "calculate": [
+          "shape",
+          "size"
+        ],
+        "appearance": [
+          "sea",
+          "ashore",
+          "ashorewAlt",
+          "ashoreInSlope"
+        ],
+        "specificSize": "320x232",
+        "specificShape": "Circle",
+        "colorBands": {
+          "visible": [],
+          "NIR": [],
+          "Ultraviolet": []
+        }
+      }
+    }
+  ],
+  "response": [
+    {
+      "searchID": 0,
+      "responseID": 0,
+      "object_title": "",
+      "features": {
+        "shape": "",
+        "size": "",
+        "sea": false,
+        "ashore": false,
+        "ashorewAlt": false,
+        "ashoreInSlope": false
+      }
+    }
+  ]
+}

@@ -3,8 +3,9 @@ import { Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {HttpClient} from '@angular/common/http';
 import { DialogMessageService } from './dialog-message.service';
-import {ResponseResults} from '../response-results';
-import {RequestResults} from '../request-results';
+import {Object} from '../object';
+import {Phenomenon} from '../phenomenon';
+
 
 @Component({
   selector: 'app-dialog-message',
@@ -14,8 +15,8 @@ import {RequestResults} from '../request-results';
 export class DialogMessageComponent implements OnInit {
   
   modalMessage: string;
-  response:ResponseResults[];
-  request:RequestResults;
+  response:Object[];
+  request:Object;
 
   constructor(public dialogRef: MatDialogRef<DialogMessageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,private _messageService:DialogMessageService) {
@@ -26,12 +27,12 @@ export class DialogMessageComponent implements OnInit {
     this._messageService.getResults().subscribe(data=>{
       this.response=data;
     });
-    var posts= new RequestResults();
+    /*var posts= new RequestResults();
     posts.role='admin';
     posts.object_title='box';
     this._messageService.post(posts).toPromise().then(data=>{
       this.request=data;
-    })
+    })*/
   }
   onClickNext(){
     
