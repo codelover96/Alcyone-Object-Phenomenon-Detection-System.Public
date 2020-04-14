@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import {ObjectDetectionService} from './object-detection.service';
+import {Object} from '../object';
 
 @Component({
   selector: 'app-object-detection',
@@ -19,6 +20,7 @@ export class ObjectDetectionComponent implements OnInit {
   markedSpecificShape=false;
   xvalueInput;
   shapeValueInput;
+  results:Object[];
  
 
   constructor(public objectService:ObjectDetectionService){}
@@ -26,10 +28,11 @@ export class ObjectDetectionComponent implements OnInit {
   ngOnInit(): void {
   }
   onChangeShape(event:MatCheckboxChange){
+    //const writeJsonFile = require('write-json-file');
     this.markedShape=event.checked;
-    var shape = String(this.markedShape);
+    /*var shape = String(this.markedShape);
     var jsonObj=JSON.parse(shape);
-    var jsonContent=JSON.stringify(jsonObj);
+    var jsonContent=JSON.stringify(jsonObj);*/
     //this.fs.writeFile("object.json",jsonContent);
   }
   onChangeSize(event:MatCheckboxChange){
@@ -56,8 +59,11 @@ export class ObjectDetectionComponent implements OnInit {
   onClick(){
      this.xvalueInput=parseInt((document.getElementById("xvalue") as HTMLInputElement).value);
      this.shapeValueInput=((document.getElementById("selectShape") as HTMLSelectElement).innerText);
-     var data = null;
-     this.objectService.openModal("Message Test", ()=>{}, ()=>{}, ()=>{});
+     var jsonContent=JSON.stringify({ashore:this.markedAshore,ashoreWithSlope:this.markedAshoreInSlope});
+     this.objectService.post(jsonContent).subscribe(data=>{
+       this.results.push(data);
+     });
+     this.objectService.openModal(this.results, ()=>{}, ()=>{}, ()=>{});
   }
 
 }

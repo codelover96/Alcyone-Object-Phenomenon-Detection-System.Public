@@ -17,16 +17,17 @@ export class DialogMessageComponent implements OnInit {
   modalMessage: string;
   response:Object[];
   request:Object;
+  
 
   constructor(public dialogRef: MatDialogRef<DialogMessageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,private _messageService:DialogMessageService) {
-    this.modalMessage = data.message;
+    this.modalMessage = data;
   }
  
   ngOnInit(): void {
-    this._messageService.getResults().subscribe(data=>{
+    /*this._messageService.getResults().subscribe(data=>{
       this.response=data;
-    });
+    });*/
     /*var posts= new RequestResults();
     posts.role='admin';
     posts.object_title='box';

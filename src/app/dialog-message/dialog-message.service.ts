@@ -13,8 +13,8 @@ export class DialogMessageService {
         return this.http.get('http://localhost:3000/object/request');
     }
     
-    /*post(posts:RequestResults): Observable<any>{
+    /*post(): Observable<any>{
         
-        return this.http.post('http://localhost:3000/request',posts);
+        return this.http.post('http://localhost:3000/request');
     }*/
 }
