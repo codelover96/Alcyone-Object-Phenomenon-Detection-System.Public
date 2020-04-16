@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import {ObjectDetectionService} from './object-detection.service';
-import {Object} from '../object';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-object-detection',
@@ -20,20 +20,16 @@ export class ObjectDetectionComponent implements OnInit {
   markedSpecificShape=false;
   xvalueInput;
   shapeValueInput;
-  results:Object[];
+  results:string[];
+  jsonData:string;
  
 
-  constructor(public objectService:ObjectDetectionService){}
+  constructor(public objectService:ObjectDetectionService,private http: HttpClient){}
 
   ngOnInit(): void {
   }
   onChangeShape(event:MatCheckboxChange){
-    //const writeJsonFile = require('write-json-file');
     this.markedShape=event.checked;
-    /*var shape = String(this.markedShape);
-    var jsonObj=JSON.parse(shape);
-    var jsonContent=JSON.stringify(jsonObj);*/
-    //this.fs.writeFile("object.json",jsonContent);
   }
   onChangeSize(event:MatCheckboxChange){
     this.markedSize=event.checked;
@@ -59,11 +55,15 @@ export class ObjectDetectionComponent implements OnInit {
   onClick(){
      this.xvalueInput=parseInt((document.getElementById("xvalue") as HTMLInputElement).value);
      this.shapeValueInput=((document.getElementById("selectShape") as HTMLSelectElement).innerText);
-     var jsonContent=JSON.stringify({ashore:this.markedAshore,ashoreWithSlope:this.markedAshoreInSlope});
-     this.objectService.post(jsonContent).subscribe(data=>{
-       this.results.push(data);
+     var content={ashore:this.markedAshore,ashoreWithSlope:this.markedAshoreInSlope};
+     this.http.post('https://httpbin.org/post', content).toPromise().then((data:any)=>
+     {
+         this.jsonData=JSON.stringify(data.json);
      });
-     this.objectService.openModal(this.results, ()=>{}, ()=>{}, ()=>{});
+     this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((data:any) =>{
+        this.results=data;
+        this.objectService.openModal(this.results,()=>{}, ()=>{}, ()=>{});
+     });
   }
 
 }

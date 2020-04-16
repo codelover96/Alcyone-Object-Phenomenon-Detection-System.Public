@@ -10,14 +10,15 @@ import { RouterModule } from '@angular/router';
 import { ObjectDetectionComponent } from './object-detection/object-detection.component';
 import { PhenomenonDetectionComponent } from './phenomenon-detection/phenomenon-detection.component';
 import { PhenomenonDetection2Component } from './phenomenon-detection2/phenomenon-detection2.component';
-import { DialogMessageComponent } from './dialog-message/dialog-message.component';
+import { DialogMessageComponent } from './object-detection/dialog-message/dialog-message.component';
+import {DialogMessage2Component} from './phenomenon-detection2/dialog-message2/dialog-message2.component';
 import {ObjectDetectionService} from './object-detection/object-detection.service';
 import {PhenomenonDetection2Service} from './phenomenon-detection2/phenomenon-detection2.service';
 import {DetectComponent} from './detect/detect.component';
 import { HomeComponent } from './home/home.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import {HttpClientModule} from '@angular/common/http';
-import {DialogMessageService} from './dialog-message/dialog-message.service';
+
 
 @NgModule({
    declarations: [
@@ -26,6 +27,7 @@ import {DialogMessageService} from './dialog-message/dialog-message.service';
       PhenomenonDetectionComponent,
       PhenomenonDetection2Component,
       DialogMessageComponent,
+      DialogMessage2Component,
       DetectComponent,
       HomeComponent,
       MainViewComponent
@@ -39,8 +41,8 @@ import {DialogMessageService} from './dialog-message/dialog-message.service';
       RouterModule,
       HttpClientModule
    ],
-   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetection2Service,DialogMessageService],
+   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetection2Service],
    bootstrap: [AppComponent],
-   entryComponents : [DialogMessageComponent]
+   entryComponents : [DialogMessageComponent,DialogMessage2Component]
 })
 export class AppModule { }

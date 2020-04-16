@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { PhenomenonDetection2Service} from './phenomenon-detection2.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-phenomenon-detection2',
@@ -20,8 +21,10 @@ export class PhenomenonDetection2Component implements OnInit {
   markedAshore=false;
   markedAshorewAlt=false;
   markedAshoreInSlope=false;
+  results:string[];
+  jsonData:string;
 
-  constructor(public phenomService:PhenomenonDetection2Service){}
+  constructor(public phenomService:PhenomenonDetection2Service,private http: HttpClient){}
 
   ngOnInit(): void {
   }
@@ -56,8 +59,15 @@ export class PhenomenonDetection2Component implements OnInit {
     this.markedAshoreInSlope=event.checked;
   }
   onClick(){
-    var data = null;
-    this.phenomService.openModal("Message Test", ()=>{}, ()=>{}, ()=>{});
+    var content={ashore:this.markedAshore,ashoreWithSlope:this.markedAshoreInSlope};
+     this.http.post('https://httpbin.org/post', content).toPromise().then((data:any)=>
+     {
+         this.jsonData=JSON.stringify(data.json);
+     });
+     this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((data:any) =>{
+        this.results=data;
+        this.phenomService.openModal(this.results,()=>{}, ()=>{}, ()=>{});
+     });
     
   }
 }
