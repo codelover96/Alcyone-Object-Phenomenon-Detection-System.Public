@@ -1,42 +1,16 @@
 {
-  "request": [
-    {
-      "searchID": 0,
-      "object_title": "",
-      "features": {
-        "calculate": [
-          "shape",
-          "size"
-        ],
-        "appearance": [
-          "sea",
-          "ashore",
-          "ashorewAlt",
-          "ashoreInSlope"
-        ],
-        "specificSize": "320x232",
-        "specificShape": "Circle",
-        "colorBands": {
-          "visible": [],
-          "NIR": [],
-          "Ultraviolet": []
-        }
-      }
-    }
-  ],
   "response": [
     {
       "searchID": 0,
       "responseID": 0,
-      "object_title": "",
-      "features": {
-        "shape": "",
-        "size": "",
-        "sea": false,
-        "ashore": false,
-        "ashorewAlt": false,
-        "ashoreInSlope": false
-      }
+      "shape":"Triangle",
+      "size":"1000x2130",
+      "sea":"true",
+      "ashore":"false",
+      "ashoreWithAltitude":0,
+      "ashoreInSlope":0,
+      "specificSize":"true",
+      "specificShape":0
     }
   ]
 }

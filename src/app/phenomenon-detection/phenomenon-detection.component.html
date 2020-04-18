@@ -13,4 +13,4 @@
     <mat-checkbox id="ingredients" value="Object's ingredients" (change)="onChangeIngred($event)">Object's ingredients
     </mat-checkbox><br><br>
 </div>
-<button mat-raised-button id="nextButton" routerLink="/main/phenomenon-detection2">Next</button>
+<button mat-raised-button id="nextButton" (click)="passArray()" routerLink="/main/phenomenon-detection2">Next</button>

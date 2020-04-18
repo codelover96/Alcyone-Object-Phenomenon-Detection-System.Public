@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import {PhenomenonDetectionService} from './phenomenon-detection.service';
 
 @Component({
   selector: 'app-phenomenon-detection',
@@ -19,10 +20,11 @@ export class PhenomenonDetectionComponent implements OnInit {
   markedWind=false;
   markedPollution=false;
   markedIngredients=false;
+  array:boolean[]=new Array;
 
   ngOnInit(): void {
   }
-  constructor(private router:Router){}
+  constructor(private router:Router, public phenomService:PhenomenonDetectionService){}
   
   onChangeFire(event:MatCheckboxChange){
     this.markedFire=event.checked;
@@ -53,5 +55,18 @@ export class PhenomenonDetectionComponent implements OnInit {
   }
   onChangeIngred(event:MatCheckboxChange){
     this.markedIngredients=event.checked;
+  }
+  passArray(){
+    this.array.push(this.markedFire);
+    this.array.push(this.markedFlood);
+    this.array.push(this.markedTornado);
+    this.array.push(this.markedSnow);
+    this.array.push(this.markedRain);
+    this.array.push(this.markedBalllight);
+    this.array.push(this.markedHail);
+    this.array.push(this.markedWind);
+    this.array.push(this.markedPollution);
+    this.array.push(this.markedIngredients);
+    this.phenomService.array=this.array;
   }
 }

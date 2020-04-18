@@ -1,50 +1,28 @@
 {
-    "request": [
-        {
-            "searchID": 0,
-            "object_title": "",
-            "features": {
-                "detect": [
-                    "fire",
-                    "flood",
-                    "tornado"
-                ],
-                "metrics": [
-                    "shape",
-                    "size",
-                    "speed"
-                ],
-                "appearance": [
-                    "sea",
-                    "ashore",
-                    "ashorewAlt",
-                    "ashoreInSlope"
-                ],
-                "colorBands": {
-                    "visible": [],
-                    "NIR": [],
-                    "Ultraviolet": []
-                }
-            }
-        }
-    ],
-    "response": [
-        {
-            "searchID": 0,
-            "responseID": 0,
-            "object_title": "",
-            "features": {
-                "fire":false,
-                "flood":false,
-                "tornado":false,
-                "snow/snowstorm":false,
-                "rain/rainstorm":false,
-                "balllightning":false,
-                "hail":false,
-                "wind/windstorm":false,
-                "pollution":false,
-                "ingredients":[]
-            }
-        }
-    ]
+  "response": [
+    {
+      "searchID": 0,
+      "responseID": 0,
+      "fire":"false",
+      "flood":"true",
+      "tornado":"",
+      "snow":"",
+      "rain":"",
+      "balllight":"",
+      "hail":"",
+      "wind":"",
+      "pollution":"",
+      "ingredients":[],
+      "shape":"Triangle",
+      "size":"1000x2130",
+      "altitude":"",
+      "direction":"",
+      "footprint":"",
+      "location":"",
+      "sea":"true",
+      "ashore":"false",
+      "ashoreWithAltitude":"",
+      "ashoreInSlope":""
+    }
+  ]
 }
