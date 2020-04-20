@@ -67,6 +67,6 @@ export class PhenomenonDetectionComponent implements OnInit {
     this.array.push(this.markedWind);
     this.array.push(this.markedPollution);
     this.array.push(this.markedIngredients);
-    this.phenomService.array=this.array;
+    this.phenomService.sendArray(this.array);
   }
 }

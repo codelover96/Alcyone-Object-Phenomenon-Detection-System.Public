@@ -36,6 +36,9 @@ export class PhenomenonDetection2Component implements OnInit {
   onChangeSize(event:MatCheckboxChange){
     this.markedSize=event.checked;
   }
+  onChangeSpeed(event:MatCheckboxChange){
+    this.markedSpeed=event.checked;
+  }
   onChangeAltitude(event:MatCheckboxChange){
     this.markedAltitude=event.checked
   }
@@ -60,14 +63,14 @@ export class PhenomenonDetection2Component implements OnInit {
   onChangeAshoreInSlope(event:MatCheckboxChange){
     this.markedAshoreInSlope=event.checked;
   }
-  onClick(){
-    this.array= this.phenomService.array;
+  getResults(){
+    this.array=this.phenomService.getArray();
     var content={fire:this.array[0],flood:this.array[1],tornado:this.array[2],snow:this.array[3],rain:this.array[4],balllightning:this.array[5],hail:this.array[6],wind:this.array[7],pollution:this.array[8],ingredients:this.array[9],shape:this.markedShape,size:this.markedSize,altitude:this.markedAltitude,direction:this.markedDirection,footprint:this.markedFootprint,sea:this.markedSea,ashore:this.markedAshore,ashoreWithAltitude:this.markedAshorewAlt,ashoreWithSlope:this.markedAshoreInSlope};
      this.http.post('https://httpbin.org/post', content).toPromise().then((data:any)=>
      {
          this.jsonData=JSON.stringify(data.json);
      });
-     this.http.get('http://localhost:3000/response').subscribe((data:any) =>{
+     this.http.get('http://localhost:3000/phenomenon').subscribe((data:any) =>{
         this.results=data;
         this.phenom2Service.openModal(this.results,()=>{}, ()=>{}, ()=>{});
      });

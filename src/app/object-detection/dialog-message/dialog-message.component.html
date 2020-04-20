@@ -1,14 +1,14 @@
 <div class="custom-dialog">
 	<h2 mat-dialog-title class="title">Results</h2>
 	<mat-dialog-content>
-		<p *ngIf="this.shape">Shape: {{this.shape}}</p>
-		<p *ngIf="this.size">Size: {{this.size}}</p>
-		<p *ngIf="this.sea">Sea</p>
-		<p *ngIf="this.ashore">Ashore</p>
-		<p *ngIf="this.ashoreWithAltitude">Ashore with altitude</p>
-		<p *ngIf="this.ashoreInSlope">Ashore in slope</p>
-		<p *ngIf="this.specificSize">Specific size</p>
-		<p *ngIf="this.specificShape">Specific shape</p>
+		<p *ngIf="this.shape!=''">Shape: {{this.shape}}</p>
+		<p *ngIf="this.size!=''">Size: {{this.size}}</p>
+		<p *ngIf="!this.sea==-1">Sea</p>
+		<p *ngIf="!this.ashore==-1">Ashore</p>
+		<p *ngIf="!this.ashoreWithAltitude==-1">Ashore with altitude</p>
+		<p *ngIf="!this.ashoreInSlope==-1">Ashore in slope</p>
+		<p *ngIf="!this.specificSize==-1">Specific size</p>
+		<p *ngIf="!this.specificShape==-1">Specific shape</p>
 	</mat-dialog-content>
 	<mat-dialog-actions>
 		<button mat-raised-button class="button" [mat-dialog-close]="false" value='Next object'(click)="onClickNext()">Next object</button>

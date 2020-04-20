@@ -25,12 +25,12 @@ export class DialogMessageComponent implements OnInit {
     this.results=data;
     this.shape=this.results[0].shape;
     this.size=this.results[0].size;
-    this.sea=JSON.parse(this.results[0].sea);
-    this.ashore=JSON.parse(this.results[0].ashore);
-    this.ashoreWithAltitude=JSON.parse(this.results[0].ashoreWithAltitude);
-    this.ashoreInSlope=JSON.parse(this.results[0].ashoreInSlope);
-    this.specificSize=JSON.parse(this.results[0].specificSize);
-    this.specificShape=JSON.parse(this.results[0].specificShape);
+    this.sea=((this.results[0].sea=='')? -1: JSON.parse(this.results[0].sea));
+    this.ashore=((this.results[0].ashore=='')? -1: JSON.parse(this.results[0].ashore));
+    this.ashoreWithAltitude=((this.results[0].ashoreWithAltitude=='')? -1: JSON.parse(this.results[0].ashoreWithAltitude));
+    this.ashoreInSlope=((this.results[0].ashoreInSlope=='')? -1: JSON.parse(this.results[0].ashoreInSlope));
+    this.specificSize=((this.results[0].specificSize=='')? -1: JSON.parse(this.results[0].specificSize));
+    this.specificShape=((this.results[0].specificShape=='')? -1: JSON.parse(this.results[0].specificShape));
   }
 
   ngOnInit(): void {

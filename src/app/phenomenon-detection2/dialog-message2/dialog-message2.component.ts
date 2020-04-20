@@ -16,7 +16,6 @@ export class DialogMessage2Component implements OnInit {
   tornado: boolean;
   snow: boolean;
   rain: boolean;
-  
   balllightning: boolean;
   hail: boolean;
   wind: boolean;
@@ -37,15 +36,15 @@ export class DialogMessage2Component implements OnInit {
   constructor(public dialogRef: MatDialogRef<DialogMessage2Component>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.results=data;
-    this.fire=JSON.parse(this.results[0].fire);
-    this.flood=JSON.parse(this.results[0].flood);
-    this.tornado=JSON.parse(this.results[0].tornado);
-    this.snow=JSON.parse(this.results[0].snow);
-    this.rain=JSON.parse(this.results[0].rain);
-    this.balllightning=JSON.parse(this.results[0].balllightning);
-    this.hail=JSON.parse(this.results[0].hail);
-    this.wind=JSON.parse(this.results[0].wind);
-    this.pollution=JSON.parse(this.results[0].pollution);
+    this.fire=((this.results[0].fire=='')? -1: JSON.parse(this.results[0].fire));
+    this.flood=((this.results[0].flood=='')? -1: JSON.parse(this.results[0].flood));
+    this.tornado=((this.results[0].tornado=='')? -1: JSON.parse(this.results[0].tornado));
+    this.snow=((this.results[0].snow=='')? -1: JSON.parse(this.results[0].snow));
+    this.rain=((this.results[0].rain=='')? -1: JSON.parse(this.results[0].rain));
+    this.balllightning=((this.results[0].balllightning=='')? -1: JSON.parse(this.results[0].balllightning));
+    this.hail=((this.results[0].hail=='')? -1: JSON.parse(this.results[0].hail));
+    this.wind=((this.results[0].wind=='')? -1: JSON.parse(this.results[0].wind));
+    this.pollution=((this.results[0].pollution=='')? -1: JSON.parse(this.results[0].pollution));
     this.ingredients=this.results[0].ingredients;
     this.shape=this.results[0].shape;
     this.size=this.results[0].size;
@@ -54,10 +53,10 @@ export class DialogMessage2Component implements OnInit {
     this.direction=this.results[0].direction;
     this.footprint=this.results[0].footprint;
     this.location=this.results[0].location;
-    this.sea=JSON.parse(this.results[0].sea);
-    this.ashore=JSON.parse(this.results[0].ashore);
-    this.ashoreWithAltitude=JSON.parse(this.results[0].ashoreWithAltitude);
-    this.ashoreInSlope=JSON.parse(this.results[0].ashoreInSlope);
+    this.sea=((this.results[0].sea=='')? -1: JSON.parse(this.results[0].sea));
+    this.ashore=((this.results[0].ashore=='')? -1: JSON.parse(this.results[0].ashore));
+    this.ashoreWithAltitude=((this.results[0].ashoreWithAltitude=='')? -1: JSON.parse(this.results[0].ashoreWithAltitude));
+    this.ashoreInSlope=((this.results[0].ashoreInSlope=='')? -1: JSON.parse(this.results[0].ashoreInSlope));
 
   }
  

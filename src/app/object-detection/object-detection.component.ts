@@ -60,7 +60,7 @@ export class ObjectDetectionComponent implements OnInit {
      {
          this.jsonData=JSON.stringify(data.json);
      });
-     this.http.get('http://localhost:3000/response').subscribe((data:any) =>{
+     this.http.get('http://localhost:3000/object').subscribe((data:any) =>{
         this.results=data;
         this.objectService.openModal(this.results,()=>{}, ()=>{}, ()=>{});
      });
