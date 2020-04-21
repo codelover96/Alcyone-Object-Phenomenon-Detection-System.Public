@@ -1,16 +1,16 @@
 <div class="custom-dialog">
 	<h2 mat-dialog-title class="title">Results</h2>
 	<mat-dialog-content>
-		<p *ngIf="!this.fire==-1">Fire</p>
-		<p *ngIf="!this.flood==-1">Flood</p>
-		<p *ngIf="!this.tornado==-1">Tornado</p>
-		<p *ngIf="!this.snow==-1">Snow</p>
-		<p *ngIf="!this.rain==-1">Rain</p>
-		<p *ngIf="!this.balllightning==-1">balllightning</p>
-		<p *ngIf="!this.hail==-1">Hail</p>
-		<p *ngIf="!this.wind==-1">Wind</p>
-		<p *ngIf="!this.pollution==-1">Pollution</p>
-		<p *ngIf="!this.ingredients==''">Ingredients: {{this.ingredients}}</p>
+		<p *ngIf="this.fire!=-1">Fire</p>
+		<p *ngIf="this.flood!=-1">Flood</p>
+		<p *ngIf="this.tornado!=-1">Tornado</p>
+		<p *ngIf="this.snow!=-1">Snow</p>
+		<p *ngIf="this.rain!=-1">Rain</p>
+		<p *ngIf="this.balllightning!=-1">balllightning</p>
+		<p *ngIf="this.hail!=-1">Hail</p>
+		<p *ngIf="this.wind!=-1">Wind</p>
+		<p *ngIf="this.pollution!=-1">Pollution</p>
+		<p *ngIf="this.ingredients==''">Ingredients: {{this.ingredients}}</p>
 		<p *ngIf="this.shape!=''">Shape: {{this.shape}}</p>
 		<p *ngIf="this.size!=''">Size: {{this.size}}</p>
 		<p *ngIf="this.speed!=''">Speed: {{this.speed}}</p>
@@ -18,10 +18,10 @@
 		<p *ngIf="this.direction!=''">Direction: {{this.direction}}</p>
 		<p *ngIf="this.footprint!=''">Footprint: {{this.footprint}}</p>
 		<p *ngIf="this.location!=''">Location: {{this.location}}</p>
-		<p *ngIf="!this.sea==-1">Sea</p>
-		<p *ngIf="!this.ashore==-1">Ashore</p>
-		<p *ngIf="!this.ashoreWithAltitude==-1">Ashore with altitude</p>
-		<p *ngIf="!this.ashoreInSlope==-1">Ashore in slope</p>
+		<p *ngIf="this.sea!=-1">Sea</p>
+		<p *ngIf="this.ashore!=-1">Ashore</p>
+		<p *ngIf="this.ashoreWithAltitude!=-1">Ashore with altitude</p>
+		<p *ngIf="this.ashoreInSlope!=-1">Ashore in slope</p>
 	</mat-dialog-content>
 	<mat-dialog-actions>
 		<button mat-raised-button class="button" [mat-dialog-close]="false" value='Next object'(click)="onClickNext()">Next object</button>
