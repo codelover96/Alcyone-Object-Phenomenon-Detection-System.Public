@@ -10,63 +10,34 @@ import {PhenomenonDetectionService} from './phenomenon-detection.service';
 })
 export class PhenomenonDetectionComponent implements OnInit {
   
-  markedFire=false;
-  markedFlood=false;
-  markedTornado=false;
-  markedSnow=false;
-  markedRain=false;
-  markedBalllight=false;
-  markedHail=false;
-  markedWind=false;
-  markedPollution=false;
-  markedIngredients=false;
+  fire=false;
+  flood=false;
+  tornado=false;
+  snow=false;
+  rain=false;
+  wind=false;
+  hail=false;
+  pollution=false;
+  balllightning=false;
+  ingredients=false;
   array:boolean[]=new Array;
+
 
   ngOnInit(): void {
   }
   constructor(private router:Router, public phenomService:PhenomenonDetectionService){}
-  
-  onChangeFire(event:MatCheckboxChange){
-    this.markedFire=event.checked;
-  }
-  onChangeFlood(event:MatCheckboxChange){
-    this.markedFlood=event.checked;
-  }
-  onChangeTornado(event:MatCheckboxChange){
-    this.markedTornado=event.checked;
-  }
-  onChangeSnow(event:MatCheckboxChange){
-    this.markedSnow=event.checked;
-  }
-  onChangeRain(event:MatCheckboxChange){
-    this.markedRain=event.checked;
-  }
-  onChangeBalllight(event:MatCheckboxChange){
-    this.markedBalllight=event.checked;
-  }
-  onChangeHail(event:MatCheckboxChange){
-    this.markedHail=event.checked;
-  }
-  onChangeWind(event:MatCheckboxChange){
-    this.markedWind=event.checked;
-  }
-  onChangePollution(event:MatCheckboxChange){
-    this.markedPollution=event.checked;
-  }
-  onChangeIngred(event:MatCheckboxChange){
-    this.markedIngredients=event.checked;
-  }
-  passArray(){
-    this.array.push(this.markedFire);
-    this.array.push(this.markedFlood);
-    this.array.push(this.markedTornado);
-    this.array.push(this.markedSnow);
-    this.array.push(this.markedRain);
-    this.array.push(this.markedBalllight);
-    this.array.push(this.markedHail);
-    this.array.push(this.markedWind);
-    this.array.push(this.markedPollution);
-    this.array.push(this.markedIngredients);
+ 
+  onClick(){
+    this.array.push(this.fire);
+    this.array.push(this.flood);
+    this.array.push(this.tornado);
+    this.array.push(this.snow);
+    this.array.push(this.rain);
+    this.array.push(this.balllightning);
+    this.array.push(this.hail);
+    this.array.push(this.wind);
+    this.array.push(this.pollution);
+    this.array.push(this.ingredients);
     this.phenomService.sendArray(this.array);
   }
 }

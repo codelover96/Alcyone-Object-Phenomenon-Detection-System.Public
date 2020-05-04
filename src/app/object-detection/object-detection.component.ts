@@ -20,7 +20,7 @@ export class ObjectDetectionComponent implements OnInit {
   markedSpecificShape=false;
   xvalueInput;
   shapeValueInput;
-  results:object[];
+  results;
   jsonData:string;
  
 
@@ -56,14 +56,17 @@ export class ObjectDetectionComponent implements OnInit {
      this.xvalueInput=parseInt((document.getElementById("xvalue") as HTMLInputElement).value);
      this.shapeValueInput=((document.getElementById("selectShape") as HTMLSelectElement).innerText);
      var content={shape:this.markedShape,size:this.markedSize,sea:this.markedSea,ashore:this.markedAshore,ashoreWithAltitude:this.markedAshorewAlt,ashoreWithSlope:this.markedAshoreInSlope,specificSize:this.xvalueInput,specificShape:this.shapeValueInput};
-     this.http.post('https://httpbin.org/post', content).toPromise().then((data:any)=>
+     this.objectService.postFilters(content).toPromise().then((data:any)=>{
+      this.results=data;
+      this.objectService.openModal(this.results,()=>{}, ()=>{}, ()=>{});
+     });
+     /*this.http.post('https://httpbin.org/post', content).toPromise().then((data:any)=>
      {
          this.jsonData=JSON.stringify(data.json);
      });
      this.http.get('http://localhost:3000/object').subscribe((data:any) =>{
         this.results=data;
-        this.objectService.openModal(this.results,()=>{}, ()=>{}, ()=>{});
-     });
+     });*/
   }
 
 }

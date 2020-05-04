@@ -1,4 +1,4 @@
-<mat-toolbar class="topBar">
+<mat-toolbar class="topBar" role="heading">
     <a routerLink="/home"><img [src]="logo" id="logo"></a>
     <div class="items">
         <button mat-button [matMenuTriggerFor]="file" class="topItem">File</button>
@@ -32,4 +32,7 @@
     <mat-sidenav mode="side" #sidenav opened class="sideBar">
         <router-outlet></router-outlet>
     </mat-sidenav>
+    <mat-sidenav-content>
+        <img [src]="imageUrl">
+    </mat-sidenav-content>
 </mat-sidenav-container>

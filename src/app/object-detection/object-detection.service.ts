@@ -9,7 +9,7 @@ import { Object } from '../object';
 @Injectable()
 export class ObjectDetectionService {
     router: Router;
-    constructor(public dialog: MatDialog) {}
+    constructor(public dialog: MatDialog,private http: HttpClient) {}
 
     openModal(jsonData,next: Function = null, ok: Function = null, newSearch: Function = null) {
         const dialogConfig = new MatDialogConfig();
@@ -18,6 +18,11 @@ export class ObjectDetectionService {
         dialogConfig.minWidth = 400;
         const dialogRef = this.dialog.open(DialogMessageComponent, dialogConfig);
         dialogRef.afterClosed().subscribe(result => { });
+    }
+    postFilters(content): Observable<any>{
+        const headers = { 'content-type': 'application/json'}  
+        const jsonData=JSON.stringify(content);
+        return this.http.post('http://localhost:5000/api/object-detection',jsonData,{'headers':headers});
     }
 
 }

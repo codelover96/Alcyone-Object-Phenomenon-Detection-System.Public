@@ -19,6 +19,7 @@ export class DetectComponent implements OnInit {
   markedPhe: string;
   theCheckbox = false;
   clickedNext=false;
+  detect;
   
   constructor(private router:Router){}
 
@@ -31,11 +32,11 @@ export class DetectComponent implements OnInit {
     this.markedPhe=event.value;
   }
   onClick(){
-    if (this.markedObj=="Object"){
+    if (this.detect=="Object"){
         this.router.navigate(['/main/object-detection']);
 
     }
-    if (this.markedPhe=="Phenomenon"){
+    else{
       this.router.navigate(['/main/phenomenon-detection']);
     }
   }
