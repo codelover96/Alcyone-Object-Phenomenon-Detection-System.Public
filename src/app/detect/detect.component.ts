@@ -9,34 +9,21 @@ import { Router } from '@angular/router';
 })
 export class DetectComponent implements OnInit {
 
-  disabledObject=false;
-  checkedObject=false;
-  disabledPhenom=false;
-  checkedPhenom=false;
-  disabledNext=false;
-  checkedNext=false;
-  markedObj : string ;
-  markedPhe: string;
-  theCheckbox = false;
-  clickedNext=false;
-  detect;
-  
-  constructor(private router:Router){}
+  detect: any; // It contains the choice of user. It may be either "Object" or "Phenomenon".
 
-  ngOnInit(): void {
-  }
-  onChangeObj(event:MatRadioChange){
-    this.markedObj=event.value;
-  }
-  onChangePhe(event:MatRadioChange){
-    this.markedPhe=event.value;
-  }
-  onClick(){
-    if (this.detect=="Object"){
-        this.router.navigate(['/main/object-detection']);
+  constructor(private router: Router) { }
+
+  ngOnInit(): void { }
+
+  /** Function which navigates the user to the suitable next page according to his choice
+   *  after clicking on "Next" button
+   */
+  onClick() { 
+    if (this.detect == "Object") {
+      this.router.navigate(['/main/object-detection']);
 
     }
-    else{
+    else {
       this.router.navigate(['/main/phenomenon-detection']);
     }
   }

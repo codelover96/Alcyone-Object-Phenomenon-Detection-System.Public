@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Object} from '../../object';
 
 @Component({
   selector: 'app-dialog-message',
@@ -10,6 +9,7 @@ import {Object} from '../../object';
 })
 export class DialogMessageComponent implements OnInit {
   
+  //They contain the values of results
   results: Object;
   shape:string;
   size:string;
@@ -36,9 +36,15 @@ export class DialogMessageComponent implements OnInit {
   ngOnInit(): void {
   
   }
+  /**
+   * Function which shows the next detected object after clicking on "Next button"
+   */
   onClickNext(){
     
   }
+  /**
+   * Function which closes the dialog message after clicking on "OK" button
+   */
   onClickOK(){
     this.dialogRef.close();
   }

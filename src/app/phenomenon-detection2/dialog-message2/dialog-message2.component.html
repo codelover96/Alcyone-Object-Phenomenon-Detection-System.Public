@@ -1,5 +1,7 @@
+<!-- The diallog message -->
 <div class="custom-dialog">
 	<h2 mat-dialog-title class="title">Results</h2>
+	<!-- The results of search -->
 	<mat-dialog-content>
 		<p *ngIf="this.fire!=-1">Fire</p>
 		<p *ngIf="this.flood!=-1">Flood</p>
@@ -23,6 +25,7 @@
 		<p *ngIf="this.ashoreWithAltitude!=-1">Ashore with altitude</p>
 		<p *ngIf="this.ashoreInSlope!=-1">Ashore in slope</p>
 	</mat-dialog-content>
+	<!-- The buttons -->
 	<mat-dialog-actions>
 		<button mat-raised-button class="button" [mat-dialog-close]="false" value='Next object'(click)="onClickNext()">Next object</button>
 		<button mat-raised-button class="button" [mat-dialog-close]="true" value='OK' (click)="onClickOK()">OK</button>

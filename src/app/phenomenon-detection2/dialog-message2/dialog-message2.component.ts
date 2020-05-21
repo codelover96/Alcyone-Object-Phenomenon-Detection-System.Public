@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Phenomenon} from '../../phenomenon';
 
 @Component({
   selector: 'app-dialog-message2',
@@ -10,7 +9,8 @@ import {Phenomenon} from '../../phenomenon';
 })
 export class DialogMessage2Component implements OnInit {
   
-  results: Phenomenon;
+  //They contain the values of each one of the checkboxes of filters
+  results: any;
   fire: boolean;
   flood: boolean;
   tornado: boolean;
@@ -60,12 +60,17 @@ export class DialogMessage2Component implements OnInit {
 
   }
  
-  ngOnInit(): void {
-  
-  }
+  ngOnInit(): void {}
+
+  /**
+   * Function which shows the next result after clicking "Next" button
+   */
   onClickNext(){
     
   }
+  /**
+   * Function which closes the dialog message after clicking "OK" button
+   */
   onClickOK(){
     this.dialogRef.close();
   }

@@ -8,9 +8,14 @@ import {Observable, of} from 'rxjs';
 @Injectable()
 export class PhenomenonDetection2Service{
     router:Router;
+
     constructor(public dialog: MatDialog,private http: HttpClient) { }
 
-    openModal(jsonData, next:Function=null, ok:Function=null, newSearch:Function=null) {
+    /**
+     * Function which opens the modal message which contains the results of the search
+     * @param jsonData the results of search
+     */
+    openModal(jsonData) {
         const dialogConfig=new MatDialogConfig();
         dialogConfig.autoFocus=true;
         dialogConfig.data=jsonData;
@@ -18,6 +23,10 @@ export class PhenomenonDetection2Service{
         const dialogRef=this.dialog.open(DialogMessage2Component, dialogConfig);
         dialogRef.afterClosed().subscribe(result => {});
     }
+    /**
+     * Function which carries out the post request passing the chosen filters
+     * @param content the chosen filters
+     */
     postFilters(content): Observable<any>{
       const headers = { 'content-type': 'application/json'}  
       const jsonData=JSON.stringify(content);

@@ -9,10 +9,11 @@ import {PhenomenonDetectionService} from './phenomenon-detection.service';
   styleUrls: ['./phenomenon-detection.component.css']
 })
 export class PhenomenonDetectionComponent implements OnInit {
-  
+
+  //They contain the values of each one of the checkboxes of filters
   fire=false;
   flood=false;
-  tornado=false;
+  hurricane=false;
   snow=false;
   rain=false;
   wind=false;
@@ -20,17 +21,21 @@ export class PhenomenonDetectionComponent implements OnInit {
   pollution=false;
   balllightning=false;
   ingredients=false;
-  array:boolean[]=new Array;
+  array:boolean[]=new Array; //It contains the values of all checkboxes
 
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   constructor(private router:Router, public phenomService:PhenomenonDetectionService){}
  
+  /**
+   * The function collects the selected filters and adds them in an array
+   * and passes them to another function
+   */
   onClick(){
     this.array.push(this.fire);
     this.array.push(this.flood);
-    this.array.push(this.tornado);
+    this.array.push(this.hurricane);
     this.array.push(this.snow);
     this.array.push(this.rain);
     this.array.push(this.balllightning);

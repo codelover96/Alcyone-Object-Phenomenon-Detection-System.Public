@@ -1,3 +1,4 @@
+<!-- Toolbar with menu items -->
 <mat-toolbar class="topBar" role="heading">
     <a routerLink="/home"><img [src]="logo" id="logo"></a>
     <div class="items">
@@ -6,7 +7,7 @@
             <button mat-menu-item (click)="openInput()">Open</button>
             <input hidden type="file" id="fileInput" #Image accept="image/*"
                 (change)="handleFileInput($event.target.files)">
-            <button mat-menu-item>Save picture</button>
+            <button mat-menu-item (click)="saveInput()">Save picture</button>
             <button mat-menu-item (click)="closeInput()">Close picture</button>
         </mat-menu>
         <button mat-button [matMenuTriggerFor]="edit" class="topItem">Edit</button>
@@ -28,10 +29,12 @@
         <span class="filler"></span>
     </div>
 </mat-toolbar>
+<!-- Side navigation bar -->
 <mat-sidenav-container class="container">
     <mat-sidenav mode="side" #sidenav opened class="sideBar">
         <router-outlet></router-outlet>
     </mat-sidenav>
+    <!-- Location of input image -->
     <mat-sidenav-content>
         <img [src]="imageUrl">
     </mat-sidenav-content>

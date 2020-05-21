@@ -8,18 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   image='./assets/image.jpeg';
-  height;
-  width;
-  constructor() {
-    this.height = screen.height; //800
-    this.width = screen.width; //1280
-  }
+
+  constructor() {}
+
   ngOnInit(): void {
   }
-  getWidth() {
-      return this.width;
-  }
-  getHeight() {
-    return this.height;
-  }
+  
 }
