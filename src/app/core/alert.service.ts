@@ -11,7 +11,6 @@ export class AlertService {
   constructor(private router: Router) {
     router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        console.log('test');
         this.subject.next();
       }
     });

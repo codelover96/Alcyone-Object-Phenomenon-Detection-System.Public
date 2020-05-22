@@ -19,6 +19,7 @@ import {DetectComponent} from './detect/detect.component';
 import { HomeComponent } from './home/home.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 @NgModule({
@@ -31,7 +32,9 @@ import {HttpClientModule} from '@angular/common/http';
       DialogMessage2Component,
       DetectComponent,
       HomeComponent,
-      MainViewComponent
+      MainViewComponent,
+      ToolbarComponent
+      
    ],
    imports: [
       MaterialModule,

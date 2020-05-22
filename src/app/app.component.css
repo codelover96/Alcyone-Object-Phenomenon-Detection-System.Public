@@ -1,10 +1,10 @@
 .topBar { 
    background-color:	#808080;
    color:#fff;
-   position: fixed;
+   position: sticky;
    top: 0;
-   left: 0;
-   right: 0;
+   z-index: 1;
+   height:10vh;
 }
 #logo{
    margin-left:-15px;

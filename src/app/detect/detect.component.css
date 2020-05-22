@@ -1,9 +1,6 @@
 .detect{
     font-size:25px;
  }
- .outDetect{
-   margin-top: 180px;
- }
  #nextButton{
     background-color: #808080;
     color:white;
@@ -12,4 +9,7 @@
  }
  .item{
    font-size: 17px;
+ }
+ .detect{
+    margin-top:80%;
  }

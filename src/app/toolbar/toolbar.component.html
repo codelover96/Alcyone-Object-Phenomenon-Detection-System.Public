@@ -1,0 +1,28 @@
+<div class="items" *ngIf="router.url=='/main/detect' || router.url=='/main/object-detection'
+  || router.url=='/main/phenomenon-detection' || router.url=='/main/phenomenon-detection2'">
+    <button mat-button [matMenuTriggerFor]="file" class="topItem">File</button>
+    <mat-menu #file="matMenu" yPosition="above">
+        <button mat-menu-item (click)="openInput()">Open</button>
+        <input hidden type="file" id="fileInput" #Image accept="image/*"
+            (change)="handleFileInput($event.target.files)">
+        <button mat-menu-item (click)="saveInput()">Save picture</button>
+        <button mat-menu-item (click)="closeInput()">Close picture</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="edit" class="topItem">Edit</button>
+    <mat-menu #edit="matMenu" yPosition="above">
+        <button mat-menu-item>Add a tag to detected object</button>
+        <button mat-menu-item>Add day and time to detected object and phenomenon</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="tools" class="topItem">Tools</button>
+    <mat-menu #tools="matMenu" yPosition="above">
+        <button mat-menu-item>Calculate the distance between two objects</button>
+        <button mat-menu-item>Calculate latitude and longitude</button>
+        <button mat-menu-item>Create statistics for a phenomenon</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="help" class="topItem">Help</button>
+    <mat-menu #help="matMenu" yPosition="above">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <span class="filler"></span>
+</div>

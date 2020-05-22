@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {ToolbarService} from '../toolbar/toolbar.service';
 
 @Component({
   selector: 'app-main-view',
@@ -11,30 +13,11 @@ export class MainViewComponent implements OnInit {
   fileToUpload=null;
   imageUrl=null;
 
-  constructor() { }
+  constructor(private router: Router,private toolbarService: ToolbarService) { }
 
-  ngOnInit(): void {}
-
-  /** Function which opens a file chooser after clicking on "Open" choice in menu */
-  openInput(){ 
-    document.getElementById("fileInput").click();
+  ngOnInit(): void {
+    this.imageUrl=this.toolbarService.getPictureUrl();
+    console.log(this.imageUrl);
   }
-  /** Function which gets the image choice of user */
-  handleFileInput(file: FileList){
-    this.fileToUpload=file.item(0);
-    var reader = new FileReader();
-    reader.onload=(event:any)=>{
-      this.imageUrl=event.target.result;
-    }
-    reader.readAsDataURL(this.fileToUpload);
-  }
-  /** Function which closes the opened input image */
-  closeInput(){
-    this.fileToUpload=null;
-    this.imageUrl=null;
-  }
-  /** Function which saves the opened input image */
-  saveInput(){
-
-  }
+  
 }
