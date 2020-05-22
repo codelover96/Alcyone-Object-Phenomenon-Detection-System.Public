@@ -30,7 +30,7 @@ export class PhenomenonDetection2Service{
     postFilters(content): Observable<any>{
       const headers = { 'content-type': 'application/json'}  
       const jsonData=JSON.stringify(content);
-      return this.http.post('http://localhost:5000/api/phenomenon-detection',jsonData,{'headers':headers});
+      return this.http.post('${environment.apiUrl}/phenomenon-detection',jsonData,{'headers':headers});
     }
     
 

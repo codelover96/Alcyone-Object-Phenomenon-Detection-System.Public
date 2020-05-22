@@ -30,7 +30,7 @@ export class ObjectDetectionService {
     postFilters(content): Observable<any>{
         const headers = { 'content-type': 'application/json'}  
         const jsonData=JSON.stringify(content);
-        return this.http.post('http://localhost:5000/api/object-detection',jsonData,{'headers':headers});
+        return this.http.post('${environment.apiUrl}/object-detection',jsonData,{'headers':headers});
     }
 
 }
