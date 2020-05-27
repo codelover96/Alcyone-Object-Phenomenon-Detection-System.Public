@@ -19,8 +19,10 @@ import {DetectComponent} from './detect/detect.component';
 import { HomeComponent } from './home/home.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-
+import { HomepageComponent } from './homepage/homepage.component';
+import { FooterComponent } from './footer/footer.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MainViewService} from './main-view/main-view.service';
 
 @NgModule({
    declarations: [
@@ -33,7 +35,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
       DetectComponent,
       HomeComponent,
       MainViewComponent,
-      ToolbarComponent
+      HomepageComponent,
+      FooterComponent
       
    ],
    imports: [
@@ -45,7 +48,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
       RouterModule,
       HttpClientModule
    ],
-   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetectionService, PhenomenonDetection2Service],
+   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetectionService, PhenomenonDetection2Service, MainViewService],
    bootstrap: [AppComponent],
    entryComponents : [DialogMessageComponent,DialogMessage2Component]
 })

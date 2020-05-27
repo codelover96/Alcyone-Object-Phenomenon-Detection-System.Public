@@ -4,6 +4,7 @@ import {ObjectDetectionService} from './object-detection.service';
 import { HttpClient } from '@angular/common/http';
 import { AlertService } from '../core/alert.service';
 import { Subscription } from 'rxjs';
+import {MainViewService} from '../main-view/main-view.service';
 
 interface AlertMessage {
   type: string;
@@ -31,10 +32,11 @@ export class ObjectDetectionComponent implements OnInit {
   results; //It contains the responsed results from the http request
   alertMessage: AlertMessage;
   alertSubscription: Subscription;
+  url;
  
 
   constructor(public objectService:ObjectDetectionService,private http: HttpClient,
-    private alertService: AlertService){}
+    private alertService: AlertService, private mainviewService: MainViewService){}
 
   ngOnInit(): void {
     this.alertSubscription = this.alertService.getMessage().subscribe(value => {
@@ -79,9 +81,13 @@ export class ObjectDetectionComponent implements OnInit {
    * with dialog message.
    */
   onClick(){
+     this.url=this.mainviewService.getUrl();
+     console.log(this.url);
      this.xvalueInput=parseInt((document.getElementById("xvalue") as HTMLInputElement).value);
      this.shapeValueInput=((document.getElementById("selectShape") as HTMLSelectElement).innerText);
-     var content={shape:this.markedShape,size:this.markedSize,sea:this.markedSea,ashore:this.markedAshore,ashoreWithAltitude:this.markedAshorewAlt,ashoreWithSlope:this.markedAshoreInSlope,specificSize:this.xvalueInput,specificShape:this.shapeValueInput};
+     var content={"url":this.url,"shape":this.markedShape,"size":this.markedSize,"sea":this.markedSea,
+     "ashore":this.markedAshore,"ashoreWithAltitude":this.markedAshorewAlt,"ashoreWithSlope":this.markedAshoreInSlope,
+     "specificSize":this.xvalueInput,"specificShape":this.shapeValueInput};
      this.objectService.postFilters(content).toPromise().then(data=>{
       this.results=data;
       this.objectService.openModal(this.results);

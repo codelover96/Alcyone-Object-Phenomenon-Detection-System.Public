@@ -1,0 +1,16 @@
+footer {
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:7%;
+    margin-top:-5px;
+    background-color: #595959;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}

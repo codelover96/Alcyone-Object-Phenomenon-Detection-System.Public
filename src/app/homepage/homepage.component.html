@@ -1,0 +1,8 @@
+<mat-sidenav-container fxFlexFill fullscreen>
+    <mat-sidenav-content>
+        <mat-toolbar role="heading" class="topBar" *ngIf="router.url=='/home'">
+            <a routerLink="/home"><img [src]="logo" id="logo"></a>
+        </mat-toolbar>
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent },
   {path: 'main', component: MainViewComponent,
     children: [
-      {path: '', redirectTo: '/detect', pathMatch: 'full'},
+      {path: '', redirectTo: 'detect', pathMatch: 'full'},
       {path: 'detect', component: DetectComponent},
       {path: 'object-detection', component: ObjectDetectionComponent},
       {path: 'phenomenon-detection', component: PhenomenonDetectionComponent},

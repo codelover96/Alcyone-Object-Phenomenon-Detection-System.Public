@@ -1,5 +1,9 @@
-<mat-toolbar role="heading" class="topBar">
-  <a routerLink="/home"><img [src]="logo" id="logo"></a>
-  <app-toolbar></app-toolbar>
-</mat-toolbar>
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav-content>
+    <mat-toolbar role="heading" class="topBar" *ngIf="router.url=='/home'">
+      <a routerLink="/home"><img [src]="logo" id="logo"></a>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <app-footer *ngIf="router.url=='/home'"></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
