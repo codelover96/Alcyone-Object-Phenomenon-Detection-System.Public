@@ -5,5 +5,9 @@
     <mat-radio-button class="item" value="Object">Object</mat-radio-button><br>
     <mat-radio-button class="item" value="Phenomenon">Phenomenon</mat-radio-button>
   </mat-radio-group><br><br>
-  <button mat-raised-button id="nextButton" (click)="onClick()">Next</button>
+  <button mat-raised-button id="nextButton" (click)="onClick()">Next</button><br>
+  <div id="alert-message"
+      [ngClass]="{'alert-error-text' : alertMessage.type === 'error', 'alert-success-text' : alertMessage.type === 'success'}"
+      *ngIf="alertMessage">{{alertMessage.text}}
+  </div>
 </div>

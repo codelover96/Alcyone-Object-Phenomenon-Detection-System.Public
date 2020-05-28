@@ -13,3 +13,13 @@ mat-form-field {
     background-color: #808080;
     color:white;
 }
+.alert-error-text {
+    color: red;
+    font-weight: bold;
+    text-align:center;
+}
+.alert-success-text {
+    color: green;
+    font-weight: bold;
+    text-align:center;
+}

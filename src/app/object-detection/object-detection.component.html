@@ -1,6 +1,6 @@
 <!-- Side navigation bar -->
 <div class="search">
-  <div class="features">
+  <div class="features"><br>
     <p id="calculate">Calculate</p>
     <mat-checkbox id="shape" class="calculate" name="shape" value="Shape" (change)="onChangeShape($event)">Shape
     </mat-checkbox><br>
@@ -38,4 +38,8 @@
     </mat-form-field><br><br>
   </div>
   <button mat-raised-button id="goButton" (click)="onClick()">Go</button>
+  <div id="alert-message"
+      [ngClass]="{'alert-error-text' : alertMessage.type === 'error', 'alert-success-text' : alertMessage.type === 'success'}"
+      *ngIf="alertMessage">{{alertMessage.text}}
+  </div>
 </div>

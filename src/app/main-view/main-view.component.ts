@@ -27,7 +27,7 @@ export class MainViewComponent implements OnInit {
     var reader = new FileReader();
     reader.onload=(event:any)=>{
       this.imageUrl=event.target.result;
-      this.service.passUrl(event.target.value);
+      this.service.passUrl(this.imageUrl);
     }
     
     reader.readAsDataURL(this.fileToUpload);
@@ -37,7 +37,5 @@ export class MainViewComponent implements OnInit {
     this.fileToUpload=null;
     this.imageUrl=null;
   }
-  /** Function which saves the opened input image */
-  saveInput(){
-  }
+ 
 }

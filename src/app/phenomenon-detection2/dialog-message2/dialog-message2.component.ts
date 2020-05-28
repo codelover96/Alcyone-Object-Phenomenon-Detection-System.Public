@@ -63,12 +63,6 @@ export class DialogMessage2Component implements OnInit {
   ngOnInit(): void {}
 
   /**
-   * Function which shows the next result after clicking "Next" button
-   */
-  onClickNext(){
-    
-  }
-  /**
    * Function which closes the dialog message after clicking "OK" button
    */
   onClickOK(){

@@ -37,12 +37,6 @@ export class DialogMessageComponent implements OnInit {
   
   }
   /**
-   * Function which shows the next detected object after clicking on "Next button"
-   */
-  onClickNext(){
-    
-  }
-  /**
    * Function which closes the dialog message after clicking on "OK" button
    */
   onClickOK(){

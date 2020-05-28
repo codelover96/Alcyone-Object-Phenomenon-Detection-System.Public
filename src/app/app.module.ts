@@ -19,7 +19,6 @@ import {DetectComponent} from './detect/detect.component';
 import { HomeComponent } from './home/home.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import {HttpClientModule} from '@angular/common/http';
-import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MainViewService} from './main-view/main-view.service';
@@ -35,7 +34,6 @@ import {MainViewService} from './main-view/main-view.service';
       DetectComponent,
       HomeComponent,
       MainViewComponent,
-      HomepageComponent,
       FooterComponent
       
    ],

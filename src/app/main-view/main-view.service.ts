@@ -10,6 +10,7 @@ export class MainViewService {
 
     passUrl(url){
         this.url=url;
+        console.log(this.url);
     }
     getUrl(){
         return this.url;

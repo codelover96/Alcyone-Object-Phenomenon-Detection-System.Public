@@ -8,8 +8,21 @@ mat-form-field {
     color:white;
 }
 .search{
-    margin-top:20px;
+    margin-top:40px;
 }
 #appearance,#searchwith,#calculate{
     font-size:18px;
+}
+#selectShape{
+ color:white;   
+}
+.alert-error-text {
+    color: red;
+    font-weight: bold;
+    text-align:center;
+}
+.alert-success-text {
+    color: green;
+    font-weight: bold;
+    text-align:center;
 }

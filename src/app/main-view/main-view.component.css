@@ -15,20 +15,18 @@
    padding:12px;
    background-color: #4b4276;
    color:#fff;
-   position: absolute;
-   left: 0%;
-   top: 0%;
+   position: fixed;
+   left: 0;
    align-items: center;
    justify-content: center;
+   height:100vh;
    
 }
 .topBar { 
    background-color:	#808080;
    color:#fff;
-   position: sticky;
-   top: 0;
-   left: 0;
-   right: 0;
+   position: fixed;
+   z-index: 2;
 }
 
 .topItem{
@@ -43,4 +41,8 @@
 .image{
    width:85vw;
    height:100vh;
+   border:none;
+   outline:none;
+   margin-left:17%;
+   position: fixed;
 }
