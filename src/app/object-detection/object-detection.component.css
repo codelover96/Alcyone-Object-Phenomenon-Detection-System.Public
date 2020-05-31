@@ -13,9 +13,6 @@ mat-form-field {
 #appearance,#searchwith,#calculate{
     font-size:18px;
 }
-#selectShape{
- color:white;   
-}
 .alert-error-text {
     color: red;
     font-weight: bold;

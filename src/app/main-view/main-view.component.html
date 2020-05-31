@@ -33,5 +33,6 @@
                 <span class="filler"></span>
             </div>
         </mat-toolbar>
+        <div *ngIf="imageUrl==null"><img [src]="textImage" class="text" *ngIf="imageUrl==null"></div>
         <img [src]="imageUrl" class="image" *ngIf="imageUrl!=null">
 </div>

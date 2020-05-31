@@ -4,16 +4,19 @@ import { Injectable } from '@angular/core';
 export class MainViewService {
 
     url;
+    file;
 
     constructor() {}
 
-
-    passUrl(url){
+    passUrl(url,file){
         this.url=url;
-        console.log(this.url);
+        this.file=file;
     }
+
     getUrl(){
         return this.url;
     }
-    
-}
+    getFile(){
+        return this.file;
+    }
+}   

@@ -10,13 +10,23 @@ import {MainViewService} from './main-view.service';
 export class MainViewComponent implements OnInit {
 
   logo='./assets/logo.png';
+  textImage='./assets/text-image.png';
   fileToUpload=null;
   imageUrl=null;
+  file=null;
+  fileData;
+  image;
 
   constructor(private router: Router, private service: MainViewService) { }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.imageUrl=sessionStorage.getItem('url');
+    //this.image=sessionStorage.getItem('image');
+    this.service.passUrl(this.imageUrl, this.fileToUpload);
+  }
+  ngOnDestroy(){
+    sessionStorage.removeItem('url');
+  }
   /** Function which opens a file chooser after clicking on "Open" choice in menu */
   openInput(){ 
     document.getElementById("fileInput").click();
@@ -27,9 +37,9 @@ export class MainViewComponent implements OnInit {
     var reader = new FileReader();
     reader.onload=(event:any)=>{
       this.imageUrl=event.target.result;
-      this.service.passUrl(this.imageUrl);
+      sessionStorage.setItem('url',this.imageUrl);
+      this.service.passUrl(this.imageUrl, this.fileToUpload);
     }
-    
     reader.readAsDataURL(this.fileToUpload);
   }
   /** Function which closes the opened input image */
