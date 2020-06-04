@@ -4,13 +4,18 @@
 	<!-- The results of search -->
 	<mat-dialog-content>
 		<p *ngIf="this.shape!=''">Shape: {{this.shape}}</p>
-		<p *ngIf="this.size!=''">Size: {{this.size}}</p>
-		<p *ngIf="this.sea!=-1">Sea</p>
-		<p *ngIf="this.ashore!=-1">Ashore</p>
-		<p *ngIf="this.ashoreWithAltitude!=-1">Ashore with altitude</p>
-		<p *ngIf="this.ashoreInSlope!=-1">Ashore in slope</p>
-		<p *ngIf="this.specificSize!=-1">Specific size</p>
-		<p *ngIf="this.specificShape!=-1">Specific shape</p>
+		<p *ngIf="this.sea!=-1 && this.sea==true">Sea: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.sea!=-1 && this.sea==false">Sea: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.ashore!=-1 && this.ashore==true">Ashore: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.ashore!=-1 && this.ashore==false">Ashore: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.ashoreWithAltitude!=-1 && this.ashoreWithAltitude==true">Ashore with altitude: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.ashoreWithAltitude!=-1 && this.ashoreWithAltitude==false">Ashore with altitude: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.ashoreInSlope!=-1 && this.ashoreInSlope==true">Ashore in slope: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.ashoreInSlope!=-1  && this.ashoreInSlope==false">Ashore in slope: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.specificSizeInput!='' && this.specificSize==true">Specific size {{specificSizeInput}}: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.specificShapeInput!='' && this.specificShape==true">Specific shape {{specificShapeInput}}: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.specificSizeInput!='' && this.specificSize==false">Specific size {{specificSizeInput}}: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.specificShapeInput!='' && this.specificShape==false">Specific shape {{specificShapeInput}}: No <mat-icon class="closeIcon">close</mat-icon></p>
 	</mat-dialog-content>
 	<!-- The buttons -->
 	<mat-dialog-actions>

@@ -9,7 +9,7 @@
             <div class="items">
                 <button mat-button [matMenuTriggerFor]="file" class="topItem">File</button>
                 <mat-menu #file="matMenu" yPosition="above">
-                    <button mat-menu-item (click)="openInput()">Open</button>
+                    <button mat-menu-item (click)="openInput()">Open picture</button>
                     <input hidden type="file" id="fileInput" #Image accept="image/*"
                         (change)="handleFileInput($event.target.files)">
                     <button mat-menu-item (click)="closeInput()">Close picture</button>

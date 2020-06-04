@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 import {MainViewService} from './main-view/main-view.service';
 
 @NgModule({
@@ -44,7 +44,8 @@ import {MainViewService} from './main-view/main-view.service';
       AppRoutingModule,
       FormsModule,
       RouterModule,
-      HttpClientModule
+      HttpClientModule,
+      MatIconModule
    ],
    providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetectionService, PhenomenonDetection2Service, MainViewService],
    bootstrap: [AppComponent],

@@ -82,19 +82,19 @@ export class ObjectDetectionComponent implements OnInit {
    */
   onClick(){
      this.url=this.mainviewService.getUrl();
-     console.log(this.url);
      this.xvalueInput=parseInt((document.getElementById("xvalue") as HTMLInputElement).value);
      this.shapeValueInput=((document.getElementById("selectShape") as HTMLSelectElement).innerText);
      var content={"url":this.url,"shape":this.markedShape,"size":this.markedSize,"sea":this.markedSea,
      "ashore":this.markedAshore,"ashoreWithAltitude":this.markedAshorewAlt,"ashoreWithSlope":this.markedAshoreInSlope,
      "specificSize":this.xvalueInput,"specificShape":this.shapeValueInput};
-     this.objectService.postFilters(content).toPromise().then(data=>{
-      this.results=data;
+     //this.objectService.postFilters(content).toPromise().then(data=>{
+      //this.results=data;
+      this.objectService.passSpecific(this.xvalueInput,this.shapeValueInput);
       this.objectService.openModal(this.results);
-     },
+     /*},
      error=>{ //in the case of non successful response , it shows an alert message with the error
       this.alertService.error(error.errror);
-     });
+     });*/
   }
 
 }

@@ -10,6 +10,8 @@ import {MainViewService} from '../main-view/main-view.service';
 export class ObjectDetectionService {
     router: Router;
     file;
+    size:string;
+    shape:string;
 
     constructor(public dialog: MatDialog,private http: HttpClient, private mainviewService : MainViewService) {}
 
@@ -38,6 +40,16 @@ export class ObjectDetectionService {
         formdata.append('object',jsonData);
         formdata.append('file',this.file);
         return this.http.post('${environment.apiUrl}/object-detection',jsonData,{'headers':headers});
+    }
+    passSpecific(size,shape){
+        this.size=size;
+        this.shape=shape;
+    }
+    getSpecificSize(){
+        return this.size;
+    }
+    getSpecificShape(){
+        return this.shape;
     }
 
 }
