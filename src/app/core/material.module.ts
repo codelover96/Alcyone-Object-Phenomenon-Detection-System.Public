@@ -12,6 +12,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatRadioModule,
     MatInputModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ]    
 })
 

@@ -1,0 +1,24 @@
+mat-dialog-content{
+    font-size:20px;
+    font-weight: normal;
+    color:#808080;
+    display:wrap;
+}
+.button{
+    background-color:#666666;
+    color:white;
+    margin:0 auto;
+    display:block;
+}
+.icon{
+    font-size:50px;
+    color:#ffd700;
+    vertical-align: initial;
+    margin-right:15%;
+    top:10px;
+}
+.text{
+    text-align: center;
+    margin-top:-22px;
+    margin-left:50px;
+}

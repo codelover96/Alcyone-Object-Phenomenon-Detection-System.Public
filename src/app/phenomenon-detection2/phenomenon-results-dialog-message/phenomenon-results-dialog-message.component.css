@@ -1,0 +1,36 @@
+.title{
+    font-size:28px;
+    text-align:center;
+    font-weight:bold;
+    color:#4b4276;
+  }
+p{
+    font-size:25px;
+    color:#4b4276;
+}
+.custom-dialog {
+    margin: -16px;
+    overflow: hidden;
+    padding: 10px   12px 25px 12px;
+}
+.button{
+    background-color: #808080;
+    color:white;
+    margin:0 auto;
+    display:block;
+}
+.doneIcon{
+    color:#00b300;
+    font-size:40px;
+    position: relative;
+    top: 7px;
+    left: 5px;
+  }
+  .closeIcon{
+    color:red;
+    font-size:40px;
+    position: relative;
+    top: 10px;
+    left: 5px;
+  }
+  

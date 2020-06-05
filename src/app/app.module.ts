@@ -10,8 +10,8 @@ import { RouterModule } from '@angular/router';
 import { ObjectDetectionComponent } from './object-detection/object-detection.component';
 import { PhenomenonDetectionComponent } from './phenomenon-detection/phenomenon-detection.component';
 import { PhenomenonDetection2Component } from './phenomenon-detection2/phenomenon-detection2.component';
-import { DialogMessageComponent } from './object-detection/dialog-message/dialog-message.component';
-import {DialogMessage2Component} from './phenomenon-detection2/dialog-message2/dialog-message2.component';
+import { ObjectResultsDialogMessageComponent } from './object-detection/object-results-dialog-message/object-results-dialog-message.component';
+import {PhenomenonResultsDialogMessageComponent} from './phenomenon-detection2/phenomenon-results-dialog-message/phenomenon-results-dialog-message.component';
 import {ObjectDetectionService} from './object-detection/object-detection.service';
 import {PhenomenonDetection2Service} from './phenomenon-detection2/phenomenon-detection2.service';
 import {PhenomenonDetectionService} from './phenomenon-detection/phenomenon-detection.service';
@@ -20,8 +20,11 @@ import { HomeComponent } from './home/home.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
-import { MatIconModule } from '@angular/material/icon';
 import {MainViewService} from './main-view/main-view.service';
+import { ObjectWarningDialogMessageComponent } from './object-detection/object-warning-dialog-message/object-warning-dialog-message.component';
+import { DetectWarningDialogMessageComponent } from './detect/detect-warning-dialog-message/detect-warning-dialog-message.component';
+import { DetectService } from './detect/detect.service';
+import { PhenomenonWarningDialogMessageComponent } from './phenomenon-detection2/phenomenon-warning-dialog-message/phenomenon-warning-dialog-message.component';
 
 @NgModule({
    declarations: [
@@ -29,12 +32,15 @@ import {MainViewService} from './main-view/main-view.service';
       ObjectDetectionComponent,
       PhenomenonDetectionComponent,
       PhenomenonDetection2Component,
-      DialogMessageComponent,
-      DialogMessage2Component,
+      ObjectResultsDialogMessageComponent,
+      PhenomenonResultsDialogMessageComponent,
       DetectComponent,
       HomeComponent,
       MainViewComponent,
-      FooterComponent
+      FooterComponent,
+      ObjectWarningDialogMessageComponent,
+      DetectWarningDialogMessageComponent,
+      PhenomenonWarningDialogMessageComponent
       
    ],
    imports: [
@@ -44,12 +50,13 @@ import {MainViewService} from './main-view/main-view.service';
       AppRoutingModule,
       FormsModule,
       RouterModule,
-      HttpClientModule,
-      MatIconModule
+      HttpClientModule
    ],
-   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetectionService, PhenomenonDetection2Service, MainViewService],
+   providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetectionService, PhenomenonDetection2Service,
+   DetectService, MainViewService],
    bootstrap: [AppComponent],
-   entryComponents : [DialogMessageComponent,DialogMessage2Component]
+   entryComponents : [ObjectResultsDialogMessageComponent,PhenomenonResultsDialogMessageComponent, DetectWarningDialogMessageComponent, 
+      ObjectWarningDialogMessageComponent, PhenomenonWarningDialogMessageComponent]
 })
 export class AppModule { 
    

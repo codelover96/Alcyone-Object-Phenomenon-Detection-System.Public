@@ -1,14 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatRadioChange } from '@angular/material/radio';
 import { Router } from '@angular/router';
 import {MainViewService} from '../main-view/main-view.service';
-import { AlertService } from '../core/alert.service';
-import { Subscription } from 'rxjs';
-
-interface AlertMessage {
-  type: string;
-  text: string;
-}
+import {DetectService} from './detect.service';
 
 @Component({
   selector: 'app-detect',
@@ -18,25 +11,14 @@ interface AlertMessage {
 export class DetectComponent implements OnInit {
 
   detect: any; // It contains the choice of user. It may be either "Object" or "Phenomenon".
-  alertMessage: AlertMessage;
-  alertSubscription: Subscription;
   url;
 
-  constructor(private router: Router, private mainviewService: MainViewService,private alertService: AlertService) { }
+  constructor(private router: Router, private mainviewService: MainViewService,private detectService: DetectService) { }
 
   ngOnInit(): void { 
-    this.alertSubscription = this.alertService.getMessage().subscribe(value => {
-      if (value !== undefined) {
-        this.alertMessage = {
-          type: value.type,
-          text: value.text
-        };
-      }
-    });
+    
   }
-  ngOnDestroy() {
-    this.alertSubscription.unsubscribe();
-  }
+ 
   /** Function which navigates the user to the suitable next page according to his choice
    *  after clicking on "Next" button
    */
@@ -51,7 +33,7 @@ export class DetectComponent implements OnInit {
       }
     }
     else{
-        this.alertService.error('First select an image from "File"->"Open"');
+        this.detectService.openModalWarning();
     }
   }
 }

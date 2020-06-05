@@ -1,14 +1,18 @@
 mat-form-field {
     margin-right: 12px;
 }
+#width, #height{
+    width:80%;
+}
 #goButton{
     margin: 0 auto; 
     display: block;
     background-color: #808080;
     color:white;
+
 }
 .search{
-    margin-top:40px;
+    margin-top:15%;
 }
 #appearance,#searchwith,#calculate{
     font-size:18px;

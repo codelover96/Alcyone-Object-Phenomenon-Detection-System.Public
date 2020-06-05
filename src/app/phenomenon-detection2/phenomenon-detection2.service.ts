@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import {DialogMessage2Component} from './dialog-message2/dialog-message2.component';
+import {PhenomenonResultsDialogMessageComponent} from './phenomenon-results-dialog-message/phenomenon-results-dialog-message.component';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {MainViewService} from '../main-view/main-view.service'
+import {PhenomenonWarningDialogMessageComponent} from './phenomenon-warning-dialog-message/phenomenon-warning-dialog-message.component';
 
 @Injectable()
 export class PhenomenonDetection2Service{
@@ -17,14 +18,21 @@ export class PhenomenonDetection2Service{
      * Function which opens the modal message which contains the results of the search
      * @param jsonData the results of search
      */
-    openModal(jsonData) {
+    openModalResults(jsonData) {
         const dialogConfig=new MatDialogConfig();
         dialogConfig.autoFocus=true;
         dialogConfig.data=jsonData;
         dialogConfig.minWidth=400;
-        const dialogRef=this.dialog.open(DialogMessage2Component, dialogConfig);
+        const dialogRef=this.dialog.open(PhenomenonResultsDialogMessageComponent, dialogConfig);
         dialogRef.afterClosed().subscribe(result => {});
     }
+    openModalWarning() {
+      const dialogConfig=new MatDialogConfig();
+      dialogConfig.autoFocus=true;
+      dialogConfig.minWidth=400;
+      const dialogRef=this.dialog.open(PhenomenonWarningDialogMessageComponent, dialogConfig);
+      dialogRef.afterClosed().subscribe(result => {});
+  }
     /**
      * Function which carries out the post request passing the chosen filters
      * @param content the chosen filters

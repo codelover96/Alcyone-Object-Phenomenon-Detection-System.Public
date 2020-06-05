@@ -1,0 +1,27 @@
+<!-- The dialog message -->
+<div class="custom-dialog">
+	<h2 mat-dialog-title class="title">Results</h2>
+	<!-- The results of search -->
+	<mat-dialog-content>
+		<p *ngIf="this.size!=''">Size: {{this.size}}</p>
+		<p *ngIf="this.shape!=''">Shape: {{this.shape}}</p>
+		<p *ngIf="this.sea==true">Sea: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.sea==false">Sea: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.ashore==true">Ashore: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.ashore==false">Ashore: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.ashoreWithAltitude==true">Ashore with altitude: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.ashoreWithAltitude==false">Ashore with altitude: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.ashoreInSlope==true">Ashore in slope: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.ashoreInSlope==false">Ashore in slope: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.specificSize==true">Specific size {{specificWidth}}x{{specificHeight}}: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.specificSize==false">Specific size {{specificWidth}}x{{specificHeight}}: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.specificShape==true">Specific shape {{specificShapeInput}}: Yes <mat-icon class="doneIcon">done</mat-icon></p>
+		<p *ngIf="this.specificShape==false">Specific shape {{specificShapeInput}}: No <mat-icon class="closeIcon">close</mat-icon></p>
+	</mat-dialog-content>
+	<!-- The buttons -->
+	<mat-dialog-actions>
+		<button mat-raised-button class="button" [mat-dialog-close]="true" value='OK' (click)="onClickOK()">OK</button>
+		<button mat-raised-button class="button" [mat-dialog-close]="true" value='New search'
+			routerLink="/main/detect">New search</button>
+	</mat-dialog-actions>
+</div>

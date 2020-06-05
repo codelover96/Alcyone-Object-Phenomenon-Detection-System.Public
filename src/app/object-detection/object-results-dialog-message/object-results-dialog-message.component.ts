@@ -3,12 +3,13 @@ import { Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ObjectDetectionService} from '../object-detection.service';
 
+
 @Component({
-  selector: 'app-dialog-message',
-  templateUrl: './dialog-message.component.html',
-  styleUrls: ['./dialog-message.component.css']
+  selector: 'app-object-results-dialog-message',
+  templateUrl: './object-results-dialog-message.component.html',
+  styleUrls: ['./object-results-dialog-message.component.css']
 })
-export class DialogMessageComponent implements OnInit {
+export class ObjectResultsDialogMessageComponent implements OnInit {
   
   //They contain the values of results
   results: Object;
@@ -22,15 +23,18 @@ export class DialogMessageComponent implements OnInit {
   specificShape:boolean;
   specificShapeInput:string;
   specificSizeInput:string;
+  specificWidth:number;
+  specificHeight:number;
   
-  constructor(public dialogRef: MatDialogRef<DialogMessageComponent>,
+  constructor(public dialogRef: MatDialogRef<ObjectResultsDialogMessageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, private objectService : ObjectDetectionService) {
-    this.results=data;
+    this.results=data.json;
     this.shape="Circle"
     this.sea=true;
     this.specificSize=false;
-    this.specificShapeInput=this.objectService.getSpecificShape();
-    this.specificSizeInput=this.objectService.getSpecificSize();
+    this.specificShapeInput=data.specificShape;
+    this.specificWidth=data.specificWidth;
+    this.specificHeight=data.specificHeight;
     /*this.shape=this.results[0].shape;
     this.size=this.results[0].size;
     this.sea=((this.results[0].sea=='')? -1: JSON.parse(this.results[0].sea));

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { DialogMessageComponent } from '../object-detection/dialog-message/dialog-message.component';
+import { ObjectResultsDialogMessageComponent } from './object-results-dialog-message/object-results-dialog-message.component';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import {MainViewService} from '../main-view/main-view.service';
+import { ObjectWarningDialogMessageComponent } from './object-warning-dialog-message/object-warning-dialog-message.component';
 
 @Injectable()
 export class ObjectDetectionService {
@@ -19,12 +20,19 @@ export class ObjectDetectionService {
      * Function which opens the modal message which contains the results of the search
      * @param jsonData the results of search
      */
-    openModal(jsonData) {
+    openModalResults(jsonData,width,height,shape) {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.autoFocus = true;
-        dialogConfig.data = jsonData; 
+        dialogConfig.data = {"json":jsonData, "specificWidth":width, "specificHeight":height, "specificShape":shape}; 
         dialogConfig.minWidth = 400;
-        const dialogRef = this.dialog.open(DialogMessageComponent, dialogConfig);
+        const dialogRef = this.dialog.open(ObjectResultsDialogMessageComponent, dialogConfig);
+        dialogRef.afterClosed().subscribe(result => { });
+    }
+    openModalWarning(){
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.autoFocus = true;
+        dialogConfig.minWidth = 400;
+        const dialogRef = this.dialog.open(ObjectWarningDialogMessageComponent, dialogConfig);
         dialogRef.afterClosed().subscribe(result => { });
     }
     /**
@@ -41,15 +49,5 @@ export class ObjectDetectionService {
         formdata.append('file',this.file);
         return this.http.post('${environment.apiUrl}/object-detection',jsonData,{'headers':headers});
     }
-    passSpecific(size,shape){
-        this.size=size;
-        this.shape=shape;
-    }
-    getSpecificSize(){
-        return this.size;
-    }
-    getSpecificShape(){
-        return this.shape;
-    }
-
+    
 }

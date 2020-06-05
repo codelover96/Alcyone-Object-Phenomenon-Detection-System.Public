@@ -6,7 +6,7 @@
     </mat-checkbox><br>
     <mat-checkbox id="size" class="calculate" name="size" value="Size" (change)="onChangeSize($event)">Size
     </mat-checkbox>
-  </div><br>
+  </div>
   <div class="places">
     <p id="appearance">Appearance</p>
     <mat-checkbox id="sea" name="sea" value="Sea" (change)="onChangeSea($event)">Sea</mat-checkbox><br>
@@ -15,17 +15,19 @@
       Ashore with altitude</mat-checkbox><br>
     <mat-checkbox id="ashoreinslope" name="ashoreinslope" value="Ashore in slope"
       (change)="onChangeAshoreInSlope($event)">Ashore in slope</mat-checkbox><br>
-  </div><br>
+  </div>
   <div class="shapeandsize">
     <p id="searchwith">Search with specific</p>
     <mat-checkbox id="size2" name="size2" value="size" (change)="onChangeSpecificSize($event)">size</mat-checkbox><br>
     <form>
       <mat-form-field>
-        <mat-label>x</mat-label><input id="xvalue" matInput placeholder="x value">
+        <mat-label>width</mat-label><input id="width" matInput placeholder="">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>height</mat-label><input id="height" matInput placeholder="">
       </mat-form-field>
     </form>
     <mat-checkbox id="shape2" name="shape2" value="shape" (change)="onChangeSpecificShape($event)">shape</mat-checkbox>
-    <br>
     <mat-form-field (change)="onChangeSelect($event)">
       <mat-select id="selectShape">
         <mat-option value="Square">Square</mat-option>
@@ -35,11 +37,7 @@
         <mat-option value="Polygons">Polygons</mat-option>
         <mat-option value="Parallelogram">Parallelogram</mat-option>
       </mat-select>
-    </mat-form-field><br><br>
+    </mat-form-field>
   </div>
   <button mat-raised-button id="goButton" (click)="onClick()">Go</button>
-  <div id="alert-message"
-      [ngClass]="{'alert-error-text' : alertMessage.type === 'error', 'alert-success-text' : alertMessage.type === 'success'}"
-      *ngIf="alertMessage">{{alertMessage.text}}
-  </div>
 </div>
