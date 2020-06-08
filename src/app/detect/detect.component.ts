@@ -28,12 +28,15 @@ export class DetectComponent implements OnInit {
       if (this.detect == "Object") {
         this.router.navigate(['/main/object-detection']);
       }
-      else {
+      else if (this.detect== "Phenomenon") {
         this.router.navigate(['/main/phenomenon-detection']);
+      }
+      else{
+        this.detectService.openModalWarning("No choice");
       }
     }
     else{
-        this.detectService.openModalWarning();
+        this.detectService.openModalWarning("No url");
     }
   }
 }

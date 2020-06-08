@@ -62,7 +62,8 @@ export class PhenomenonDetection2Component implements OnInit {
         this.phenom2Service.openModalResults(this.results);
       },
         error => { //in the case of non successful response, it shows an alert message with the error
-          this.phenom2Service.openModalResults("There is no phenomenon with these filters");
+          this.results=null;
+          this.phenom2Service.openModalResults(this.results);
         });
     }
 

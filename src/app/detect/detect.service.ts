@@ -8,10 +8,11 @@ export class DetectService {
 constructor(public dialog: MatDialog){
 
 }
-openModalWarning(){
+openModalWarning(error){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.minWidth = 400;
+    dialogConfig.data=error;
     const dialogRef = this.dialog.open( DetectWarningDialogMessageComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => { });
 }

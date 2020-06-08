@@ -1,26 +1,44 @@
 <!-- The diallog message -->
 <div class="custom-dialog">
-	<h2 mat-dialog-title class="title">Results</h2>
+	<h2 mat-dialog-title class="title" *ngIf="!noResults">Results</h2>
 	<!-- The results of search -->
-	<mat-dialog-content>
-		<p *ngIf="this.fire==true">Fire: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.fire==false">Fire: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.flood==true">Flood: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.flood==false">Flood: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.hurricane==true">Hurricane: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.hurricane==false">Hurricane: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.snow==true">Snow: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.snow==false">Snow: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.rain==true">Rain: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.rain==false">Rain: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.balllightning==true">Balllightning: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.balllightning==false">Balllightning: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.hail==true">Hail: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.hail==false">Hail: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.wind==true">Wind: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.wind==false">Wind: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.pollution==true">Pollution: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.pollution==false">Pollution: No <mat-icon class="closeIcon">close</mat-icon></p>
+	<mat-dialog-content *ngIf="!noResults">
+		<p *ngIf="this.fire==true">Fire: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.fire==false">Fire: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.flood==true">Flood: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.flood==false">Flood: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.hurricane==true">Hurricane: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.hurricane==false">Hurricane: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.snow==true">Snow: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.snow==false">Snow: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.rain==true">Rain: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.rain==false">Rain: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.balllightning==true">Balllightning: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.balllightning==false">Balllightning: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.hail==true">Hail: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.hail==false">Hail: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.wind==true">Wind: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.wind==false">Wind: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.pollution==true">Pollution: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.pollution==false">Pollution: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
 		<p *ngIf="this.ingredients!=''">Ingredients: {{this.ingredients}}</p>
 		<p *ngIf="this.size!=''">Size: {{this.size}}</p>
 		<p *ngIf="this.shape!=''">Shape: {{this.shape}}</p>
@@ -29,18 +47,36 @@
 		<p *ngIf="this.direction!=''">Direction: {{this.direction}}</p>
 		<p *ngIf="this.footprint!=''">Footprint: {{this.footprint}}</p>
 		<p *ngIf="this.location!=''">Location: {{this.location}}</p>
-		<p *ngIf="this.sea!=-1 && this.sea==true">Sea: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.sea!=-1 && this.sea==false">Sea: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.ashore!=-1 && this.ashore==true">Ashore: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.ashore!=-1 && this.ashore==false">Ashore: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.ashoreWithAltitude!=-1 && this.ashoreWithAltitude==true">Ashore with altitude: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.ashoreWithAltitude!=-1 && this.ashoreWithAltitude==false">Ashore with altitude: No <mat-icon class="closeIcon">close</mat-icon></p>
-		<p *ngIf="this.ashoreInSlope!=-1 && this.ashoreInSlope==true">Ashore in slope: Yes <mat-icon class="doneIcon">done</mat-icon></p>
-		<p *ngIf="this.ashoreInSlope!=-1  && this.ashoreInSlope==false">Ashore in slope: No <mat-icon class="closeIcon">close</mat-icon></p>
+		<p *ngIf="this.sea!=-1 && this.sea==true">Sea: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.sea!=-1 && this.sea==false">Sea: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.ashore!=-1 && this.ashore==true">Ashore: Yes <mat-icon class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.ashore!=-1 && this.ashore==false">Ashore: No <mat-icon class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.ashoreWithAltitude!=-1 && this.ashoreWithAltitude==true">Ashore with altitude: Yes <mat-icon
+				class="doneIcon">done</mat-icon>
+		</p>
+		<p *ngIf="this.ashoreWithAltitude!=-1 && this.ashoreWithAltitude==false">Ashore with altitude: No <mat-icon
+				class="closeIcon">close</mat-icon>
+		</p>
+		<p *ngIf="this.ashoreInSlope!=-1 && this.ashoreInSlope==true">Ashore in slope: Yes <mat-icon class="doneIcon">
+				done</mat-icon>
+		</p>
+		<p *ngIf="this.ashoreInSlope!=-1  && this.ashoreInSlope==false">Ashore in slope: No <mat-icon class="closeIcon">
+				close</mat-icon>
+		</p>
+	</mat-dialog-content>
+	<mat-dialog-content *ngIf="noResults">
+		<p class="text">
+			<mat-icon class="icon">sentiment_very_dissatisfied</mat-icon>No results with these filters found.
+		</p>
 	</mat-dialog-content>
 	<!-- The buttons -->
 	<mat-dialog-actions>
 		<button mat-raised-button class="button" [mat-dialog-close]="true" value='OK' (click)="onClickOK()">OK</button>
-		<button mat-raised-button class="button" [mat-dialog-close]="true" value='New search' routerLink="/main/detect">New search</button>
+		<button mat-raised-button class="button" [mat-dialog-close]="true" value='New search'
+			routerLink="/main/detect">New search</button>
 	</mat-dialog-actions>
 </div>

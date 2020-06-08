@@ -2,9 +2,9 @@ footer {
     display: flex;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     height:7%;
-    margin-top:-5px;
+    margin-top:-25px;
     background-color: #595959;
     color: white;
     flex-wrap: wrap;

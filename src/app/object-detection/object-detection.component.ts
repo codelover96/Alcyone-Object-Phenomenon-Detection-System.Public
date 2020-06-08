@@ -96,13 +96,14 @@ export class ObjectDetectionComponent implements OnInit {
         "ashore": this.markedAshore, "ashoreWithAltitude": this.markedAshorewAlt, "ashoreWithSlope": this.markedAshoreInSlope,
         "specificWidth": this.width, "specificHeight": this.height, "specificShape": this.shapeValueInput
       };
-      // this.objectService.postFilters(content).toPromise().then(data => {
-      //this.results = data;
-      this.objectService.openModalResults(this.results, this.width, this.height, this.shapeValueInput);
-      /*},
+      this.objectService.postFilters(content).toPromise().then(data => {
+        this.results = data;
+        this.objectService.openModalResults(this.results, this.width, this.height, this.shapeValueInput);
+      },
         error => { //in the case of non successful response , it shows an alert message with the error
-          this.alertService.error(error.errror);
-        });*/
+          this.results = null;
+          this.objectService.openModalResults(this.results, this.width, this.height, this.shapeValueInput);
+        });
     }
 
   }

@@ -8,10 +8,19 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DetectWarningDialogMessageComponent implements OnInit {
 
+  noChoice:boolean=false;
+  noUrl:boolean=false;
+
   constructor(public dialogRef: MatDialogRef<DetectWarningDialogMessageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
+    if (this.data=="No choice"){
+      this.noChoice=true;
+    }
+    else if (this.data=="No url"){
+      this.noUrl=true;
+    }
   }
 
   onClick(){
