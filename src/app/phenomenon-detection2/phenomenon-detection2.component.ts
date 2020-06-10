@@ -39,8 +39,8 @@ export class PhenomenonDetection2Component implements OnInit {
    * with dialog message.
    */
   getResults() {
-    this.array = this.phenomService.getArray();
-    console.log(this.array);
+    this.array = this.phenomService.getArray(); // It gets the selected fitlers from the previous phenomenon page
+    //In the case the user hasn't selected any of filters, it shows a warning dialog message
     if (this.array[0] == false && this.array[1] == false && this.array[2] == false && this.array[3] == false
       && this.array[4] == false && this.array[5] == false && this.array[6] == false && this.array[7] == false
       && this.array[8] == false && this.array[9] == false && this.shape == false && this.size == false &&
@@ -48,6 +48,7 @@ export class PhenomenonDetection2Component implements OnInit {
       && this.ashore == false && this.ashoreInSlope == false && this.ashoreWithAltitude == false) {
       this.phenom2Service.openModalWarning();
     }
+    //In the case the user has selected a filter or filters, it sends the http request to API with the chosen filters
     else {
       var content = {
         "fire": this.array[0], "flood": this.array[1], "tornado": this.array[2], "snow": this.array[3],
@@ -61,8 +62,8 @@ export class PhenomenonDetection2Component implements OnInit {
         this.results = data;
         this.phenom2Service.openModalResults(this.results);
       },
-        error => { //in the case of non successful response, it shows an alert message with the error
-          this.results=null;
+        error => { //in the case of non successful response, it shows a dialog message
+          this.results = null;
           this.phenom2Service.openModalResults(this.results);
         });
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {MainViewService} from './main-view.service';
+import { MainViewService } from './main-view.service';
 
 @Component({
   selector: 'app-main-view',
@@ -9,43 +9,46 @@ import {MainViewService} from './main-view.service';
 })
 export class MainViewComponent implements OnInit {
 
-  logo='./assets/logo.png';
-  textImage='./assets/text-image.png';
-  fileToUpload=null;
-  imageUrl=null;
-  file=null;
-  fileData;
-  image;
+  logo = './assets/logo.png';
+  textImage = './assets/text-image.png';
+  fileToUpload = null;
+  imageUrl = null;
+  file = null;
 
   constructor(private router: Router, private service: MainViewService) { }
 
   ngOnInit(): void {
-    this.imageUrl=sessionStorage.getItem('url');
-    //this.image=sessionStorage.getItem('image');
-    this.service.passUrl(this.imageUrl, this.fileToUpload);
+    this.imageUrl = sessionStorage.getItem('url'); // It gets the imageUrl from the session storage
+    this.service.passUrl(this.imageUrl, this.fileToUpload); 
   }
-  ngOnDestroy(){
-    sessionStorage.removeItem('url');
+  ngOnDestroy() {
+    sessionStorage.removeItem('url'); //It deletes the url after end of session
   }
-  /** Function which opens a file chooser after clicking on "Open" choice in menu */
-  openInput(){ 
+  /** 
+   * Function which opens a file chooser after clicking on "Open" choice in menu 
+   **/
+  openInput() {
     document.getElementById("fileInput").click();
   }
-  /** Function which gets the image choice of user */
-  handleFileInput(file: FileList){
-    this.fileToUpload=file.item(0);
+  /**
+   * Function which gets the image choice of user
+   **/
+  handleFileInput(file: FileList) {
+    this.fileToUpload = file.item(0);
     var reader = new FileReader();
-    reader.onload=(event:any)=>{
-      this.imageUrl=event.target.result;
-      sessionStorage.setItem('url',this.imageUrl);
+    reader.onload = (event: any) => {
+      this.imageUrl = event.target.result;
+      sessionStorage.setItem('url', this.imageUrl);
       this.service.passUrl(this.imageUrl, this.fileToUpload);
     }
     reader.readAsDataURL(this.fileToUpload);
   }
-  /** Function which closes the opened input image */
-  closeInput(){
-    this.fileToUpload=null;
-    this.imageUrl=null;
+  /**
+   * Function which closes the opened input image 
+   **/
+  closeInput() {
+    this.fileToUpload = null;
+    this.imageUrl = null;
   }
- 
+
 }

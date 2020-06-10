@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import {PhenomenonDetectionService} from './phenomenon-detection.service';
+import { PhenomenonDetectionService } from './phenomenon-detection.service';
 
 @Component({
   selector: 'app-phenomenon-detection',
@@ -11,28 +11,28 @@ import {PhenomenonDetectionService} from './phenomenon-detection.service';
 export class PhenomenonDetectionComponent implements OnInit {
 
   //They contain the values of each one of the checkboxes of filters
-  fire=false;
-  flood=false;
-  hurricane=false;
-  snow=false;
-  rain=false;
-  wind=false;
-  hail=false;
-  pollution=false;
-  balllightning=false;
-  ingredients=false;
-  array:boolean[]=new Array; //It contains the values of all checkboxes
+  fire = false;
+  flood = false;
+  hurricane = false;
+  snow = false;
+  rain = false;
+  wind = false;
+  hail = false;
+  pollution = false;
+  balllightning = false;
+  ingredients = false;
+  array: boolean[] = new Array; //It contains the values of all checkboxes
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  constructor(private router:Router, public phenomService:PhenomenonDetectionService){}
- 
+  constructor(private router: Router, public phenomService: PhenomenonDetectionService) { }
+
   /**
    * The function collects the selected filters and adds them in an array
    * and passes them to another function
    */
-  onClick(){
+  onClick() {
     this.array.push(this.fire);
     this.array.push(this.flood);
     this.array.push(this.hurricane);

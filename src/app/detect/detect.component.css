@@ -1,24 +1,13 @@
 .detect{
-    font-size:25px;
-    margin-top:80%;
- }
- #nextButton{
-    background-color: #808080;
-    color:white;
-    margin: 0 auto; 
-    display: block;
- }
- .item{
-   font-size: 17px;
- }
-
- .alert-error-text {
-   color: white;
-   font-weight: bold;
-   text-align:center;
+   font-size:25px;
+   margin-top:80%;
 }
-.alert-success-text {
-   color: green;
-   font-weight: bold;
-   text-align:center;
+#nextButton{
+   background-color: #808080;
+   color:white;
+   margin: 0 auto; 
+   display: block;
+}
+.item{
+   font-size: 17px;
 }

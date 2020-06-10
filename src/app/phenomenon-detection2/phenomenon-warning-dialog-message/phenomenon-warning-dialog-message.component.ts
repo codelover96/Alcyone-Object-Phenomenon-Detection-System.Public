@@ -13,6 +13,9 @@ export class PhenomenonWarningDialogMessageComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Function which closes the dialog message after click on the button
+   */
   onClick(){
     this.dialogRef.close();
   }

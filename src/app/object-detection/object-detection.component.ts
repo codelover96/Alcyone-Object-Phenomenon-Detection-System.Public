@@ -77,17 +77,21 @@ export class ObjectDetectionComponent implements OnInit {
   onChangeSpecificShape(event: MatCheckboxChange) {
     this.markedSpecificShape = event.checked;
   }
-  /**The function gets the selected filters and passes them with the var content to the
+
+  /**
+   * The function gets the selected filters and passes them with the var content to the
    * function which carries out the http request. After successful request, it shows the response
    * with dialog message.
    */
   onClick() {
+    //In the case the user hasn't selected any of filters, it shows a warning dialog message
     if (this.markedShape == false && this.markedSize == false && this.markedSea == false && this.markedAshore == false
       && this.markedAshoreInSlope == false && this.markedAshorewAlt == false && this.markedSpecificShape == false && this.markedSpecificSize == false) {
       this.objectService.openModalWarning();
     }
+    //In the case the user has selected a filter or filters, it sends the http request to API with the chosen filters
     else {
-      this.url = this.mainviewService.getUrl();
+      this.url = this.mainviewService.getUrl(); // It gets the image url
       this.width = parseInt((document.getElementById("width") as HTMLInputElement).value);
       this.height = parseInt((document.getElementById("height") as HTMLInputElement).value);
       this.shapeValueInput = ((document.getElementById("selectShape") as HTMLSelectElement).innerText);
@@ -100,7 +104,7 @@ export class ObjectDetectionComponent implements OnInit {
         this.results = data;
         this.objectService.openModalResults(this.results, this.width, this.height, this.shapeValueInput);
       },
-        error => { //in the case of non successful response , it shows an alert message with the error
+        error => { //in the case of non successful response, it shows a dialog message
           this.results = null;
           this.objectService.openModalResults(this.results, this.width, this.height, this.shapeValueInput);
         });

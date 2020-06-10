@@ -10,9 +10,9 @@ import { ObjectWarningDialogMessageComponent } from './object-warning-dialog-mes
 @Injectable()
 export class ObjectDetectionService {
     router: Router;
-    file;
-    size:string;
-    shape:string;
+    image: any; //It contains the selected image
+    size:string; //It contains the specific size which user has given
+    shape:string; //It contains the specific shape which user has given
 
     constructor(public dialog: MatDialog,private http: HttpClient, private mainviewService : MainViewService) {}
 
@@ -28,6 +28,9 @@ export class ObjectDetectionService {
         const dialogRef = this.dialog.open(ObjectResultsDialogMessageComponent, dialogConfig);
         dialogRef.afterClosed().subscribe(result => { });
     }
+    /**
+     * Function which opens the warning modal message in the case of no selected filter/filters
+     */
     openModalWarning(){
         const dialogConfig = new MatDialogConfig();
         dialogConfig.autoFocus = true;
@@ -36,17 +39,16 @@ export class ObjectDetectionService {
         dialogRef.afterClosed().subscribe(result => { });
     }
     /**
-     * Function which carries out the post request passing the chosen filters
+     * Function which carries out the post request passing the chosen filters and the image
      * @param content the chosen filters
      */
     postFilters(content): Observable<any>{
-        //const headers = {'content-type': 'application/json'}
-        this.file=this.mainviewService.getFile();
+        this.image=this.mainviewService.getFile();
         const headers = {'content-type': 'multipart/form-data'};
         const jsonData=JSON.stringify(content);
         let formdata: FormData = new FormData();
         formdata.append('object',jsonData);
-        formdata.append('file',this.file);
+        formdata.append('image',this.image);
         return this.http.post('${environment.apiUrl}/object-detection',jsonData,{'headers':headers});
     }
     

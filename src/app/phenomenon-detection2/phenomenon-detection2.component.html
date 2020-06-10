@@ -21,8 +21,4 @@
         <br><br>
     </div>
     <button mat-raised-button id="goButton" (click)="getResults()">Go</button>
-    <div id="alert-message"
-        [ngClass]="{'alert-error-text' : alertMessage.type === 'error', 'alert-success-text' : alertMessage.type === 'success'}"
-        *ngIf="alertMessage">{{alertMessage.text}}
-    </div>
 </div>

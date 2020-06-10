@@ -1,38 +1,42 @@
 <div class="container">
-        <mat-sidenav mode="side" #sidenav opened class="sideBar">
-            <div>
-                <router-outlet></router-outlet>
-            </div>
-        </mat-sidenav>
-        <mat-toolbar class="topBar" role="heading">
-            <a routerLink="/home"><img [src]="logo" id="logo"></a>
-            <div class="items">
-                <button mat-button [matMenuTriggerFor]="file" class="topItem">File</button>
-                <mat-menu #file="matMenu" yPosition="above">
-                    <button mat-menu-item (click)="openInput()">Open picture</button>
-                    <input hidden type="file" id="fileInput" #Image accept="image/*"
-                        (change)="handleFileInput($event.target.files)">
-                    <button mat-menu-item (click)="closeInput()">Close picture</button>
-                </mat-menu>
-                <button mat-button [matMenuTriggerFor]="edit" class="topItem">Edit</button>
-                <mat-menu #edit="matMenu" yPosition="above">
-                    <button mat-menu-item>Add a tag to detected object</button>
-                    <button mat-menu-item>Add day and time to detected object and phenomenon</button>
-                </mat-menu>
-                <button mat-button [matMenuTriggerFor]="tools" class="topItem">Tools</button>
-                <mat-menu #tools="matMenu" yPosition="above">
-                    <button mat-menu-item>Calculate the distance between two objects</button>
-                    <button mat-menu-item>Calculate latitude and longitude</button>
-                    <button mat-menu-item>Create statistics for a phenomenon</button>
-                </mat-menu>
-                <button mat-button [matMenuTriggerFor]="help" class="topItem">Help</button>
-                <mat-menu #help="matMenu" yPosition="above">
-                    <button mat-menu-item>Item 1</button>
-                    <button mat-menu-item>Item 2</button>
-                </mat-menu>
-                <span class="filler"></span>
-            </div>
-        </mat-toolbar>
-        <div *ngIf="imageUrl==null"><img [src]="textImage" class="text" *ngIf="imageUrl==null"></div>
-        <img [src]="imageUrl" class="image" *ngIf="imageUrl!=null">
+    <mat-sidenav mode="side" #sidenav opened class="sideBar">
+        <!-- Side navigation bar -->
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav>
+    <!-- Top toolbar -->
+    <mat-toolbar class="topBar" role="heading">
+        <a routerLink="/home"><img [src]="logo" id="logo"></a>
+        <div class="items">
+            <button mat-button [matMenuTriggerFor]="file" class="topItem">File</button>
+            <mat-menu #file="matMenu" yPosition="above">
+                <button mat-menu-item (click)="openInput()">Open picture</button>
+                <input hidden type="file" id="fileInput" #Image accept="image/*"
+                    (change)="handleFileInput($event.target.files)">
+                <button mat-menu-item (click)="closeInput()">Close picture</button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="edit" class="topItem">Edit</button>
+            <mat-menu #edit="matMenu" yPosition="above">
+                <button mat-menu-item>Add a tag to detected object</button>
+                <button mat-menu-item>Add day and time to detected object and phenomenon</button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="tools" class="topItem">Tools</button>
+            <mat-menu #tools="matMenu" yPosition="above">
+                <button mat-menu-item>Calculate the distance between two objects</button>
+                <button mat-menu-item>Calculate latitude and longitude</button>
+                <button mat-menu-item>Create statistics for a phenomenon</button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="help" class="topItem">Help</button>
+            <mat-menu #help="matMenu" yPosition="above">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+            <span class="filler"></span>
+        </div>
+    </mat-toolbar>
+    <!-- Text-image which is displayed only when the user hasn't selected an image yet -->
+    <div *ngIf="imageUrl==null"><img [src]="textImage" class="text" *ngIf="imageUrl==null"></div>
+    <!-- Image for detection -->
+    <img [src]="imageUrl" class="image" *ngIf="imageUrl!=null">
 </div>

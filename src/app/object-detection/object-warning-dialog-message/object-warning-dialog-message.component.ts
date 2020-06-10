@@ -13,8 +13,11 @@ export class ObjectWarningDialogMessageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onClick(){
+  
+  /**
+   * Function which closes the dialog message after click on the button
+   */
+  onClick() {
     this.dialogRef.close();
   }
 }

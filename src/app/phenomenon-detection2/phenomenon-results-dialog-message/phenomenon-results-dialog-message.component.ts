@@ -35,11 +35,13 @@ export class PhenomenonResultsDialogMessageComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<PhenomenonResultsDialogMessageComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-    if (data== null) {
+    //If there are no results from the detection, the boolean variable becomes true
+    if (data == null) {
       this.noResults = true;
     }
     else {
-      this.results=data;
+      this.results = data;
+      // If the user hasn't asked for this attribute, it contains -1, otherwise it contains the true/false value
       this.fire = ((this.results[0].fire == '') ? -1 : JSON.parse(this.results[0].fire));
       this.flood = ((this.results[0].flood == '') ? -1 : JSON.parse(this.results[0].flood));
       this.hurricane = ((this.results[0].hurricane == '') ? -1 : JSON.parse(this.results[0].hurricane));
@@ -50,7 +52,7 @@ export class PhenomenonResultsDialogMessageComponent implements OnInit {
       this.wind = ((this.results[0].wind == '') ? -1 : JSON.parse(this.results[0].wind));
       this.pollution = ((this.results[0].pollution == '') ? -1 : JSON.parse(this.results[0].pollution));
       this.ingredients = this.results[0].ingredients;
-      this.shape = this.results[0].shape;
+      this.shape = this.results[0].shape; // It gets a string value 
       this.size = this.results[0].size;
       this.speed = this.results[0].speed;
       this.altitude = this.results[0].altitude;

@@ -1,7 +1,7 @@
 <!-- The dialog message -->
 <div class="custom-dialog">
 	<h2 mat-dialog-title class="title" *ngIf="!noResults">Results</h2>
-	<!-- The results of search -->
+	<!-- TIn the case of results it shows them with the form "Attribute: Result" -->
 	<mat-dialog-content *ngIf="!noResults">
 		<p *ngIf="this.size!=''">Size: {{this.size}}</p>
 		<p *ngIf="this.shape!=''">Shape: {{this.shape}}</p>
@@ -34,6 +34,7 @@
 			</mat-icon>
 		</p>
 	</mat-dialog-content>
+	<!-- In the case of no results it shows the relevant message -->
 	<mat-dialog-content *ngIf="noResults">
 		<p class="text">
 			<mat-icon class="icon">sentiment_very_dissatisfied</mat-icon>No results with these filters found.

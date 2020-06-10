@@ -19,8 +19,7 @@
    left: 0;
    align-items: center;
    justify-content: center;
-   height:100vh;
-   
+   height:100vh;  
 }
 .topBar { 
    background-color:	#808080;
@@ -28,7 +27,6 @@
    position: fixed;
    z-index: 2;
 }
-
 .topItem{
    font-size: 20px;
 }
