@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatCheckboxChange } from '@angular/material/checkbox';
 import { PhenomenonDetectionService } from './phenomenon-detection.service';
 
 @Component({

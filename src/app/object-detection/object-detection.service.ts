@@ -43,12 +43,8 @@ export class ObjectDetectionService {
      * @param content the chosen filters
      */
     postFilters(content): Observable<any>{
-        this.image=this.mainviewService.getFile();
-        const headers = {'content-type': 'multipart/form-data'};
+        const headers = {'content-type':'application/json'}; 
         const jsonData=JSON.stringify(content);
-        let formdata: FormData = new FormData();
-        formdata.append('object',jsonData);
-        formdata.append('image',this.image);
         return this.http.post('${environment.apiUrl}/object-detection',jsonData,{'headers':headers});
     }
     

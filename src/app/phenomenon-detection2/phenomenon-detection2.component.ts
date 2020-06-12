@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PhenomenonDetection2Service } from './phenomenon-detection2.service';
 import { PhenomenonDetectionService } from '../phenomenon-detection/phenomenon-detection.service';
 import { HttpClient } from '@angular/common/http';
+import { MainViewService } from '../main-view/main-view.service';
 
 @Component({
   selector: 'app-phenomenon-detection2',
@@ -24,9 +25,10 @@ export class PhenomenonDetection2Component implements OnInit {
   ashoreInSlope = false;
   results: any; //It contains the responsed results from the http request
   array: boolean[] = new Array; //It contains the selected filters
+  url: any; //It contains the url of the selected image
 
   constructor(public phenomService: PhenomenonDetectionService, public phenom2Service: PhenomenonDetection2Service,
-    private http: HttpClient) { }
+    private http: HttpClient, private mainviewService: MainViewService) { }
 
   ngOnInit(): void {
   }
@@ -50,8 +52,9 @@ export class PhenomenonDetection2Component implements OnInit {
     }
     //In the case the user has selected a filter or filters, it sends the http request to API with the chosen filters
     else {
+      this.url = this.mainviewService.getUrl(); // It gets the image url
       var content = {
-        "fire": this.array[0], "flood": this.array[1], "tornado": this.array[2], "snow": this.array[3],
+        "url": this.url, "fire": this.array[0], "flood": this.array[1], "tornado": this.array[2], "snow": this.array[3],
         "rain": this.array[4], "balllightning": this.array[5], "hail": this.array[6], "wind": this.array[7],
         "pollution": this.array[8], "ingredients": this.array[9], "shape": this.shape, "size": this.size,
         "altitude": this.altitude, "direction": this.direction, "footprint": this.footprint,

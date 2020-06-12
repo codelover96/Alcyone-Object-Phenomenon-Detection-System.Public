@@ -41,13 +41,8 @@ export class PhenomenonDetection2Service {
    * @param content the chosen filters
    */
   postFilters(content): Observable<any> {
-    this.image = this.mainviewService.getFile();
-    console.log(this.image);
-    const headers = { 'content-type': 'multipart/form-data' };
-    const jsonData = JSON.stringify(content);
-    let formdata: FormData = new FormData();
-    formdata.append('phenomenon', jsonData);
-    formdata.append('image', this.image);
+    const headers = {'content-type':'application/json'}; 
+    const jsonData=JSON.stringify(content);
     return this.http.post('${environment.apiUrl}/phenomenon-detection', jsonData, { 'headers': headers });
   }
 

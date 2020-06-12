@@ -2,14 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { ObjectDetectionService } from './object-detection.service';
 import { HttpClient } from '@angular/common/http';
-import { AlertService } from '../core/alert.service';
-import { Subscription } from 'rxjs';
 import { MainViewService } from '../main-view/main-view.service';
-
-interface AlertMessage {
-  type: string;
-  text: string;
-}
 
 @Component({
   selector: 'app-object-detection',
@@ -30,28 +23,14 @@ export class ObjectDetectionComponent implements OnInit {
   width: number;
   height: number;
   shapeValueInput;
-  results; //It contains the responsed results from the http request
-  alertMessage: AlertMessage;
-  alertSubscription: Subscription;
-  url;
+  results: any; //It contains the responsed results from the http request
+  url: any; //It contains the url of selected image
 
 
-  constructor(public objectService: ObjectDetectionService, private http: HttpClient,
-    private alertService: AlertService, private mainviewService: MainViewService) { }
+  constructor(public objectService: ObjectDetectionService, private http: HttpClient, private mainviewService: MainViewService) { }
 
-  ngOnInit(): void {
-    this.alertSubscription = this.alertService.getMessage().subscribe(value => {
-      if (value !== undefined) {
-        this.alertMessage = {
-          type: value.type,
-          text: value.text
-        };
-      }
-    });
-  }
-  ngOnDestroy() {
-    this.alertSubscription.unsubscribe();
-  }
+  ngOnInit(): void { }
+
   /**The following functions get the values of the filters' checkboxes */
   onChangeShape(event: MatCheckboxChange) {
     this.markedShape = event.checked;
