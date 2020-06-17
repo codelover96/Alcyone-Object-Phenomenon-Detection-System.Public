@@ -50,5 +50,7 @@ export class MainViewComponent implements OnInit {
     this.fileToUpload = null;
     this.imageUrl = null;
   }
-
+  onClickContact(){
+    this.service.openModalContact();
+  }
 }

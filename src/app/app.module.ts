@@ -25,6 +25,7 @@ import { ObjectWarningDialogMessageComponent } from './object-detection/object-w
 import { DetectWarningDialogMessageComponent } from './detect/detect-warning-dialog-message/detect-warning-dialog-message.component';
 import { DetectService } from './detect/detect.service';
 import { PhenomenonWarningDialogMessageComponent } from './phenomenon-detection2/phenomenon-warning-dialog-message/phenomenon-warning-dialog-message.component';
+import { ContactDialogMessageComponent } from './main-view/contact-dialog-message/contact-dialog-message.component';
 
 @NgModule({
    declarations: [
@@ -40,7 +41,8 @@ import { PhenomenonWarningDialogMessageComponent } from './phenomenon-detection2
       FooterComponent,
       ObjectWarningDialogMessageComponent,
       DetectWarningDialogMessageComponent,
-      PhenomenonWarningDialogMessageComponent
+      PhenomenonWarningDialogMessageComponent,
+      ContactDialogMessageComponent
       
    ],
    imports: [

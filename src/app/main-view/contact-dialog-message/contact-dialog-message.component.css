@@ -1,0 +1,12 @@
+mat-dialog-content{
+    font-size:20px;
+    font-weight: normal;
+    color:#808080;
+    display:wrap;
+}
+.button{
+    background-color:#666666;
+    color:white;
+    margin:0 auto;
+    display:block;
+}
