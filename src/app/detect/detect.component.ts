@@ -24,19 +24,14 @@ export class DetectComponent implements OnInit {
    */
   onClick() {
     this.url = this.mainviewService.getUrl();
-    if (this.url != null) {
-      if (this.detect == "Object") {
-        this.router.navigate(['/main/object-detection']);
-      }
-      else if (this.detect == "Phenomenon") {
-        this.router.navigate(['/main/phenomenon-detection']);
-      }
-      else { //If the user didn't select object or phenomenon it shows a warning dialog message
-        this.detectService.openModalWarning("No choice");
-      }
+    if (this.detect == "Object") {
+      this.router.navigate(['/main/object-detection']);
     }
-    else { //If the user didn't select an image it shows a warning dialog message
-      this.detectService.openModalWarning("No url");
+    else if (this.detect == "Phenomenon") {
+      this.router.navigate(['/main/phenomenon-detection']);
+    }
+    else { //If the user didn't select object or phenomenon it shows a warning dialog message
+      this.detectService.openModalWarning("No choice");
     }
   }
 }
