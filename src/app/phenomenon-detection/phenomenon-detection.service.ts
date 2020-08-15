@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class PhenomenonDetectionService {
 
-    array: boolean[]; //It contains the values of all checkboxes
+    array: boolean[]; // It contains the values of all checkboxes
 
     constructor() { }
 

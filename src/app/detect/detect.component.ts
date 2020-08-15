@@ -11,7 +11,7 @@ import { DetectService } from './detect.service';
 export class DetectComponent implements OnInit {
 
   detect: any; // It contains the choice of user. It may be either "Object" or "Phenomenon".
-  url: any; //It contains the url of selected image 
+  url: any; // It contains the url of selected image
 
   constructor(private router: Router, private mainviewService: MainViewService, private detectService: DetectService) { }
 
@@ -24,14 +24,12 @@ export class DetectComponent implements OnInit {
    */
   onClick() {
     this.url = this.mainviewService.getUrl();
-    if (this.detect == "Object") {
+    if (this.detect === 'Object') {
       this.router.navigate(['/main/object-detection']);
-    }
-    else if (this.detect == "Phenomenon") {
+    } else if (this.detect === 'Phenomenon') {
       this.router.navigate(['/main/phenomenon-detection']);
-    }
-    else { //If the user didn't select object or phenomenon it shows a warning dialog message
-      this.detectService.openModalWarning("No choice");
+    } else { // If the user didn't select object or phenomenon it shows a warning dialog message
+      this.detectService.openModalWarning('No choice');
     }
   }
 }

@@ -4,13 +4,14 @@ import { PhenomenonResultsDialogMessageComponent } from './phenomenon-results-di
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { MainViewService } from '../main-view/main-view.service'
+import { MainViewService } from '../main-view/main-view.service';
 import { PhenomenonWarningDialogMessageComponent } from './phenomenon-warning-dialog-message/phenomenon-warning-dialog-message.component';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class PhenomenonDetection2Service {
   router: Router;
-  image: any; //It contains the selected image
+  image: any; // It contains the selected image
 
   constructor(public dialog: MatDialog, private http: HttpClient, private mainviewService: MainViewService) { }
 
@@ -41,9 +42,10 @@ export class PhenomenonDetection2Service {
    * @param content the chosen filters
    */
   postFilters(content): Observable<any> {
-    const headers = {'content-type':'application/json'}; 
-    const jsonData=JSON.stringify(content);
-    return this.http.post('${environment.apiUrl}/phenomenon-detection', jsonData, { 'headers': headers });
+    const API_URL = environment.apiUrl;
+    const headers = {'content-type': 'application/json'};
+    const jsonData = JSON.stringify(content);
+    return this.http.post(API_URL + '/phenomenon-detection', jsonData, { headers });
   }
 
 

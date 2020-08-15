@@ -7,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  image='./assets/image.jpeg';
+  image = './assets/image.jpeg';
 
   constructor() {}
 
   ngOnInit(): void {}
-  
 }

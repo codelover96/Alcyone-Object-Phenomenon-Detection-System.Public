@@ -9,15 +9,14 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class PhenomenonWarningDialogMessageComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<PhenomenonWarningDialogMessageComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {}
 
   /**
    * Function which closes the dialog message after click on the button
    */
-  onClick(){
+  onClickOK() {
     this.dialogRef.close();
   }
-
 }

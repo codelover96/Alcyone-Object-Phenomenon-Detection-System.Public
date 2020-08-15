@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { ContactDialogMessageComponent } from './contact-dialog-message/contact-dialog-message.component';
+import {Injectable} from '@angular/core';
+import {MatDialogConfig, MatDialog} from '@angular/material/dialog';
+import {ContactDialogMessageComponent} from './contact-dialog-message/contact-dialog-message.component';
 
 @Injectable()
 export class MainViewService {
 
-    url: any; //It contains the url of selected image
+    url: any; // It contains the url of selected image
 
-    constructor(public dialog: MatDialog) { }
+    constructor(public dialog: MatDialog) {}
 
     /**
      * Function which gets the selected image url and file
@@ -17,13 +17,15 @@ export class MainViewService {
     passUrl(url) {
         this.url = url;
     }
+
     /**
      * Function which returns the image url
      */
     getUrl() {
         return this.url;
     }
-    /** Function which creates the contact dialog message according 
+
+    /** Function which creates the contact dialog message according
      * @param error the error content
      */
     openModalContact() {
@@ -31,6 +33,7 @@ export class MainViewService {
         dialogConfig.autoFocus = true;
         dialogConfig.minWidth = 400;
         const dialogRef = this.dialog.open(ContactDialogMessageComponent, dialogConfig);
-        dialogRef.afterClosed().subscribe(result => { });
+        dialogRef.afterClosed().subscribe(result => {
+        });
     }
-}   
+}

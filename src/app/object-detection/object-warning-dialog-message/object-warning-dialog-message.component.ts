@@ -9,11 +9,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ObjectWarningDialogMessageComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<ObjectWarningDialogMessageComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
   }
-  
+
   /**
    * Function which closes the dialog message after click on the button
    */

@@ -9,15 +9,16 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class ContactDialogMessageComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<ContactDialogMessageComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+              @Inject(MAT_DIALOG_DATA) public data: any) {}
 
-  ngOnInit(): void {
-  }
-   /**
+  ngOnInit(): void {}
+
+  /**
    * Function which closes the dialog message after click on the button
    */
   onClick() {
     this.dialogRef.close();
   }
 
+  onClickOK() {}
 }

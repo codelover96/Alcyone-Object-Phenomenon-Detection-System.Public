@@ -16,9 +16,9 @@ import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
-  imports: [ 
-    MatButtonModule, 
-    MatIconModule, 
+  imports: [
+    MatButtonModule,
+    MatIconModule,
     MatMenuModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -29,8 +29,8 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogModule
   ],
   exports: [
-    MatButtonModule, 
-    MatIconModule, 
+    MatButtonModule,
+    MatIconModule,
     MatMenuModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -42,7 +42,7 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     MatDialogModule,
     MatTableModule
-  ]    
+  ]
 })
 
 export class MaterialModule {}

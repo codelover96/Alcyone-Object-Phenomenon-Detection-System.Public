@@ -8,8 +8,7 @@ import { PhenomenonDetectionService } from './phenomenon-detection.service';
   styleUrls: ['./phenomenon-detection.component.css']
 })
 export class PhenomenonDetectionComponent implements OnInit {
-
-  //They contain the values of each one of the checkboxes of filters
+  // They contain the values of each one of the checkboxes of filters
   fire = false;
   flood = false;
   hurricane = false;
@@ -20,7 +19,7 @@ export class PhenomenonDetectionComponent implements OnInit {
   pollution = false;
   balllightning = false;
   ingredients = false;
-  array: boolean[] = new Array; //It contains the values of all checkboxes
+  array: boolean[] = []; // It contains the values of all checkboxes
 
 
   ngOnInit(): void { }

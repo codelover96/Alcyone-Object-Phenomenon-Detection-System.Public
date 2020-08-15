@@ -43,7 +43,7 @@ import { ContactDialogMessageComponent } from './main-view/contact-dialog-messag
       DetectWarningDialogMessageComponent,
       PhenomenonWarningDialogMessageComponent,
       ContactDialogMessageComponent
-      
+
    ],
    imports: [
       MaterialModule,
@@ -57,9 +57,8 @@ import { ContactDialogMessageComponent } from './main-view/contact-dialog-messag
    providers: [{provide: APP_BASE_HREF, useValue: ''}, ObjectDetectionService, PhenomenonDetectionService, PhenomenonDetection2Service,
    DetectService, MainViewService],
    bootstrap: [AppComponent],
-   entryComponents : [ObjectResultsDialogMessageComponent,PhenomenonResultsDialogMessageComponent, DetectWarningDialogMessageComponent, 
+   entryComponents : [ObjectResultsDialogMessageComponent, PhenomenonResultsDialogMessageComponent, DetectWarningDialogMessageComponent,
       ObjectWarningDialogMessageComponent, PhenomenonWarningDialogMessageComponent]
 })
-export class AppModule { 
-   
-}
+
+export class AppModule {}

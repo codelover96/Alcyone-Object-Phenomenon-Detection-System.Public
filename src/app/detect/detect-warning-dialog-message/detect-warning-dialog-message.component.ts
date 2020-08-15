@@ -8,18 +8,17 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DetectWarningDialogMessageComponent implements OnInit {
 
-  noChoice: boolean = false; // It contains if there is a choice or not (phenomenon or object)
-  noUrl: boolean = false; // It contains if there is a url of image choice or not
+  noChoice = false; // It contains if there is a choice or not (phenomenon or object)
+  noUrl = false; // It contains if there is a url of image choice or not
 
   constructor(public dialogRef: MatDialogRef<DetectWarningDialogMessageComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
-    // It sets the boolean variables according the error content 
-    if (this.data == "No choice") {
+    // It sets the boolean variables according the error content
+    if (this.data === 'No choice') {
       this.noChoice = true;
-    }
-    else if (this.data == "No url") {
+    } else if (this.data === 'No url') {
       this.noUrl = true;
     }
   }
