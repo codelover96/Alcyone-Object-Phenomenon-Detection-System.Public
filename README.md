@@ -12,12 +12,11 @@ models to recognize and dictate objects like ships, oil spills, fire and smoke o
 *Alcyone* is the senior thesis of Eirini Mitsa and Costas Patsaras, students at Informatics Department of Aristotle
 University of Thessaloniki.
 
-# | Eirini Mitsa | Costas Patsaras
------------- | ------------ | ------------
-mail| mitsaeirini@csd.auth.gr | patsarask@csd.auth.gr
-website|-|costaspatsaras.me
-github| mitsaeirini | @codelover96
-
+| # | Eirini Mitsa | Costas Patsaras |
+| ------------ | ------------ | ------------ |
+| mail | mitsaeirini@csd.auth.gr | patsarask@csd.auth.gr |
+| website |---| costaspatsaras.me |
+| github | mitsaeirini | @codelover96 |
 #### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change
