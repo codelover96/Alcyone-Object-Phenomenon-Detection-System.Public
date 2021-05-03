@@ -6,7 +6,7 @@
 
 *Alcyone* is a machine learning system for object and phenomenon detection. Utilizes state of the art machine learning
 models to recognize and dictate objects like ships, oil spills, fire and smoke on satellite image data.
-
+![Alcyone Home Page Screenshot](https://github.com/codelover96/Alcyone-Object-Phenomenon-Detection-System/blob/main/screenshot.PNG)
 #### Authors
 
 *Alcyone* is the senior thesis of Eirini Mitsa and Costas Patsaras, students at Informatics Department of Aristotle
