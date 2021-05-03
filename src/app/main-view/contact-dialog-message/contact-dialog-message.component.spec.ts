@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ContactDialogMessageComponent } from './contact-dialog-message.component';
+import {ContactDialogMessageComponent} from './contact-dialog-message.component';
 
 describe('ContactDialogMessageComponent', () => {
-  let component: ContactDialogMessageComponent;
-  let fixture: ComponentFixture<ContactDialogMessageComponent>;
+    let component: ContactDialogMessageComponent;
+    let fixture: ComponentFixture<ContactDialogMessageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ContactDialogMessageComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ContactDialogMessageComponent]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ContactDialogMessageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(ContactDialogMessageComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

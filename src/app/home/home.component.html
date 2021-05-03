@@ -1,11 +1,27 @@
 <!-- Main content of page with the picture and the button -->
-<div>
-    <img [src]="image" id="image">
-    <div>
-        <p id="p1"><i>Welcome to Alcyone</i></p>
-        <p id="p2">Let's detect an object or a phenomenon.</p><br>
-        <div>
-            <button mat-raised-button routerLink="/main" id="button">Go</button>
+<div class="background-image home-container">
+    <!--<img [src]="image" id="image">-->
+    <div fxLayout="column" fxFlex="0 0" class="inner-home-container">
+        <div class="home-border">
+            <div class="welcome">
+                <p class="mat-display-1" id="p1">Welcome to Alcyone!</p>
+            </div>
+        </div>
+        <div class="home-border">
+            <div class="cta-go">
+                <p class="mat-subheader" id="p2">Let's detect an object or a phenomenon</p><br>
+                <div class="cta-button">
+                    <a id="button" mat-raised-button routerLink="/main"><b>Start</b></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<!--
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile><h4 class="mat-display-1">Welcome to Alcyone</h4></mat-grid-tile>
+    <mat-grid-tile><h1 class="mat-display-1"></h1></mat-grid-tile>
+    <mat-grid-tile><h1 class="mat-display-1"></h1></mat-grid-tile>
+    <mat-grid-tile><h1 class="mat-headline">Let's detect an object or a phenomenon</h1></mat-grid-tile>
+</mat-grid-list>
+-->

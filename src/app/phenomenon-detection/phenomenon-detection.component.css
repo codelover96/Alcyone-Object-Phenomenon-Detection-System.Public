@@ -1,18 +1,22 @@
 mat-form-field {
     margin-right: 12px;
 }
-.phenom{
-    margin-top:80px;
+
+.phenom {
+    margin-top: 80px;
 }
-#ingredients{
-    margin-left:10px;
+
+#ingredients {
+    margin-left: 10px;
 }
-#nextButton{
-    margin: 0 auto; 
+
+#nextButton {
+    margin: 0 auto;
     display: block;
     background-color: #808080;
-    color:white;
+    color: white;
 }
-#detect{
-    font-size:18px;
+
+#detect {
+    font-size: 18px;
 }

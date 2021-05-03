@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {MatDialogConfig, MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import {ContactDialogMessageComponent} from './contact-dialog-message/contact-dialog-message.component';
 
 @Injectable()
@@ -7,7 +7,8 @@ export class MainViewService {
 
     url: any; // It contains the url of selected image
 
-    constructor(public dialog: MatDialog) {}
+    constructor(public dialog: MatDialog) {
+    }
 
     /**
      * Function which gets the selected image url and file

@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class PhenomenonDetectionService {
 
     array: boolean[]; // It contains the values of all checkboxes
 
-    constructor() { }
+    constructor() {
+    }
 
     /**
      * Function which gets the values of checkboxes
@@ -14,6 +15,7 @@ export class PhenomenonDetectionService {
     sendArray(data) {
         this.array = data;
     }
+
     /**
      * Function which returns the values of checkboxes
      */

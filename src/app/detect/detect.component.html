@@ -1,9 +1,12 @@
 <!-- Side navigation bar -->
 <div class="content">
-  <mat-radio-group [(ngModel)]="detect">
-    <h1 class="detect">Detect</h1><br>
-    <mat-radio-button class="item" value="Object">Object</mat-radio-button><br>
-    <mat-radio-button class="item" value="Phenomenon">Phenomenon</mat-radio-button>
-  </mat-radio-group><br><br>
-  <button mat-raised-button id="nextButton" (click)="onClick()">Next</button><br>
+    <mat-radio-group [(ngModel)]="detect">
+        <h1 class="detect">Detect</h1><br>
+        <mat-radio-button class="item" value="Object">Object</mat-radio-button>
+        <br>
+        <mat-radio-button class="item" value="Phenomenon">Phenomenon</mat-radio-button>
+    </mat-radio-group>
+    <br><br>
+    <button (click)="onClick()" id="nextButton" mat-raised-button>Next</button>
+    <br>
 </div>

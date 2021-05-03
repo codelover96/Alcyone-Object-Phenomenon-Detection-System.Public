@@ -1,29 +1,35 @@
 mat-form-field {
     margin-right: 12px;
 }
-#width, #height{
-    width:80%;
+
+#width, #height {
+    width: 80%;
 }
-#goButton{
-    margin: 0 auto; 
+
+#goButton {
+    margin: 0 auto;
     display: block;
     background-color: #808080;
-    color:white;
+    color: white;
 
 }
-.search{
-    margin-top:15%;
+
+.search {
+    margin-top: 15%;
 }
-#appearance,#searchwith,#calculate{
-    font-size:18px;
+
+#appearance, #searchwith, #calculate {
+    font-size: 18px;
 }
+
 .alert-error-text {
     color: red;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
 }
+
 .alert-success-text {
     color: green;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
 }

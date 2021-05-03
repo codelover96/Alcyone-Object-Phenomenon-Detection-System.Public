@@ -1,50 +1,64 @@
 .filler {
-   flex: 1 1 auto;
+    flex: 1 1 auto;
 }
+
 ::ng-deep div.mat-menu-panel {
-   min-width: 112px;
-   max-width: 500px;
-   overflow: auto;
-   -webkit-overflow-scrolling: touch;
-   max-height: calc(100vh - 48px);
-   border-radius: 4px;
-   outline: 0;
+    min-width: 112px;
+    max-width: 500px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 48px);
+    border-radius: 4px;
+    outline: 0;
 }
+
 .sideBar {
-   width: 17%;
-   padding:12px;
-   background-color: #4b4276;
-   color:#fff;
-   position: fixed;
-   left: 0;
-   align-items: center;
-   justify-content: center;
-   height:100vh;  
+    width: 17%;
+    padding: 12px;
+    background-color: #4b4276;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
-.topBar { 
-   background-color:	#808080;
-   color:#fff;
-   position: fixed;
-   z-index: 2;
+
+.topBar {
+    background-color: #808080;
+    color: #fff;
+    position: fixed;
+    z-index: 2;
 }
-.topItem{
-   font-size: 20px;
+
+.topItem {
+    font-size: 20px;
 }
-.items{
-   margin-left:10px;
+
+.items {
+    margin-left: 10px;
 }
-#logo{
-   margin-left:-15px;
+
+#logo {
+    margin-left: -15px;
 }
-.image{
-   width:85vw;
-   height:100vh;
-   border:none;
-   outline:none;
-   margin-left:17%;
-   position: fixed;
+
+.image {
+    width: 85vw;
+    height: 100vh;
+    border: none;
+    outline: none;
+    margin-left: 17%;
+    position: fixed;
 }
-.text{
-   margin-left:35%;
-   margin-top:20%;
+
+.text {
+    margin-left: 35%;
+    margin-top: 20%;
+}
+
+#github-link{
+    text-decoration: none !important;
+    color: rgba(0, 0, 0, 0.87);
+    letter-spacing: normal;
 }

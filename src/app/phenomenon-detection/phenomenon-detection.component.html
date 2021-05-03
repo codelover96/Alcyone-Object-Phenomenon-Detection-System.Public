@@ -1,17 +1,27 @@
 <!-- The side navigation bar -->
 <div class="phenom">
     <p id="detect">Physical phenomena</p>
-    <mat-checkbox id="fire" value="Fire" [(ngModel)]="fire">Fire</mat-checkbox><br>
-    <mat-checkbox id="flood" value="Flood" [(ngModel)]="flood">Flood</mat-checkbox><br>
-    <mat-checkbox id="hurricane" value="Hurricane" [(ngModel)]="hurricane">Hurricane</mat-checkbox><br>
-    <mat-checkbox id="snow" value="Snow/Snowstorm" [(ngModel)]="snow">Snow/Snowstorm</mat-checkbox><br>
-    <mat-checkbox id="rain" value="Rain/Rainstorm" [(ngModel)]="rain">Rain/Rainstorm</mat-checkbox><br>
-    <mat-checkbox id="balllightning" value="Ball lightning" [(ngModel)]="balllightning">Ball lightning
-    </mat-checkbox><br>
-    <mat-checkbox id="hail" value="Hail" [(ngModel)]="hail">Hail</mat-checkbox><br>
-    <mat-checkbox id="wind" value="Wind/Windstorm" [(ngModel)]="wind">Wind/Windstorm</mat-checkbox><br>
-    <mat-checkbox id="pollution" value="pollution" [(ngModel)]="pollution">Pollution</mat-checkbox><br>
-    <mat-checkbox id="ingredients" value="Object's ingredients" [(ngModel)]="ingredients">Object's ingredients
-    </mat-checkbox><br><br>
+    <mat-checkbox [(ngModel)]="fire" id="fire" value="Fire">Fire</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="flood" id="flood" value="Flood">Flood</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="hurricane" id="hurricane" value="Hurricane">Hurricane</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="snow" id="snow" value="Snow/Snowstorm">Snow/Snowstorm</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="rain" id="rain" value="Rain/Rainstorm">Rain/Rainstorm</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="balllightning" id="balllightning" value="Ball lightning">Ball lightning
+    </mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="hail" id="hail" value="Hail">Hail</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="wind" id="wind" value="Wind/Windstorm">Wind/Windstorm</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="pollution" id="pollution" value="pollution">Pollution</mat-checkbox>
+    <br>
+    <mat-checkbox [(ngModel)]="ingredients" id="ingredients" value="Object's ingredients">Object's ingredients
+    </mat-checkbox>
+    <br><br>
 </div>
-<button mat-raised-button id="nextButton" routerLink="/main/phenomenon-detection2" (click)="onClick()">Next</button>
+<button (click)="onClick()" id="nextButton" mat-raised-button routerLink="/main/phenomenon-detection2">Next</button>

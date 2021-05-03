@@ -2,10 +2,10 @@
 <mat-dialog-content>
     <div>
         <mat-icon class="icon">warning</mat-icon>
-        <div class="text" *ngIf="noChoice">You haven't selected neither object nor phenomenon.</div>
-        <div class="text" *ngIf="noUrl">You haven't selected an image.</div>
+        <div *ngIf="noChoice" class="text">You haven't selected neither object nor phenomenon.</div>
+        <div *ngIf="noUrl" class="text">You haven't selected an image.</div>
     </div>
 </mat-dialog-content><br>
 <mat-dialog-actions>
-    <button mat-raised-button class="button" [mat-dialog-close]="true" value='OK' (click)="onClickOK()">OK</button>
+    <button (click)="onClickOK()" [mat-dialog-close]="true" class="button" mat-raised-button value='OK'>OK</button>
 </mat-dialog-actions>

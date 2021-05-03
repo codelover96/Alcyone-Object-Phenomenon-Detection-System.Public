@@ -1,12 +1,17 @@
-mat-dialog-content{
-    font-size:20px;
+h1.mat-headline{
+    color: #808080;
+    text-align: center;
+}
+mat-dialog-content {
+    font-size: 1em;
     font-weight: normal;
-    color:#808080;
+    color: #808080;
     /*display:wrap;*/
 }
-.button{
-    background-color:#666666;
-    color:white;
-    margin:0 auto;
-    display:block;
+
+.button {
+    background-color: #666;
+    color: white;
+    margin: 0 auto;
+    display: block;
 }

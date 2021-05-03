@@ -1,15 +1,18 @@
 mat-form-field {
     margin-right: 12px;
 }
-.metrics{
-    margin-top:80px;
+
+.metrics {
+    margin-top: 80px;
 }
-#detect,#appearance{
-    font-size:18px;
+
+#detect, #appearance {
+    font-size: 18px;
 }
-#goButton{
-    margin: 0 auto; 
+
+#goButton {
+    margin: 0 auto;
     display: block;
     background-color: #808080;
-    color:white;
+    color: white;
 }

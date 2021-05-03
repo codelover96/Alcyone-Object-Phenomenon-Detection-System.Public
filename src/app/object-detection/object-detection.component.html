@@ -1,43 +1,55 @@
 <!-- Side navigation bar -->
 <div class="search">
-  <div class="features"><br>
-    <p id="calculate">Calculate</p>
-    <mat-checkbox id="shape" class="calculate" name="shape" value="Shape" (change)="onChangeShape($event)">Shape
-    </mat-checkbox><br>
-    <mat-checkbox id="size" class="calculate" name="size" value="Size" (change)="onChangeSize($event)">Size
-    </mat-checkbox>
-  </div>
-  <div class="places">
-    <p id="appearance">Appearance</p>
-    <mat-checkbox id="sea" name="sea" value="Sea" (change)="onChangeSea($event)">Sea</mat-checkbox><br>
-    <mat-checkbox id="ashore" name="ashore" value="Ashore" (change)="onChangeAshore($event)">Ashore</mat-checkbox><br>
-    <mat-checkbox id="ashorewalt" name="ashorewalt" value="Ashore with altitude" (change)="onChangeAshorewAlt($event)">
-      Ashore with altitude</mat-checkbox><br>
-    <mat-checkbox id="ashoreinslope" name="ashoreinslope" value="Ashore in slope"
-      (change)="onChangeAshoreInSlope($event)">Ashore in slope</mat-checkbox><br>
-  </div>
-  <div class="shapeandsize">
-    <p id="searchwith">Search with specific</p>
-    <mat-checkbox id="size2" name="size2" value="size" (change)="onChangeSpecificSize($event)">size</mat-checkbox><br>
-    <form>
-      <mat-form-field>
-        <mat-label>width</mat-label><input id="width" matInput placeholder="">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>height</mat-label><input id="height" matInput placeholder="">
-      </mat-form-field>
-    </form>
-    <mat-checkbox id="shape2" name="shape2" value="shape" (change)="onChangeSpecificShape($event)">shape</mat-checkbox>
-    <mat-form-field (change)="onChangeSelect($event)">
-      <mat-select id="selectShape">
-        <mat-option value="Square">Square</mat-option>
-        <mat-option value="Rectangle">Rectangle</mat-option>
-        <mat-option value="Triangle">Triangle</mat-option>
-        <mat-option value="Circle">Circle</mat-option>
-        <mat-option value="Polygons">Polygons</mat-option>
-        <mat-option value="Parallelogram">Parallelogram</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <button mat-raised-button id="goButton" (click)="onClick()">Go</button>
+    <div class="features"><br>
+        <p id="calculate">Calculate</p>
+        <mat-checkbox (change)="onChangeShape($event)" class="calculate" id="shape" name="shape" value="Shape">Shape
+        </mat-checkbox>
+        <br>
+        <mat-checkbox (change)="onChangeSize($event)" class="calculate" id="size" name="size" value="Size">Size
+        </mat-checkbox>
+    </div>
+    <div class="places">
+        <p id="appearance">Appearance</p>
+        <mat-checkbox (change)="onChangeSea($event)" id="sea" name="sea" value="Sea">Sea</mat-checkbox>
+        <br>
+        <mat-checkbox (change)="onChangeAshore($event)" id="ashore" name="ashore" value="Ashore">Ashore</mat-checkbox>
+        <br>
+        <mat-checkbox (change)="onChangeAshorewAlt($event)" id="ashorewalt" name="ashorewalt"
+                      value="Ashore with altitude">
+            Ashore with altitude
+        </mat-checkbox>
+        <br>
+        <mat-checkbox (change)="onChangeAshoreInSlope($event)" id="ashoreinslope" name="ashoreinslope"
+                      value="Ashore in slope">Ashore in slope
+        </mat-checkbox>
+        <br>
+    </div>
+    <div class="shapeandsize">
+        <p id="searchwith">Search with specific</p>
+        <mat-checkbox (change)="onChangeSpecificSize($event)" id="size2" name="size2" value="size">size</mat-checkbox>
+        <br>
+        <form>
+            <mat-form-field>
+                <mat-label>width</mat-label>
+                <input id="width" matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>height</mat-label>
+                <input id="height" matInput placeholder="">
+            </mat-form-field>
+        </form>
+        <mat-checkbox (change)="onChangeSpecificShape($event)" id="shape2" name="shape2" value="shape">shape
+        </mat-checkbox>
+        <mat-form-field (change)="onChangeSelect($event)">
+            <mat-select id="selectShape">
+                <mat-option value="Square">Square</mat-option>
+                <mat-option value="Rectangle">Rectangle</mat-option>
+                <mat-option value="Triangle">Triangle</mat-option>
+                <mat-option value="Circle">Circle</mat-option>
+                <mat-option value="Polygons">Polygons</mat-option>
+                <mat-option value="Parallelogram">Parallelogram</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <button (click)="onClick()" id="goButton" mat-raised-button>Go</button>
 </div>

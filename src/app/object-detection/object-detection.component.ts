@@ -27,9 +27,11 @@ export class ObjectDetectionComponent implements OnInit {
     url: any; // It contains the url of selected image
 
 
-    constructor(public objectService: ObjectDetectionService, private http: HttpClient, private mainviewService: MainViewService) {}
+    constructor(public objectService: ObjectDetectionService, private http: HttpClient, private mainviewService: MainViewService) {
+    }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+    }
 
     // The following functions get the values of the filters' checkboxes
     onChangeShape(event: MatCheckboxChange) {
@@ -79,7 +81,7 @@ export class ObjectDetectionComponent implements OnInit {
             this.markedAshorewAlt === false &&
             this.markedSpecificShape === false &&
             this.markedSpecificSize === false) {
-                this.objectService.openModalWarning();
+            this.objectService.openModalWarning();
         } else {
             this.url = this.mainviewService.getUrl(); // It gets the image url
             this.width = parseInt((document.getElementById('width') as HTMLInputElement).value, 10);
@@ -109,5 +111,6 @@ export class ObjectDetectionComponent implements OnInit {
 
     }
 
-  onChangeSelect($event: Event) {}
+    onChangeSelect($event: Event) {
+    }
 }

@@ -1,9 +1,10 @@
 <!-- Dialog message content -->
+<h1 class="mat-headline" fxFill>Contact Info</h1>
 <mat-dialog-content>
     <div>
-        For any problem or help, send us an email to <b>alcyone@csd.auth.gr</b>
+        <p>For any problem or help, please send an email to <a href="mailto:alcyone@csd.auth.gr">alcyone@csd.auth.gr</a></p>
     </div>
 </mat-dialog-content><br>
 <mat-dialog-actions>
-    <button mat-raised-button class="button" [mat-dialog-close]="true" value='OK' (click)="onClickOK()">OK</button>
+    <button (click)="onClickOK()" [mat-dialog-close]="true" class="button" mat-raised-button value='Close'>Close</button>
 </mat-dialog-actions>

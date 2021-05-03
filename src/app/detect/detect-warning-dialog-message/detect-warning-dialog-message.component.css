@@ -1,25 +1,28 @@
-mat-dialog-content{
-    font-size:20px;
+mat-dialog-content {
+    font-size: 20px;
     font-weight: normal;
-    color:#808080;
+    color: #808080;
     /*display:wrap;*/
 }
-.button{
-    background-color:#666666;
-    color:white;
-    margin:0 auto;
-    display:block;
+
+.button {
+    background-color: #666666;
+    color: white;
+    margin: 0 auto;
+    display: block;
 }
-.icon{
-    font-size:50px;
-    color:#ffd700;
+
+.icon {
+    font-size: 50px;
+    color: #ffd700;
     vertical-align: initial;
-    margin-right:15%;
-    top:10px;
+    margin-right: 15%;
+    top: 10px;
 }
-.text{
+
+.text {
     text-align: center;
     vertical-align: middle;
-    margin-top:-22px;
-    margin-left:70px;
+    margin-top: -22px;
+    margin-left: 70px;
 }

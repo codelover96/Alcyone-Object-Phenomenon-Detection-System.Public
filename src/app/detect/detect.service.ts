@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { DetectWarningDialogMessageComponent } from './detect-warning-dialog-message/detect-warning-dialog-message.component';
+import {Injectable} from '@angular/core';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {DetectWarningDialogMessageComponent} from './detect-warning-dialog-message/detect-warning-dialog-message.component';
 
 @Injectable()
 export class DetectService {
 
-    constructor(public dialog: MatDialog) { }
+    constructor(public dialog: MatDialog) {
+    }
 
     /** Function which creates the relevant warning dialog message according with the error
      * @param error the error content
@@ -16,6 +17,7 @@ export class DetectService {
         dialogConfig.minWidth = 400;
         dialogConfig.data = error;
         const dialogRef = this.dialog.open(DetectWarningDialogMessageComponent, dialogConfig);
-        dialogRef.afterClosed().subscribe(result => { });
+        dialogRef.afterClosed().subscribe(result => {
+        });
     }
 }

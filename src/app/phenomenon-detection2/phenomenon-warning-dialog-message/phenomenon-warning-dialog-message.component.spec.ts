@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PhenomenonWarningDialogMessageComponent } from './phenomenon-warning-dialog-message.component';
+import {PhenomenonWarningDialogMessageComponent} from './phenomenon-warning-dialog-message.component';
 
 describe('PhenomenonWarningDialogMessageComponent', () => {
-  let component: PhenomenonWarningDialogMessageComponent;
-  let fixture: ComponentFixture<PhenomenonWarningDialogMessageComponent>;
+    let component: PhenomenonWarningDialogMessageComponent;
+    let fixture: ComponentFixture<PhenomenonWarningDialogMessageComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PhenomenonWarningDialogMessageComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [PhenomenonWarningDialogMessageComponent]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PhenomenonWarningDialogMessageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(PhenomenonWarningDialogMessageComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

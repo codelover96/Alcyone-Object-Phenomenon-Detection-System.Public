@@ -1,9 +1,21 @@
-<mat-sidenav-container fullscreen>
-  <mat-sidenav-content>
-    <mat-toolbar role="heading" class="topBar" *ngIf="router.url=='/home'">
-      <a routerLink="/home"><img [src]="logo" id="logo"></a>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
-    <app-footer *ngIf="router.url=='/home'"></app-footer>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="main">
+    <!--<mat-sidenav-container>
+        <mat-sidenav-content> -->
+    <div class="">
+        <header>
+            <mat-toolbar *ngIf="router.url=='/home'" class="topBar md-medium-tall" role="heading">
+                <a routerLink="/home"><img [src]="logo" id="logo" alt="Alcyone"></a>
+            </mat-toolbar>
+        </header>
+    </div>
+
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="">
+        <app-footer *ngIf="router.url=='/home'" class=""  id="app-footer"></app-footer>
+    </div>
+    <!--</mat-sidenav-content>
+</mat-sidenav-container>-->
+</div>

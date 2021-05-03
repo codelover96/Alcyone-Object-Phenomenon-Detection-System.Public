@@ -2,23 +2,35 @@
 <div class="content">
     <div class="metrics">
         <p id="detect">Metrics</p>
-        <mat-checkbox id="shape" value="Shape" [(ngModel)]="shape">Shape</mat-checkbox><br>
-        <mat-checkbox id="size" value="Size" [(ngModel)]="size">Size</mat-checkbox><br>
-        <mat-checkbox id="speed" value="Speed" [(ngModel)]="speed">Speed</mat-checkbox><br>
-        <mat-checkbox id="altitude" value="Altitude" [(ngModel)]="altitude">Altitude</mat-checkbox><br>
-        <mat-checkbox id="direction" value="Direction" [(ngModel)]="direction">Direction</mat-checkbox><br>
-        <mat-checkbox id="footprint" value="Footprint" [(ngModel)]="footprint">Footprint</mat-checkbox><br>
-        <mat-checkbox id="location" value="Location" [(ngModel)]="location">Location</mat-checkbox><br>
-    </div><br>
+        <mat-checkbox [(ngModel)]="shape" id="shape" value="Shape">Shape</mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="size" id="size" value="Size">Size</mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="speed" id="speed" value="Speed">Speed</mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="altitude" id="altitude" value="Altitude">Altitude</mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="direction" id="direction" value="Direction">Direction</mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="footprint" id="footprint" value="Footprint">Footprint</mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="location" id="location" value="Location">Location</mat-checkbox>
+        <br>
+    </div>
+    <br>
     <div class="places">
         <p id="appearance">Specific location</p>
-        <mat-checkbox id="sea" value="Sea" [(ngModel)]="sea">Sea</mat-checkbox><br>
-        <mat-checkbox id="ashore" value="Ashore" [(ngModel)]="ashore">Ashore</mat-checkbox><br>
-        <mat-checkbox id="ashorewithaltitude" value="Ashore with altitude" [(ngModel)]="ashoreWithAltitude">Ashore with
-            altitude</mat-checkbox><br>
-        <mat-checkbox id="ashoreinslope" value="Ashore in slope" [(ngModel)]="ashoreInSlope">Ashore in slope
+        <mat-checkbox [(ngModel)]="sea" id="sea" value="Sea">Sea</mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="ashore" id="ashore" value="Ashore">Ashore</mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="ashoreWithAltitude" id="ashorewithaltitude" value="Ashore with altitude">Ashore with
+            altitude
+        </mat-checkbox>
+        <br>
+        <mat-checkbox [(ngModel)]="ashoreInSlope" id="ashoreinslope" value="Ashore in slope">Ashore in slope
         </mat-checkbox>
         <br><br>
     </div>
-    <button mat-raised-button id="goButton" (click)="getResults()">Go</button>
+    <button (click)="getResults()" id="goButton" mat-raised-button>Go</button>
 </div>
