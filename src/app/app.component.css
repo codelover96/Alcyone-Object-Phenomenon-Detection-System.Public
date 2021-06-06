@@ -1,12 +1,20 @@
 .topBar {
     background-color: #808080;
     color: #fff;
+    padding: 2.5em 1.5em !important;
     /*position: sticky;
     top: 0;
     z-index: 1;
     height:10vh;
     width:100vw;*/
 }
+
+.toolbar-brand{
+    display: flex;
+    font: 500 20px/20px Roboto, "Helvetica Neue", sans-serif !important;
+    max-height: 100px!important;
+}
+
 
 #logo {
     /*margin-left: -15px;*/

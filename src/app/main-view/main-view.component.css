@@ -1,3 +1,19 @@
+.example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.example-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .filler {
     flex: 1 1 auto;
 }
@@ -13,15 +29,16 @@
 }
 
 .sideBar {
-    width: 17%;
-    padding: 12px;
+    width: 20%;
+    padding: 1em;
     background-color: #4b4276;
     color: #fff;
-    position: fixed;
-    left: 0;
+    /*position: fixed;*/
+    /*left: 0;*/
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
+    z-index: -1;
 }
 
 .topBar {
@@ -32,11 +49,11 @@
 }
 
 .topItem {
-    font-size: 20px;
+    font-size: 1em;
 }
 
 .items {
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 
 #logo {
@@ -48,8 +65,8 @@
     height: 100vh;
     border: none;
     outline: none;
-    margin-left: 17%;
-    position: fixed;
+    /*margin-left: 20%;*/
+    /*position: fixed;*/
 }
 
 .text {
@@ -57,8 +74,35 @@
     margin-top: 20%;
 }
 
+.toolbar-brand{
+    display: flex;
+    font: 500 20px/20px Roboto, "Helvetica Neue", sans-serif !important;
+    max-height: 100px!important;
+}
+
 #github-link{
     text-decoration: none !important;
     color: rgba(0, 0, 0, 0.87);
     letter-spacing: normal;
 }
+
+.file-upload{
+    font-size:1em;
+    padding: 0.5em;
+}
+
+.file-input {
+    display: none;
+}
+
+/* Hints */
+.hints{
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+}
+
+.hint-list{
+
+}
+

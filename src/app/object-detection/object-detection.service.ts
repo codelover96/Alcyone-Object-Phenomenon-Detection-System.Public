@@ -7,6 +7,7 @@ import {HttpClient} from '@angular/common/http';
 import {MainViewService} from '../main-view/main-view.service';
 import {ObjectWarningDialogMessageComponent} from './object-warning-dialog-message/object-warning-dialog-message.component';
 import {environment} from '../../environments/environment';
+import {SearchService} from '../search.service';
 
 @Injectable()
 export class ObjectDetectionService {
@@ -14,16 +15,16 @@ export class ObjectDetectionService {
     image: any; // It contains the selected image
     size: string; // It contains the specific size which user has given
     shape: string; // It contains the specific shape which user has given
-
-    constructor(public dialog: MatDialog, private http: HttpClient, private mainviewService: MainViewService) {
+    // TODO do i need the mainViewService import?
+    constructor(public dialog: MatDialog, private http: HttpClient, private mainviewService: MainViewService, private searchService: SearchService) {
     }
 
     /**
-     * Function which opens the modal message which contains the results of the search
-     * @param jsonData the results of search
-     * @param width of image
-     * @param height of image
-     * @param shape of object
+     * Opens a modal message containing search results
+     * @param jsonData search results as json
+     * @param width image width
+     * @param height image height
+     * @param shape object shape
      */
     openModalResults(jsonData, width, height, shape) {
         const dialogConfig = new MatDialogConfig();
@@ -36,7 +37,7 @@ export class ObjectDetectionService {
     }
 
     /**
-     * Function which opens the warning modal message in case of no selected filter/filters
+     * Opens a warning modal message in case of no selected filters
      */
     openModalWarning() {
         const dialogConfig = new MatDialogConfig();
@@ -48,13 +49,14 @@ export class ObjectDetectionService {
     }
 
     /**
-     * Function which carries out the post request passing the chosen filters and the image
+     * Carries out a post request, passing chosen filters and image
      * @param content the chosen filters
      */
     postFilters(content): Observable<any> {
         const API_URL = environment.apiUrl;
         const headers = {'content-type': 'application/json'};
         const jsonData = JSON.stringify(content);
+        const result = this.searchService.postSearch(jsonData);
         return this.http.post(API_URL + '/object-detection', jsonData, {headers});
     }
 }

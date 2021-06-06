@@ -64,14 +64,14 @@
 }
 
 .welcome{
-    color: lightgray;
+    color: grey;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
 .cta-go{
-    color: lightgray;
+    color: gray;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -93,5 +93,5 @@
     padding: 1.2rem;
     /*border: white 0.1em solid;*/
     border-radius: 0.4em;
-    background-color: rgba(66,66,66, 0.8)
+    background-color: rgba(255, 255, 255, 0.8)
 }

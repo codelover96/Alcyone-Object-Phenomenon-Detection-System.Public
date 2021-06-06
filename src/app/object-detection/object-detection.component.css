@@ -2,9 +2,9 @@ mat-form-field {
     margin-right: 12px;
 }
 
-#width, #height {
+/*#width, #height {
     width: 80%;
-}
+}*/
 
 #goButton {
     margin: 0 auto;
@@ -15,11 +15,11 @@ mat-form-field {
 }
 
 .search {
-    margin-top: 15%;
+    margin-top: 0.5em;
 }
 
 #appearance, #searchwith, #calculate {
-    font-size: 18px;
+    font-size: 1em;
 }
 
 .alert-error-text {
@@ -32,4 +32,30 @@ mat-form-field {
     color: green;
     font-weight: bold;
     text-align: center;
+}
+
+.my-mat-checkbox{
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+}
+
+/* Progress Spinner */
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.2em;
+    height: 2.2em;
+    margin-top: -1.1em;
+    margin-left: -1.1em;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-top-color: #313131de;
+    animation: spinner .8s linear infinite;
 }

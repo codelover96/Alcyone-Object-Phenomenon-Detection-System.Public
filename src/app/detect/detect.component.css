@@ -1,5 +1,5 @@
 .detect {
-    font-size: 25px;
+    font-size: 1.5em;
     margin-top: 80%;
 }
 
@@ -11,5 +11,7 @@
 }
 
 .item {
-    font-size: 17px;
+    font-size: 1em;
+    padding-top: 0.5em;
+    padding-left: 0.8em;
 }

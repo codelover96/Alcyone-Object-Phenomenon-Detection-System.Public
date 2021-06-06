@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './core/material.module';
 import {AppRoutingModule} from './core/app-routing.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {ObjectDetectionComponent} from './object-detection/object-detection.component';
 import {PhenomenonDetectionComponent} from './phenomenon-detection/phenomenon-detection.component';
@@ -27,6 +27,10 @@ import {DetectService} from './detect/detect.service';
 import {PhenomenonWarningDialogMessageComponent} from './phenomenon-detection2/phenomenon-warning-dialog-message/phenomenon-warning-dialog-message.component';
 import {ContactDialogMessageComponent} from './main-view/contact-dialog-message/contact-dialog-message.component';
 import {FlexLayoutModule, FlexModule} from '@angular/flex-layout';
+import {AngularSvgIconModule} from 'angular-svg-icon';
+import {AngularSvgIconPreloaderModule} from 'angular-svg-icon-preloader';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
     declarations: [
@@ -54,7 +58,14 @@ import {FlexLayoutModule, FlexModule} from '@angular/flex-layout';
         RouterModule,
         HttpClientModule,
         FlexModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        AngularSvgIconModule.forRoot(),
+        AngularSvgIconPreloaderModule.forRoot({
+            configUrl: './assets/json/icons.json',
+        }),
+        ReactiveFormsModule,
+        MatDividerModule,
+        MatProgressBarModule,
     ],
     exports: [
         MaterialModule,

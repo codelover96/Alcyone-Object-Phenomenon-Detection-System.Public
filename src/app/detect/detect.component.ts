@@ -8,12 +8,14 @@ import {DetectService} from './detect.service';
     templateUrl: './detect.component.html',
     styleUrls: ['./detect.component.css']
 })
+
 export class DetectComponent implements OnInit {
 
-    detect: any; // It contains the choice of user. It may be either "Object" or "Phenomenon".
-    url: any; // It contains the url of selected image
+    detect: any; // "Object" or "Phenomenon".
+    url: any; // image url
 
     constructor(private router: Router, private mainviewService: MainViewService, private detectService: DetectService) {
+
     }
 
     ngOnInit(): void {
@@ -24,7 +26,7 @@ export class DetectComponent implements OnInit {
      * suitable dialog message after clicking on "Next" button
      */
     onClick() {
-        this.url = this.mainviewService.getUrl();
+        this.url = this.mainviewService.getImageData();
         if (this.detect === 'Object') {
             this.router.navigate(['/main/object-detection']);
         } else if (this.detect === 'Phenomenon') {

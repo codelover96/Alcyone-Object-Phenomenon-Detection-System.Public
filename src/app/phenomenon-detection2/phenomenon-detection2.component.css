@@ -3,11 +3,11 @@ mat-form-field {
 }
 
 .metrics {
-    margin-top: 80px;
+    margin-top: 0.5em;
 }
 
 #detect, #appearance {
-    font-size: 18px;
+    font-size: 1em;
 }
 
 #goButton {

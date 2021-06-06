@@ -3,11 +3,11 @@ mat-form-field {
 }
 
 .phenom {
-    margin-top: 80px;
+    margin-top: 0.5em;
 }
 
 #ingredients {
-    margin-left: 10px;
+    margin-left: 1em;
 }
 
 #nextButton {
@@ -18,5 +18,5 @@ mat-form-field {
 }
 
 #detect {
-    font-size: 18px;
+    font-size: 1em;
 }

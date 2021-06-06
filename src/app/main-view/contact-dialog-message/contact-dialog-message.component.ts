@@ -30,10 +30,11 @@ export class ContactDialogMessageComponent implements OnInit {
     /**
      * Function which closes the dialog message after click on the button
      */
-    onClick() {
+    /*onClick() {
         this.dialogRef.close();
-    }
+    }*/
 
     onClickOK() {
+        this.dialogRef.close();
     }
 }

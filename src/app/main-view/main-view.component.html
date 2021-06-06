@@ -1,16 +1,40 @@
-<div class="container">
-    <mat-sidenav #sidenav class="sideBar" mode="side" opened>
-        <!-- Side navigation bar -->
-        <div>
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav>
+<div class="">
     <!-- Top toolbar -->
     <mat-toolbar class="topBar" role="heading">
-        <a routerLink="/home"><img [src]="logo" id="logo"></a>
+        <div class="toolbar-brand">
+            <svg-icon name="alcyone-icon" [svgStyle]="{ 'width.em':1, 'height.em':1, 'font-size.em':3 }"></svg-icon>
+        </div>
         <div class="items">
+            <button class="topItem" mat-button routerLink="/home">Home</button>
             <button [matMenuTriggerFor]="file" class="topItem" mat-button>File</button>
             <mat-menu #file="matMenu" yPosition="above">
+                <input type="file" class="file-input"
+                       [accept]="requiredFileType"
+                       (change)="onFileSelected($event)" #fileUpload>
+
+                <div class="file-upload">
+
+                    {{fileName || "No file uploaded yet."}}
+
+                    <button mat-mini-fab color="primary" class="upload-btn"
+                            (click)="fileUpload.click()">
+                        <mat-icon>attach_file</mat-icon>
+
+                    </button>
+
+                </div>
+
+                <div class="progress">
+
+                    <mat-progress-bar class="progress-bar" mode="determinate"
+                                      [value]="uploadProgress" *ngIf="uploadProgress">
+
+                    </mat-progress-bar>
+
+                    <mat-icon class="cancel-upload" (click)="cancelUpload()"
+                              *ngIf="uploadProgress">delete_forever</mat-icon>
+
+                </div>
                 <button (click)="openInput()" mat-menu-item>Open picture</button>
                 <input #Image (change)="handleFileInput($event.target.files)" accept="image/*" hidden id="fileInput"
                        type="file">
@@ -23,7 +47,7 @@
             </mat-menu>
             <button [matMenuTriggerFor]="tools" class="topItem" mat-button>Tools</button>
             <mat-menu #tools="matMenu" yPosition="above">
-                <button mat-menu-item>Calculate the distance between two objects</button>
+                <button mat-menu-item>Calculate distance between two objects</button>
                 <button mat-menu-item>Calculate latitude and longitude</button>
                 <button mat-menu-item>Create statistics for a phenomenon</button>
             </mat-menu>
@@ -32,11 +56,69 @@
                 <button (click)="onClickContact()" mat-menu-item>Contact us</button>
                 <a href="https://github.com/codelover96" id="github-link"><button mat-menu-item value="Github">Github</button></a>
             </mat-menu>
-            <span class="filler"></span>
+
+            <button mat-raised-button (click)="sidenav.toggle()" class="topItem">Toggle Filters</button>
+
+            <!--<span class="filler"></span>-->
         </div>
     </mat-toolbar>
-    <!-- Text-image which is displayed only when the user hasn't selected an image yet -->
-    <div *ngIf="imageUrl==null"><img *ngIf="imageUrl==null" [src]="textImage" class="text"></div>
-    <!-- Image for detection -->
-    <img *ngIf="imageUrl!=null" [src]="imageUrl" class="image">
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav #sidenav class="sideBar" mode="side" opened [fixedInViewport]="false" [fixedTopGap]="0"
+                     [fixedBottomGap]="0" Non-fixed>
+            <!-- Side navigation bar -->
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content *ngIf="imageUrl===null">
+            <!--<p><button mat-raised-button (click)="sidenav.toggle()">Toggle Side</button></p>-->
+            <!-- Text-image which is displayed only when the user hasn't selected an image yet -->
+
+            <div class="hints">
+                <div *ngIf="router.url=='/main/detect'">
+                    <ul class="hint-list">
+                        <h2><em>Hint</em></h2>
+                        <li>Select 'Object' or 'Phenomenon'</li>
+                        <li>Then click Next</li>
+                    </ul>
+                </div>
+                <div *ngIf="router.url=='/main/object-detection'">
+                    <ul class="hint-list">
+                        <h2><em>Hint</em></h2>
+                        <li>Upload image by going to 'File>Open Picture'</li>
+                        <li>Select desired properties</li>
+                        <li>Then click 'Go'</li>
+                    </ul>
+                </div>
+                <div *ngIf="router.url=='/main/phenomenon-detection'">
+                    <ul class="hint-list">
+                        <h2><em>Hint</em></h2>
+                        <li>Upload image by going to 'File>Open Picture'</li>
+                        <li>Select desired filters</li>
+                        <li>Then click 'Next' to choose Metrics and more characteristics.</li>
+                    </ul>
+                    <ul class="hint-list">
+                        <h2><em>Notice:</em></h2>
+                        <li>Flood implies that you provide a sequence of images of the same geographical area.</li>
+                        <li>Selecting 'Pollution' implies that you provide object's ingredients in the next step.</li>
+                        <li>Smoke Plumes refers to smoke present in atmosphere and is not necessarily correlated with Fire/Smoke.</li>
+                    </ul>
+                </div>
+                <div *ngIf="router.url=='/main/phenomenon-detection2'">
+                    <ul class="hint-list">
+                        <h2><em>Hint</em></h2>
+                        <li>Upload image by going to 'File>Open Picture'</li>
+                        <li>Select desired properties</li>
+                        <li>Then click 'Go'</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Image for detection -->
+            <div *ngIf="imageLoaded===true">
+                <!--<img *ngIf="imageUrl!=null" [src]="imageUrl" class="image">-->
+                <img [src]="imageUrl" class="image">
+            </div>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>

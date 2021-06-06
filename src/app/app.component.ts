@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 
@@ -11,7 +11,9 @@ import {Router} from '@angular/router';
 
 export class AppComponent {
     title = 'my-app';
-    logo = './assets/logo.png';
+    /*logo = './assets/logo.png';*/
+    logoIcon = './assets/new_logo_300x300.png';
+    bannerLogo = '/assets/my_logo_design_smaller_cropped_scalled.png';
 
     constructor(private router: Router) {
     }

@@ -5,29 +5,21 @@ import {ContactDialogMessageComponent} from './contact-dialog-message/contact-di
 @Injectable()
 export class MainViewService {
 
-    url: any; // It contains the url of selected image
+    imageData: string; // It contains the url of selected image
+                        // nope, contains image data as base64 encoding string...
 
     constructor(public dialog: MatDialog) {
     }
 
-    /**
-     * Function which gets the selected image url and file
-     * @param url the selected image url
-     * @param image the selected image file
-     */
-    passUrl(url) {
-        this.url = url;
+    passImageData(url) {
+        this.imageData = url;
     }
 
-    /**
-     * Function which returns the image url
-     */
-    getUrl() {
-        return this.url;
+    getImageData() {
+        return this.imageData;
     }
 
     /** Function which creates the contact dialog message according
-     * @param error the error content
      */
     openModalContact() {
         const dialogConfig = new MatDialogConfig();

@@ -10,6 +10,7 @@ import {PhenomenonDetectionService} from './phenomenon-detection.service';
 export class PhenomenonDetectionComponent implements OnInit {
     // They contain the values of each one of the checkboxes of filters
     fire = false;
+    smoke = false;
     flood = false;
     hurricane = false;
     snow = false;
@@ -33,6 +34,7 @@ export class PhenomenonDetectionComponent implements OnInit {
      */
     onClick() {
         this.array.push(this.fire);
+        this.array.push(this.smoke);
         this.array.push(this.flood);
         this.array.push(this.hurricane);
         this.array.push(this.snow);

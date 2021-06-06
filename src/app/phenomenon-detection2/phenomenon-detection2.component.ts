@@ -42,7 +42,7 @@ export class PhenomenonDetection2Component implements OnInit {
      * with dialog message.
      */
     getResults() {
-        this.array = this.phenomService.getArray(); // gets elected filters from the previous phenomenon page
+        this.array = this.phenomService.getArray(); // get selected filters from the previous phenomenon page
         // In the case the user hasn't selected any of filters, it shows a warning dialog message
         if (this.array[0] === false &&
             this.array[1] === false &&
@@ -63,9 +63,10 @@ export class PhenomenonDetection2Component implements OnInit {
             this.ashore === false &&
             this.ashoreInSlope === false &&
             this.ashoreWithAltitude === false) {
+            console.log(this.array[10]);
             this.phenom2Service.openModalWarning();
         } else {
-            this.url = this.mainviewService.getUrl(); // It gets the image url
+            this.url = this.mainviewService.getImageData(); // It gets the image url
             const content = {
                 url: this.url,
                 fire: this.array[0],

@@ -1,13 +1,16 @@
 <div class="main">
     <!--<mat-sidenav-container>
         <mat-sidenav-content> -->
-    <div class="">
         <header>
-            <mat-toolbar *ngIf="router.url=='/home'" class="topBar md-medium-tall" role="heading">
-                <a routerLink="/home"><img [src]="logo" id="logo" alt="Alcyone"></a>
-            </mat-toolbar>
+            <div>
+                <mat-toolbar *ngIf="router.url=='/home'" class="topBar" role="heading">
+                    <a routerLink="/home" class="toolbar-brand">
+                        <svg-icon name="alcyone-icon" [svgStyle]="{ 'width.em':1, 'height.em':1, 'font-size.em':3 }"></svg-icon>
+                    </a>
+                    <h2>Alcyone</h2>
+                </mat-toolbar>
+            </div>
         </header>
-    </div>
 
     <div class="content">
         <router-outlet></router-outlet>
