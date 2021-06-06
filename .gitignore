@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/src/assets/NSLComm2.png
+/src/assets/fonts/Waukegan_LDO_Extended_Regular/readme.html
+/src/assets/ESTCube-1_illustration.jpg
+/src/assets/Screenshot+2019-02-01+at+16.18.25.png
