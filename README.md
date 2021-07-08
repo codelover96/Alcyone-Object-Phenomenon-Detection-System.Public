@@ -46,9 +46,9 @@ Built with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 This is an ongoing project. This code is expected to change a lot. Currently, this repo represents only the front-end of Alcyone.
 
 #### Todos
-* Add responsiveness with flexLayout and custom css
-* Apply minor tweaks to typography
-* Optimise css
+* Add responsiveness with flexLayout and custom css (DONE)
+* Apply minor tweaks to typography (DONE)
+* Optimise css (DONE)
 * Integrate with back-end
 
 #### License
