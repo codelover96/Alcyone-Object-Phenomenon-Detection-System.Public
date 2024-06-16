@@ -7,6 +7,9 @@
 *Alcyone* is a machine learning system for object and phenomenon detection. Utilizes state of the art machine learning
 models to recognize and dictate objects like ships, oil spills, fire and smoke on satellite image data.
 ![Alcyone Home Page Screenshot](https://github.com/codelover96/Alcyone-Object-Phenomenon-Detection-System/blob/master/screenshot.PNG)
+
+This repo is a Proof of Concept of the Front End Service of Alcyone system. 
+
 #### Authors
 
 *Alcyone* is the senior thesis of Eirini Mitsa and Costas Patsaras, students at Informatics Department of Aristotle
@@ -42,14 +45,14 @@ the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/READ
 
 Built with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
-#### Notice
-This is an ongoing project. This code is expected to change a lot. Currently, this repo represents only the front-end of Alcyone.
-
 #### Todos
 * Add responsiveness with flexLayout and custom css (DONE)
 * Apply minor tweaks to typography (DONE)
 * Optimise css (DONE)
 * Integrate with back-end
+
+#### Contributing
+Contributions to this project are welcome! Please fork this repository and submit a pull request with your proposed changes.
 
 #### License
 [Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/)
