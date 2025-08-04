@@ -6,9 +6,9 @@
 
 *Alcyone* is a machine learning system for object and phenomenon detection. Utilizes state of the art machine learning
 models to recognize and dictate objects like ships, oil spills, fire and smoke on satellite image data.
-![Alcyone Home Page Screenshot](https://github.com/codelover96/Alcyone-Object-Phenomenon-Detection-System/blob/master/screenshot.PNG)
+![Alcyone Home Page Screenshot](screenshot.PNG)
 
-This repo is a Proof of Concept of the Front End Service of Alcyone system. 
+This repo is a Proof of Concept of the Front End Service of Alcyone system.
 
 #### Authors
 
